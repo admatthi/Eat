@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Firebase
+import FBSDKCoreKit
+import SwiftyStoreKit
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        
+        FBSDKAppEvents.activateApp()
+        
+        SwiftyStoreKit.completeTransactions(atomically: true) { products in
+            
+            for product in products {
+                
+                if product.transaction.transactionState == .purchased || product.transaction.transactionState == .restored {
+                    
+                    if product.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(product.transaction)
+                    }
+                    print("purchased: \(product)")
+                }
+            }
+        }
+        
         return true
     }
 
@@ -42,5 +66,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+class SegueFromLeft: UIStoryboardSegue
+{
+    override func perform()
+    {
+        let src = self.source
+        let dst = self.destination
+        
+        src.view.superview?.insertSubview(dst.view, aboveSubview: src.view)
+        dst.view.transform = CGAffineTransform(translationX: -src.view.frame.size.width, y: 0)
+        
+        UIView.animate(withDuration: 0.25,
+                       delay: 0.0,
+                       options: UIViewAnimationOptions.curveEaseInOut,
+                       animations: {
+                        dst.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        },
+                       completion: { finished in
+                        src.present(dst, animated: false, completion: nil)
+        }
+        )
+    }
+}
+
+class SegueFromRight: UIStoryboardSegue
+{
+    override func perform()
+    {
+        let src = self.source
+        let dst = self.destination
+        
+        src.view.superview?.insertSubview(dst.view, aboveSubview: src.view)
+        dst.view.transform = CGAffineTransform(translationX: src.view.frame.size.width, y: 0)
+        
+        UIView.animate(withDuration: 0.25,
+                       delay: 0.0,
+                       options: UIViewAnimationOptions.curveEaseInOut,
+                       animations: {
+                        dst.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        },
+                       completion: { finished in
+                        src.present(dst, animated: false, completion: nil)
+        }
+        )
+    }
 }
 
