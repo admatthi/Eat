@@ -87,8 +87,48 @@ class HomeViewController: UIViewController {
         
         
         var unhealthymeals = "0"
-        self.healthynumber.text = totahealthymealtoday
-        self.totalnumber.text = unhealthymeals
+        self.healthynumber.text = "0"
+        self.totalnumber.text = "0"
+        
+        if totalmealtoday != "" && totalmealtoday != "0" {
+            
+            self.totalnumber.text = totalmealtoday
+            
+            if totahealthymealtoday != "" && totahealthymealtoday != "0" {
+                
+                
+                unhealthymeals = String(Int(totalmealtoday)! - Int(totahealthymealtoday)!)
+                self.totalnumber.text = unhealthymeals
+                self.healthynumber.text = totahealthymealtoday
+
+                if unhealthymeals == "0" && Int(totahealthymealtoday)! >= 10  {
+                    
+                    healthypercent.text = "1"
+                    
+                } else {
+                    
+                    if Int(unhealthymeals)! < 1 && Int(totahealthymealtoday)! >= 20  {
+                        
+                        healthypercent.text = "2"
+                        
+                    }  else {
+                        
+                        if Int(unhealthymeals)! == 1 && Int(totahealthymealtoday)! >= 20  {
+                            
+                            healthypercent.text = "1"
+                            
+                        } else {
+                            
+                            healthypercent.text = "0"
+                            
+                            }
+                        }
+                    
+                    }
+                
+                }
+            }
+        }
         
         //        if totalmealtoday != "0" && totahealthymealtoday != "0" && totahealthymealtoday != "" && totalmealtoday != "" {
         //
@@ -106,49 +146,7 @@ class HomeViewController: UIViewController {
         //            healthypercent.text = "0"
         //        }
         
-        if totalmealtoday != "0" && totahealthymealtoday != "0" && totahealthymealtoday != "" && totalmealtoday != "" {
-            
-            unhealthymeals = String(Int(totalmealtoday)! - Int(totahealthymealtoday)!)
-            self.totalnumber.text = unhealthymeals
-            
-            
-            if unhealthymeals == "0" && Int(totahealthymealtoday)! >= 10  {
-                
-                healthypercent.text = "1"
-            } else {
-                
-                if Int(unhealthymeals)! < 1 && Int(totahealthymealtoday)! >= 20  {
-                    
-                    healthypercent.text = "2"
-                    
-                }  else {
-                    
-                    if Int(unhealthymeals)! == 1 && Int(totahealthymealtoday)! >= 20  {
-                        
-                        healthypercent.text = "1"
-                        
-                    } else {
-                        
-                        healthypercent.text = "0"
-                        
-                    }
-                }
-                
-            }
-            
-            
-            
-        } else {
-            
-            unhealthymeals = String(Int(totalmealtoday)!)
-            self.totalnumber.text = unhealthymeals
-            healthypercent.text = "0"
-        }
-        
-        
-        
-        
-    }
+
     
     func seeifthisisanewweek(completed: @escaping (() -> ()) ) {
         
@@ -165,7 +163,7 @@ class HomeViewController: UIViewController {
                     totalmealtoday = "0"
                     totahealthymealtoday = "0"
                     
-                    self.updatelabels()
+                                        self.updatelabels()
                     
                 } else {
                     
@@ -177,9 +175,64 @@ class HomeViewController: UIViewController {
                 totalmealtoday = "0"
                 totahealthymealtoday = "0"
                 
-                self.updatelabels()
+                                self.updatelabels()
+            }
+            
+            if var activityvalueee = value?["LastLoggedWeek"] as? String {
+                
+                if thisweek != activityvalueee {
+                    
+                    weekmeals = "0"
+                    weekhealthymeals = "0"
+                    
+                } else {
+                    
+                    completed()
+                    
+                }
+            } else {
+                
+                weekmeals = "0"
+                weekhealthymeals = "0"
+            }
+            
+            if var activityvalueee = value?["LastLoggedMonth"] as? String {
+                
+                if thismonth != activityvalueee {
+                    
+                    monthmeals = "0"
+                    monthhealthymeals = "0"
+                    
+                } else {
+                    
+                    completed()
+                    
+                }
+            } else {
+                
+                monthmeals = "0"
+                monthhealthymeals = "0"
+            }
+            
+            if var activityvalueee = value?["LastLoggedYear"] as? String {
+                
+                if thisyear != activityvalueee {
+                    
+                    totalmealsyear = "0"
+                    totalhealthymeals = "0"
+                    
+                } else {
+                    
+                    completed()
+                    
+                }
+            } else {
+                
+                totalmealsyear = "0"
+                totalhealthymeals = "0"
             }
         })
+        
     }
     
     func findlastloggeddata() {
@@ -191,13 +244,13 @@ class HomeViewController: UIViewController {
             if var activityvalue = value?["TotalDayMeals"] as? String {
                 
                 totalmealtoday = activityvalue
-                //                self.updatelabels()
+                                self.updatelabels()
             }
             
             if var activityvaluee = value?["TotalHealthyDayMeals"] as? String {
                 
                 totahealthymealtoday = activityvaluee
-                //                self.updatelabels()
+                                self.updatelabels()
             }
             
         })
@@ -258,7 +311,8 @@ class HomeViewController: UIViewController {
         })
         
         
-        
+        updatelabels()
+
     }
     
     func calculatenewmealvalues() {
