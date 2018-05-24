@@ -66,6 +66,8 @@ class HomeViewController: UIViewController {
             todaysdate =  dateFormatter.string(from: date)
             
             uid = (Auth.auth().currentUser?.uid)!
+
+//            uid = "7SZwrR5kFIgLMRbwdXeSraaedcv2"
             
             seeifthisisanewweek { () -> () in
                 
@@ -241,15 +243,15 @@ class HomeViewController: UIViewController {
             
             var value = snapshot.value as? NSDictionary
             
-            if var activityvalue = value?["TotalDayMeals"] as? String {
+            if var activityvalue2 = value?["TotalDayMeals"] as? String {
                 
-                totalmealtoday = activityvalue
+                totalmealtoday = activityvalue2
                                 self.updatelabels()
             }
             
-            if var activityvaluee = value?["TotalHealthyDayMeals"] as? String {
+            if var activityvaluee3 = value?["TotalHealthyDayMeals"] as? String {
                 
-                totahealthymealtoday = activityvaluee
+                totahealthymealtoday = activityvaluee3
                                 self.updatelabels()
             }
             

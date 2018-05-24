@@ -43,7 +43,6 @@ class LogViewController: UIViewController {
         mealhealth = "1"
         
         calculatenewmealvalues()
-        self.performSegue(withIdentifier: "BackToHome", sender: self)
         
     }
     @IBAction func tapButton2(_ sender: Any) {
@@ -53,7 +52,6 @@ class LogViewController: UIViewController {
         
         calculatenewmealvalues()
         
-        self.performSegue(withIdentifier: "BackToHome", sender: self)
         
     }
     @IBAction func tapButton3(_ sender: Any) {
@@ -62,7 +60,6 @@ class LogViewController: UIViewController {
         mealhealth = "3"
         
         calculatenewmealvalues()
-        self.performSegue(withIdentifier: "BackToHome", sender: self)
         
         
     }
@@ -73,7 +70,6 @@ class LogViewController: UIViewController {
         
         calculatenewmealvalues()
         
-        self.performSegue(withIdentifier: "BackToHome", sender: self)
         
     }
     
@@ -121,8 +117,43 @@ class LogViewController: UIViewController {
             todaysdate =  dateFormatter.string(from: date)
             
             uid = (Auth.auth().currentUser?.uid)!
+
             
+            if weekmeals == "" {
+                
+                weekmeals = "0"
+            }
             
+            if monthmeals == "" {
+                
+                monthmeals = "0"
+            }
+            if totalmealsyear == "" {
+                
+                totalmealsyear = "0"
+            }
+            if totalmealtoday == "" {
+                
+                totalmealtoday = "0"
+            }
+        
+            
+            if weekhealthymeals == "" {
+                
+                weekhealthymeals = "0"
+            }
+            if monthhealthymeals == "" {
+                
+                monthhealthymeals = "0"
+            }
+            if totalhealthymeals == "" {
+                
+                totalhealthymeals = "0"
+            }
+            if totahealthymealtoday == "" {
+                
+                totahealthymealtoday = "0"
+            }
             // Do any additional setup after loading the view.
         }
         
@@ -193,170 +224,9 @@ class LogViewController: UIViewController {
     //
     //    }
     
-    func seeifthisisanewweek(completed: @escaping (() -> ()) ) {
-        
-        
-        var functioncounter = 0
-        ref?.child("OurUsers").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            var value = snapshot.value as? NSDictionary
-            
-            if var activityvalueee = value?["LastLoggedDay"] as? String {
-                
-                if thisday != activityvalueee {
-                    
-                    totalmealtoday = "0"
-                    totahealthymealtoday = "0"
-                    
-                    //                    self.updatelabels()
-                    
-                } else {
-                    
-                    completed()
-                    
-                }
-            } else {
-                
-                totalmealtoday = "0"
-                totahealthymealtoday = "0"
-                
-                //                self.updatelabels()
-            }
-            
-            if var activityvalueee = value?["LastLoggedWeek"] as? String {
-                
-                if thisweek != activityvalueee {
-                    
-                    weekmeals = "0"
-                    weekhealthymeals = "0"
-                    
-                } else {
-                    
-                    completed()
-                    
-                }
-            } else {
-                
-                weekmeals = "0"
-                weekhealthymeals = "0"
-            }
-            
-            if var activityvalueee = value?["LastLoggedMonth"] as? String {
-                
-                if thismonth != activityvalueee {
-                    
-                    monthmeals = "0"
-                    monthhealthymeals = "0"
-                    
-                } else {
-                    
-                    completed()
-                    
-                }
-            } else {
-                
-                monthmeals = "0"
-                monthhealthymeals = "0"
-            }
-            
-            if var activityvalueee = value?["LastLoggedYear"] as? String {
-                
-                if thisyear != activityvalueee {
-                    
-                    totalmealsyear = "0"
-                    totalhealthymeals = "0"
-                    
-                } else {
-                    
-                    completed()
-                    
-                }
-            } else {
-                
-                totalmealsyear = "0"
-                totalhealthymeals = "0"
-            }
-        })
-    }
+
     
-    func findlastloggeddata() {
-        
-        ref?.child("OurUsers").child(uid).child(thisday).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            var value = snapshot.value as? NSDictionary
-            
-            if var activityvalue = value?["TotalDayMeals"] as? String {
-                
-                totalmealtoday = activityvalue
-                //                self.updatelabels()
-            }
-            
-            if var activityvaluee = value?["TotalHealthyDayMeals"] as? String {
-                
-                totahealthymealtoday = activityvaluee
-                //                self.updatelabels()
-            }
-            
-        })
-        
-        
-        ref?.child("OurUsers").child(uid).child(thisweek).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            var value = snapshot.value as? NSDictionary
-            
-            if var activityvalue = value?["TotalWeekMeals"] as? String {
-                
-                weekmeals = activityvalue
-                
-            }
-            
-            if var activityvaluee = value?["TotalHealthyWeekMeals"] as? String {
-                
-                weekhealthymeals = activityvaluee
-                
-            }
-            
-        })
-        
-        ref?.child("OurUsers").child(uid).child(thisyear).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            var value = snapshot.value as? NSDictionary
-            
-            if var activityvalue = value?["TotalYearMeals"] as? String {
-                
-                totalmealsyear = activityvalue
-                
-            }
-            
-            if var activityvaluee = value?["TotalHealthyYearMeals"] as? String {
-                
-                totalhealthymeals = activityvaluee
-                
-            }
-            
-        })
-        
-        ref?.child("OurUsers").child(uid).child(thismonth).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            var value = snapshot.value as? NSDictionary
-            
-            if var activityvalue = value?["TotalMonthMeals"] as? String {
-                
-                monthmeals = activityvalue
-                
-            }
-            
-            if var activityvaluee = value?["TotalHealthyMonthMeals"] as? String {
-                
-                monthhealthymeals = activityvaluee
-                
-            }
-            
-        })
-        
-        
-        
-    }
+ 
     
     func calculatenewmealvalues() {
         
@@ -375,7 +245,7 @@ class LogViewController: UIViewController {
             var newhealthweek = Int(weekhealthymeals)! + 1
             var newhealthmonth = Int(monthhealthymeals)! + 1
             var newhealthyear = Int(totalhealthymeals)! + 1
-            var newhealthyday = Int(totalhealthymeals)! + 1
+            var newhealthyday = Int(totahealthymealtoday)! + 1
             
             ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek)])
             
@@ -395,7 +265,8 @@ class LogViewController: UIViewController {
             totalhealthymeals = String(newhealthyear)
             
             totahealthymealtoday = String(newhealthyday)
-            
+            self.performSegue(withIdentifier: "BackToHome", sender: self)
+
         } else {
             
             var newhealthweek = weekhealthymeals
@@ -404,7 +275,7 @@ class LogViewController: UIViewController {
             
             var newhealthyear = totalhealthymeals
             
-            var newhealthyday = totalhealthymeals
+            var newhealthyday = totahealthymealtoday
             
             
             ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek)])
@@ -425,7 +296,8 @@ class LogViewController: UIViewController {
             totalhealthymeals = String(newhealthyear)
             
             totahealthymealtoday = String(newhealthyday)
-            
+            self.performSegue(withIdentifier: "BackToHome", sender: self)
+
         }
         
         

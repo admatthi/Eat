@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController {
 
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://getfullapp.weebly.com/terms--policy.html"
+        if let url = NSURL(string: "https://geteatapp.weebly.com/terms--policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }

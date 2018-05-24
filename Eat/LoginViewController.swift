@@ -16,11 +16,15 @@ import FBSDKCoreKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    @IBAction func tapContinue(_ sender: Any) {
+    @IBAction func tapLogin(_ sender: Any) {
         
         login()
-
     }
+    @IBAction func tapSignUp(_ sender: Any) {
+        
+        signup()
+    }
+
 
     @IBOutlet weak var passwordtf: UITextField!
     @IBOutlet weak var emailtf: UITextField!
@@ -34,7 +38,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             if let error = error {
                 
-                self.signup()
+                
+                self.errorlabel.alpha = 1
+                self.errorlabel.text = error.localizedDescription
+                
+                return
                 
             } else {
                 

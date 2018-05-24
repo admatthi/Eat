@@ -82,7 +82,7 @@ class PurchaseViewController: UIViewController {
     @IBOutlet weak var tapterms: UIButton!
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://getfullapp.weebly.com/terms--policy.html"
+        if let url = NSURL(string: "https://geteatapp.weebly.com/terms--policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -118,11 +118,7 @@ class PurchaseViewController: UIViewController {
         purchase(purchase: sevenday)
         
         
-//        DispatchQueue.main.async {
-//
-//            self.performSegue(withIdentifier: "PurchaseToLogin2", sender: self)
-//
-//        }
+//        login()
         //
         
         
@@ -182,14 +178,9 @@ class PurchaseViewController: UIViewController {
                                             }
                                             
                                             FBSDKAppEvents.logEvent("Purchased Completed")
-                                            
-                                            
-                                            DispatchQueue.main.async {
-                                                
-                                                self.performSegue(withIdentifier: "PurchaseToLogin2", sender: self)
-                                                
-                                            }
-                                            
+                                        
+
+                                            self.login()
                                             
                                             self.showAlert(alert: self.alertForPurchaseResult(result: result))
                                             
@@ -341,6 +332,40 @@ class PurchaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func login() {
+        
+        var email = "demo@gmail.com"
+        var password = "password"
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            
+            if let error = error {
+                
+                
+                return
+                
+            } else {
+                
+                uid = (Auth.auth().currentUser?.uid)!
+                
+                let date = Date()
+                let calendar = Calendar.current
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM-dd-yy"
+                var todaysdate =  dateFormatter.string(from: date)
+                
+                
+                DispatchQueue.main.async {
+                    
+                    self.performSegue(withIdentifier: "PurchaseToHome8", sender: self)
+                    
+                }
+            }
+            
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -487,11 +512,13 @@ class PurchaseViewController: UIViewController {
     }
     
     var attrs = [
-        NSAttributedStringKey.foregroundColor : UIColor.lightGray,
+        NSAttributedStringKey.foregroundColor : UIColor.black,
         NSAttributedStringKey.underlineStyle : 1] as [NSAttributedStringKey : Any]
     
     var attributedString = NSMutableAttributedString(string:"")
 }
+
+
 
 
 
