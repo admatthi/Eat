@@ -15,14 +15,33 @@ import FirebaseAuth
 import FBSDKCoreKit
 
 var thisyear = String()
+var healthy1 = CGFloat()
+var healthy2 = CGFloat()
+var healthy3 = CGFloat()
+var healthy4 = CGFloat()
+var healthy5 = CGFloat()
+var healthy6 = CGFloat()
+var healthy7 = CGFloat()
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    let cellId = "cellId"
+    
+    var values = [CGFloat]()
+    
     @IBOutlet weak var healthynumber: UILabel!
     
     @IBOutlet weak var totalnumber: UILabel!
     @IBOutlet weak var healthypercent: UILabel!
     
+    @IBOutlet weak var onebottom: UILabel!
+    @IBOutlet weak var twobottom: UILabel!
+    @IBOutlet weak var threebottom: UILabel!
+    @IBOutlet weak var fourbottom: UILabel!
+    @IBOutlet weak var fivebottom: UILabel!
+    @IBOutlet weak var sixbottom: UILabel!
+    @IBOutlet weak var sevenbottom: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,11 +93,17 @@ class HomeViewController: UIViewController {
                 self.findlastloggeddata()
                 
             }
+            
+            collectionView?.backgroundColor = .white
+            
+            collectionView?.register(BarCell.self, forCellWithReuseIdentifier: cellId)
+            
             // Do any additional setup after loading the view.
         }
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var collectionView: UICollectionView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -274,6 +299,94 @@ class HomeViewController: UIViewController {
                 
             }
             
+            
+            if var one = value?["Healthy1"] as? String {
+                
+                healthy1 = CGFloat(Int(one)!)
+                
+            } else {
+                
+                healthy1 = 0
+
+            }
+            
+            if var two = value?["Healthy2"] as? String {
+                
+                healthy2 = CGFloat(Int(two)!)
+                
+            } else {
+                
+                healthy2 = 0
+            }
+            
+            if var three = value?["Healthy3"] as? String {
+                
+                healthy3 = CGFloat(Int(three)!)
+                
+            } else {
+                
+                healthy3 = 0
+            }
+            
+            if var four = value?["Healthy4"] as? String {
+                
+                healthy4 = CGFloat(Int(four)!)
+                
+            }else {
+                
+                healthy4 = 0
+            }
+            
+            if var five = value?["Healthy5"] as? String {
+                
+                healthy5 = CGFloat(Int(five)!)
+                
+            }else {
+                
+                healthy5 = 0
+            }
+            
+            if var six = value?["Healthy6"] as? String {
+                
+                healthy6 = CGFloat(Int(six)!)
+                
+            }else {
+                
+                healthy6 = 0
+            }
+            
+            if var seven = value?["Healthy7"] as? String {
+                
+                healthy7 = CGFloat(Int(seven)!)
+                
+                self.values = [healthy1, healthy2, healthy3, healthy4, healthy5, healthy6, healthy7]
+                self.onebottom.text = String(Int(self.values[0]))
+                self.twobottom.text = String(Int(self.values[1]))
+                self.threebottom.text = String(Int(self.values[2]))
+                self.fourbottom.text = String(Int(self.values[3]))
+                self.fivebottom.text = String(Int(self.values[4]))
+                self.sixbottom.text = String(Int(self.values[5]))
+                self.sevenbottom.text = String(Int(self.values[6]))
+                self.collectionView.reloadData()
+
+            }else {
+                
+                healthy7 = 0
+                
+                self.values = [healthy1, healthy2, healthy3, healthy4, healthy5, healthy6, healthy7]
+                self.onebottom.text = String(Int(self.values[0]))
+                self.twobottom.text = String(Int(self.values[1]))
+                self.threebottom.text = String(Int(self.values[2]))
+                self.fourbottom.text = String(Int(self.values[3]))
+                self.fivebottom.text = String(Int(self.values[4]))
+                self.sixbottom.text = String(Int(self.values[5]))
+                self.sevenbottom.text = String(Int(self.values[6]))
+            
+                self.collectionView.reloadData()
+
+            }
+            
+            
         })
         
         ref?.child("OurUsers").child(uid).child(thisyear).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -390,6 +503,58 @@ class HomeViewController: UIViewController {
         }
         
         
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 30
+    }
+    
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return values.count
+        
+        
+    }
+    
+    func maxHeight() -> CGFloat {
+        
+        return values.max()! + 50
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BarCell
+        
+        
+        if let max = values.max() {
+
+        if max != 0 {
+            
+            let value = values[indexPath.item]
+            let ratio = value / max
+
+            cell.barHeightConstraint?.constant = maxHeight() * ratio
+            
+        } else {
+            
+            cell.barHeightConstraint?.constant = 10
+            
+            
+            }
+            
+        }
+        
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 30, height: maxHeight())
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 75, left: 50, bottom: 30, right: 0)
     }
     /*
      // MARK: - Navigation

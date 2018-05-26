@@ -59,6 +59,9 @@
 		9D694E7220B1DD5300AEED4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */; };
 		9D694E7D20B1DD5300AEED4E /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E7C20B1DD5300AEED4E /* EatTests.swift */; };
 		9D694E8820B1DD5300AEED4E /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E8720B1DD5300AEED4E /* EatUITests.swift */; };
+		9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
+		9DBB8B3620B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
+		9DBB8B3720B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		C3552F51131E596A3143D483 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E85CEF3FB24BB9D7280F9A /* Pods_EatTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +115,7 @@
 		9D694E8320B1DD5300AEED4E /* EatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D694E8720B1DD5300AEED4E /* EatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatUITests.swift; sourceTree = "<group>"; };
 		9D694E8920B1DD5300AEED4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DBB8B3420B64F06004C36D1 /* BarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		A88B6C258942DD8C488A6364 /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF9B31F77D99EB6CC4E6816D /* Pods_Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E85CEF3FB24BB9D7280F9A /* Pods_EatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +210,7 @@
 				9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */,
 				9D694E7320B1DD5300AEED4E /* Info.plist */,
 				9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */,
+				9DBB8B3420B64F06004C36D1 /* BarCell.swift */,
 			);
 			path = Eat;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				9D63811A20B1F23100350C4D /* SettingsViewController.swift in Sources */,
 				9D694E6820B1DD5300AEED4E /* AppDelegate.swift in Sources */,
 				9D63811620B1E96800350C4D /* FoodsTableViewCell.swift in Sources */,
+				9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */,
 				9D6380FE20B1E03D00350C4D /* EViewController.swift in Sources */,
 				9D63811220B1E07500350C4D /* InsightsViewController.swift in Sources */,
 			);
@@ -577,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D63811F20B1F27000350C4D /* LoginViewController.swift in Sources */,
+				9DBB8B3620B64F06004C36D1 /* BarCell.swift in Sources */,
 				9D6380EF20B1E01000350C4D /* AViewController.swift in Sources */,
 				9D63811720B1E96800350C4D /* FoodsTableViewCell.swift in Sources */,
 				9D6380FB20B1E03100350C4D /* DViewController.swift in Sources */,
@@ -598,6 +605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D63812020B1F27000350C4D /* LoginViewController.swift in Sources */,
+				9DBB8B3720B64F06004C36D1 /* BarCell.swift in Sources */,
 				9D6380F020B1E01000350C4D /* AViewController.swift in Sources */,
 				9D63811820B1E96800350C4D /* FoodsTableViewCell.swift in Sources */,
 				9D6380FC20B1E03100350C4D /* DViewController.swift in Sources */,
@@ -760,7 +768,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A264F16ACEF0C97563464A1 /* Pods-Eat.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-5";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				INFOPLIST_FILE = Eat/Info.plist;
@@ -777,7 +785,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-4";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-5";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				INFOPLIST_FILE = Eat/Info.plist;

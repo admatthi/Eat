@@ -82,7 +82,7 @@ class PurchaseViewController: UIViewController {
     @IBOutlet weak var tapterms: UIButton!
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://geteatapp.weebly.com/terms--policy.html"
+        if let url = NSURL(string: "https://tryeatfree.weebly.com/terms--policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
@@ -117,6 +117,12 @@ class PurchaseViewController: UIViewController {
         
         purchase(purchase: sevenday)
         
+//        
+//        DispatchQueue.main.async {
+//            
+//            self.performSegue(withIdentifier: "PurchaseToLogin2", sender: self)
+//            
+//        }
         
 //        login()
         //
@@ -180,7 +186,11 @@ class PurchaseViewController: UIViewController {
                                             FBSDKAppEvents.logEvent("Purchased Completed")
                                         
 
-                                            self.login()
+                                            DispatchQueue.main.async {
+
+                                            self.performSegue(withIdentifier: "PurchaseToLogin2", sender: self)
+                                                        
+                                            }
                                             
                                             self.showAlert(alert: self.alertForPurchaseResult(result: result))
                                             

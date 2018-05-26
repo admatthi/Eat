@@ -28,6 +28,7 @@ var monthhealthymeals = String()
 var thisweek = String()
 var thismonth = String()
 var thisday = String()
+var dayofweek = Int()
 
 class LogViewController: UIViewController {
     @IBOutlet weak var healthynumber: UILabel!
@@ -85,6 +86,7 @@ class LogViewController: UIViewController {
         let calendar = Calendar.current
         var weekOfYear = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
         var monthOfYear = calendar.component(.month, from: Date.init(timeIntervalSinceNow: 0))
+        dayofweek = Date().dayNumberOfWeek()!
         
         
         thisweek = String(weekOfYear)
@@ -247,7 +249,8 @@ class LogViewController: UIViewController {
             var newhealthyear = Int(totalhealthymeals)! + 1
             var newhealthyday = Int(totahealthymealtoday)! + 1
             
-            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek)])
+            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek), "Healthy\(dayofweek)" : String(newhealthyday)])
+
             
             ref?.child("OurUsers").child(uid).child(thismonth).updateChildValues(["TotalMonthMeals" : String(newmonth), "TotalHealthyMonthMeals" : String(newhealthmonth)])
             
@@ -278,7 +281,7 @@ class LogViewController: UIViewController {
             var newhealthyday = totahealthymealtoday
             
             
-            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek)])
+            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek), "Healthy\(dayofweek)" : String(newhealthyday)])
             
             ref?.child("OurUsers").child(uid).child(thismonth).updateChildValues(["TotalMonthMeals" : String(newmonth), "TotalHealthyMonthMeals" : String(newhealthmonth)])
             
@@ -319,5 +322,11 @@ class LogViewController: UIViewController {
      */
     
     
+}
+
+extension Date {
+    func dayNumberOfWeek() -> Int? {
+        return Calendar.current.dateComponents([.weekday], from: self).weekday
+    }
 }
 
