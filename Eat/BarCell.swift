@@ -15,7 +15,7 @@ class BarCell: UICollectionViewCell {
     
     let barView: UIView = {
         let view = UIView()
-        view.backgroundColor = lightgreen
+        
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 5.0
         return view
@@ -24,8 +24,18 @@ class BarCell: UICollectionViewCell {
     var barHeightConstraint: NSLayoutConstraint?
     
     override var isHighlighted: Bool {
+        
         didSet {
-            barView.backgroundColor = lightgreen
+            
+//            if tag == 1 {
+//                
+//                barView.backgroundColor = lightgreen
+//
+//            } else {
+//                
+//                barView.backgroundColor = lightorange
+//
+//            }
 
         }
     }

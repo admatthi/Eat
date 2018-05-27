@@ -23,11 +23,22 @@ var healthy5 = CGFloat()
 var healthy6 = CGFloat()
 var healthy7 = CGFloat()
 
+var unhealthy1 = CGFloat()
+var unhealthy2 = CGFloat()
+var unhealthy3 = CGFloat()
+var unhealthy4 = CGFloat()
+var unhealthy5 = CGFloat()
+var unhealthy6 = CGFloat()
+var unhealthy7 = CGFloat()
+
+var lightorange = UIColor(red:0.86, green:0.42, blue:0.32, alpha:1.0)
+
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     let cellId = "cellId"
     
-    var values = [CGFloat]()
+    var healthyvalues = [CGFloat]()
+    var unhealthyvalues = [CGFloat]()
     
     @IBOutlet weak var healthynumber: UILabel!
     
@@ -41,6 +52,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var fivebottom: UILabel!
     @IBOutlet weak var sixbottom: UILabel!
     @IBOutlet weak var sevenbottom: UILabel!
+    
+    @IBOutlet weak var uonebottom: UILabel!
+    @IBOutlet weak var utwobottom: UILabel!
+    @IBOutlet weak var uthreebottom: UILabel!
+    @IBOutlet weak var ufourbottom: UILabel!
+    @IBOutlet weak var ufivebottom: UILabel!
+    @IBOutlet weak var usixbottom: UILabel!
+    @IBOutlet weak var usevenbottom: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +116,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             collectionView?.backgroundColor = .white
             
             collectionView?.register(BarCell.self, forCellWithReuseIdentifier: cellId)
+            
+            collectionVie2?.backgroundColor = .white
+            
+            collectionVie2?.register(BarCell.self, forCellWithReuseIdentifier: cellId)
             
             // Do any additional setup after loading the view.
         }
@@ -359,32 +382,119 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 
                 healthy7 = CGFloat(Int(seven)!)
                 
-                self.values = [healthy1, healthy2, healthy3, healthy4, healthy5, healthy6, healthy7]
-                self.onebottom.text = String(Int(self.values[0]))
-                self.twobottom.text = String(Int(self.values[1]))
-                self.threebottom.text = String(Int(self.values[2]))
-                self.fourbottom.text = String(Int(self.values[3]))
-                self.fivebottom.text = String(Int(self.values[4]))
-                self.sixbottom.text = String(Int(self.values[5]))
-                self.sevenbottom.text = String(Int(self.values[6]))
+                self.healthyvalues = [healthy1, healthy2, healthy3, healthy4, healthy5, healthy6, healthy7]
+                self.onebottom.text = String(Int(self.healthyvalues[0]))
+                self.twobottom.text = String(Int(self.healthyvalues[1]))
+                self.threebottom.text = String(Int(self.healthyvalues[2]))
+                self.fourbottom.text = String(Int(self.healthyvalues[3]))
+                self.fivebottom.text = String(Int(self.healthyvalues[4]))
+                self.sixbottom.text = String(Int(self.healthyvalues[5]))
+                self.sevenbottom.text = String(Int(self.healthyvalues[6]))
                 self.collectionView.reloadData()
 
             }else {
                 
                 healthy7 = 0
                 
-                self.values = [healthy1, healthy2, healthy3, healthy4, healthy5, healthy6, healthy7]
-                self.onebottom.text = String(Int(self.values[0]))
-                self.twobottom.text = String(Int(self.values[1]))
-                self.threebottom.text = String(Int(self.values[2]))
-                self.fourbottom.text = String(Int(self.values[3]))
-                self.fivebottom.text = String(Int(self.values[4]))
-                self.sixbottom.text = String(Int(self.values[5]))
-                self.sevenbottom.text = String(Int(self.values[6]))
+                self.healthyvalues = [healthy1, healthy2, healthy3, healthy4, healthy5, healthy6, healthy7]
+                self.onebottom.text = String(Int(self.healthyvalues[0]))
+                self.twobottom.text = String(Int(self.healthyvalues[1]))
+                self.threebottom.text = String(Int(self.healthyvalues[2]))
+                self.fourbottom.text = String(Int(self.healthyvalues[3]))
+                self.fivebottom.text = String(Int(self.healthyvalues[4]))
+                self.sixbottom.text = String(Int(self.healthyvalues[5]))
+                self.sevenbottom.text = String(Int(self.healthyvalues[6]))
             
                 self.collectionView.reloadData()
 
             }
+            
+            if var one = value?["unHealthy1"] as? String {
+                
+                unhealthy1 = CGFloat(Int(one)!)
+                
+            } else {
+                
+                unhealthy1 = 0
+                
+            }
+            
+            if var two = value?["unHealthy2"] as? String {
+                
+                unhealthy2 = CGFloat(Int(two)!)
+                
+            } else {
+                
+                unhealthy2 = 0
+            }
+            
+            if var three = value?["unHealthy3"] as? String {
+                
+                unhealthy3 = CGFloat(Int(three)!)
+                
+            } else {
+                
+                unhealthy3 = 0
+            }
+            
+            if var four = value?["unHealthy4"] as? String {
+                
+                unhealthy4 = CGFloat(Int(four)!)
+                
+            }else {
+                
+                unhealthy4 = 0
+            }
+            
+            if var five = value?["unHealthy5"] as? String {
+                
+                unhealthy5 = CGFloat(Int(five)!)
+                
+            }else {
+                
+                unhealthy5 = 0
+            }
+            
+            if var six = value?["unHealthy6"] as? String {
+                
+                unhealthy6 = CGFloat(Int(six)!)
+                
+            }else {
+                
+                unhealthy6 = 0
+            }
+            
+            if var seven = value?["unHealthy7"] as? String {
+                
+                unhealthy7 = CGFloat(Int(seven)!)
+                
+                self.unhealthyvalues = [unhealthy1, unhealthy2, unhealthy3, unhealthy4, unhealthy5, unhealthy6, unhealthy7]
+                self.uonebottom.text = String(Int(self.unhealthyvalues[0]))
+                self.utwobottom.text = String(Int(self.unhealthyvalues[1]))
+                self.uthreebottom.text = String(Int(self.unhealthyvalues[2]))
+                self.ufourbottom.text = String(Int(self.unhealthyvalues[3]))
+                self.ufivebottom.text = String(Int(self.unhealthyvalues[4]))
+                self.usixbottom.text = String(Int(self.unhealthyvalues[5]))
+                self.usevenbottom.text = String(Int(self.unhealthyvalues[6]))
+                self.collectionVie2.reloadData()
+                
+            }else {
+                
+                unhealthy7 = 0
+                
+                self.unhealthyvalues = [unhealthy1, unhealthy2, unhealthy3, unhealthy4, unhealthy5, unhealthy6, unhealthy7]
+                self.uonebottom.text = String(Int(self.unhealthyvalues[0]))
+                self.utwobottom.text = String(Int(self.unhealthyvalues[1]))
+                self.uthreebottom.text = String(Int(self.unhealthyvalues[2]))
+                self.ufourbottom.text = String(Int(self.unhealthyvalues[3]))
+                self.ufivebottom.text = String(Int(self.unhealthyvalues[4]))
+                self.usixbottom.text = String(Int(self.unhealthyvalues[5]))
+                self.usevenbottom.text = String(Int(self.healthyvalues[6]))
+                
+                self.collectionVie2.reloadData()
+                
+            }
+            
             
             
         })
@@ -429,6 +539,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         updatelabels()
 
     }
+    @IBOutlet weak var collectionVie2: UICollectionView!
     
     func calculatenewmealvalues() {
         
@@ -512,37 +623,101 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return values.count
+        
+        if collectionView.tag == 1 {
+            
+            return healthyvalues.count
+            
+        } else {
+            
+            if collectionView.tag == 2 {
+                
+                return unhealthyvalues.count
+                
+            } else {
+                
+                return 0
+            }
+        }
         
         
     }
     
     func maxHeight() -> CGFloat {
         
-        return values.max()! + 50
+        if collectionView.tag == 1 {
+            
+//            return healthyvalues.max()! + 50
+            
+            return 50
+            
+        } else {
+            
+            if collectionView.tag == 2 {
+                
+//                return unhealthyvalues.max()! + 50
+                
+                return 50
+
+            } else {
+                
+                return 0
+            }
+        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BarCell
         
+        if collectionView.tag == 1 {
         
-        if let max = values.max() {
+        cell.barView.backgroundColor = lightgreen
+
+        if let max = healthyvalues.max() {
 
         if max != 0 {
             
-            let value = values[indexPath.item]
-            let ratio = value / max
+            let value = healthyvalues[indexPath.item]
+//            let ratio = value / max
+            let ratio = value / 5
 
             cell.barHeightConstraint?.constant = maxHeight() * ratio
             
         } else {
             
-            cell.barHeightConstraint?.constant = 10
-            
+            cell.barHeightConstraint?.constant = 0
             
             }
             
+        }
+            
+        } else {
+            
+            if collectionView.tag == 2 {
+                
+                if let max = unhealthyvalues.max() {
+                    
+                    cell.barView.backgroundColor = lightorange
+
+                    if max != 0 {
+                        
+                        let value = unhealthyvalues[indexPath.item]
+//                                    let ratio = value / max
+                        let ratio = value / 5
+
+                        cell.barHeightConstraint?.constant = maxHeight() * ratio
+                        
+                    } else {
+                        
+                        cell.barHeightConstraint?.constant = 0
+                        
+                        
+                    }
+                    
+                }
+                
+            }
         }
         
         return cell
@@ -550,11 +725,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 30, height: maxHeight())
+        return CGSize(width: 10, height: maxHeight())
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 75, left: 50, bottom: 30, right: 0)
+        return UIEdgeInsets(top: 75, left: 20, bottom: 30, right: 0)
     }
     /*
      // MARK: - Navigation

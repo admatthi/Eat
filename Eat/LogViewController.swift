@@ -249,7 +249,7 @@ class LogViewController: UIViewController {
             var newhealthyear = Int(totalhealthymeals)! + 1
             var newhealthyday = Int(totahealthymealtoday)! + 1
             
-            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek), "Healthy\(dayofweek)" : String(newhealthyday)])
+            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek), "Healthy\(dayofweek)" : String(newhealthyday),"unHealthy\(dayofweek)" : String(newday-newhealthyday)])
 
             
             ref?.child("OurUsers").child(uid).child(thismonth).updateChildValues(["TotalMonthMeals" : String(newmonth), "TotalHealthyMonthMeals" : String(newhealthmonth)])
@@ -281,7 +281,7 @@ class LogViewController: UIViewController {
             var newhealthyday = totahealthymealtoday
             
             
-            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek), "Healthy\(dayofweek)" : String(newhealthyday)])
+            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek), "Healthy\(dayofweek)" : String(newhealthyday), "unHealthy\(dayofweek)" : String(Int(newday) - Int(newhealthyday)!)])
             
             ref?.child("OurUsers").child(uid).child(thismonth).updateChildValues(["TotalMonthMeals" : String(newmonth), "TotalHealthyMonthMeals" : String(newhealthmonth)])
             
