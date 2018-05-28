@@ -95,17 +95,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 
                 
-                ref?.child("NewUsers").child(uid).child("Actions").child("Other").childByAutoId().updateChildValues(["Action" : "Exercise", "Frequency" : "0", "Average" : "0"])
+                if goalweight != "" && currentweight != "" {
+                    
+                ref?.child("OurUsers").child(uid).updateChildValues(["Goal Weight" : goalweight, "Current Weight" : currentweight])
+                    
+                }
                 
-                ref?.child("NewUsers").child(uid).child("Actions").child("Other").childByAutoId().updateChildValues(["Action" : "Use Instagram", "Frequency" : "0", "Average" : "0"])
-                
-                ref?.child("NewUsers").child(uid).child("Actions").child("Other").childByAutoId().updateChildValues(["Action" : "Write", "Frequency" : "0", "Average" : "0"])
-                
-                ref?.child("NewUsers").child(uid).child("Actions").child("People").childByAutoId().updateChildValues(["Action" : "Dad", "Frequency" : "0", "Average" : "0"])
-                
-                ref?.child("NewUsers").child(uid).child("Actions").child("Food").childByAutoId().updateChildValues(["Action" : "Vegetables", "Frequency" : "0", "Average" : "0"])
-                
-                
+
                 
                 DispatchQueue.main.async {
                     

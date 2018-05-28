@@ -12,6 +12,15 @@ import FBSDKCoreKit
 class DViewController: UIViewController, UITextFieldDelegate {
 
     
+    @IBAction func tapNext(_ sender: Any) {
+        
+        if currenttf.text != "" && targettf.text != "" {
+            
+            currentweight = currenttf.text!
+            
+            goalweight = ttf.text!
+        }
+    }
     @IBOutlet weak var ttf: UITextField!
     @IBOutlet weak var targettf: UILabel!
     @IBOutlet weak var currenttf: UITextField!

@@ -31,7 +31,7 @@ var unhealthy5 = CGFloat()
 var unhealthy6 = CGFloat()
 var unhealthy7 = CGFloat()
 
-var lightorange = UIColor(red:0.86, green:0.42, blue:0.32, alpha:1.0)
+var lightorange = UIColor(red:0.95, green:0.57, blue:0.73, alpha:1.0)
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 

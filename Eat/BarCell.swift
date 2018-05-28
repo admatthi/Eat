@@ -8,7 +8,7 @@
 
 import UIKit
 
-var lightgreen = UIColor(red:0.12, green:0.72, blue:0.67, alpha:1.0)
+var lightgreen = UIColor(red:0.15, green:0.89, blue:0.80, alpha:1.0)
 
 
 class BarCell: UICollectionViewCell {

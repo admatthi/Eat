@@ -41,7 +41,7 @@ class BViewController: UIViewController {
         //        }
         
 
-        tapbutton1.setBackgroundImage(UIImage(named:"DarkGreenButton"), for: .normal)
+        tapbutton1.setBackgroundImage(UIImage(named:"LightGreen"), for: .normal)
         tapbutton1.setTitleColor(.white, for: .normal)
         tapbutton2.setTitleColor(.black, for: .normal)
         tapbutton3.setTitleColor(.black, for: .normal)
@@ -52,7 +52,7 @@ class BViewController: UIViewController {
     }
     @IBAction func tapButton2(_ sender: Any) {
         
-        tapbutton2.setBackgroundImage(UIImage(named:"DarkGreenButton"), for: .normal)
+        tapbutton2.setBackgroundImage(UIImage(named:"LightGreen"), for: .normal)
         tapbutton2.setTitleColor(.white, for: .normal)
         tapbutton1.setTitleColor(.black, for: .normal)
         tapbutton3.setTitleColor(.black, for: .normal)
@@ -63,7 +63,7 @@ class BViewController: UIViewController {
     }
     @IBAction func tapButton3(_ sender: Any) {
         
-        tapbutton3.setBackgroundImage(UIImage(named:"DarkGreenButton"), for: .normal)
+        tapbutton3.setBackgroundImage(UIImage(named:"LightGreen"), for: .normal)
         tapbutton3.setTitleColor(.white, for: .normal)
         tapbutton2.setTitleColor(.black, for: .normal)
         tapbutton1.setTitleColor(.black, for: .normal)
