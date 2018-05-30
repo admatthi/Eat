@@ -11,9 +11,13 @@ import Firebase
 import FBSDKCoreKit
 import SwiftyStoreKit
 import StoreKit
+import UserNotifications
+import FirebaseInstanceID
+import FirebaseMessaging
+import UXCam
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -25,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKAppEvents.activateApp()
         
+        UXCam.start(withKey: "8921dd89a4b98a3")
+
         SwiftyStoreKit.completeTransactions(atomically: true) { products in
             
             for product in products {
@@ -39,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+        
+
         
         return true
     }
@@ -65,6 +73,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            
+            guard settings.authorizationStatus == .authorized else { return }
+            
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+    }
+    
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            print("Permission granted: \(granted)")
+            
+            guard granted else { return }
+            self.getNotificationSettings()
+        }
+    }
+    
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        
+        let tokenParts = deviceToken.map { data -> String in
+            return String(format: "%02.2hhx", data)
+        }
+        
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+    }
+    
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
+    
+    func applicationReceivedRemoteMessage(_ remoteMessage: MessagingRemoteMessage) {
+        print(remoteMessage.appData)
+    }
 
 }
 
@@ -113,4 +161,8 @@ class SegueFromRight: UIStoryboardSegue
         )
     }
 }
+
+
+
+
 

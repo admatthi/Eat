@@ -13,6 +13,7 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 import FBSDKCoreKit
+import UserNotifications
 
 var thisyear = String()
 var healthy1 = CGFloat()
@@ -60,6 +61,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var ufivebottom: UILabel!
     @IBOutlet weak var usixbottom: UILabel!
     @IBOutlet weak var usevenbottom: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -740,6 +742,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
      // Pass the selected object to the new view controller.
      }
      */
+    
+
     
 }
 

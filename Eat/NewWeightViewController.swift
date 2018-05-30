@@ -34,6 +34,16 @@ class NewWeightViewController: UIViewController {
     @IBOutlet weak var tapUpdate: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if currentweight != "" {
+            
+            
+            tf.text = currentweight
+            
+        } else {
+            
+            
+        }
 
         // Do any additional setup after loading the view.
     }

@@ -116,6 +116,7 @@
 		9D694E8320B1DD5300AEED4E /* EatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D694E8720B1DD5300AEED4E /* EatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatUITests.swift; sourceTree = "<group>"; };
 		9D694E8920B1DD5300AEED4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D7B36E620BC7D3F00C38251 /* Eat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eat.entitlements; sourceTree = "<group>"; };
 		9DBB8B3420B64F06004C36D1 /* BarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		9DE8762520BB073E00040683 /* NewWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWeightViewController.swift; sourceTree = "<group>"; };
 		A88B6C258942DD8C488A6364 /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		9D694E6620B1DD5200AEED4E /* Eat */ = {
 			isa = PBXGroup;
 			children = (
+				9D7B36E620BC7D3F00C38251 /* Eat.entitlements */,
 				9D694E6720B1DD5200AEED4E /* AppDelegate.swift */,
 				9D694E6920B1DD5300AEED4E /* ViewController.swift */,
 				9D694E6B20B1DD5300AEED4E /* Main.storyboard */,
@@ -259,7 +261,6 @@
 				9D694E6120B1DD5200AEED4E /* Frameworks */,
 				9D694E6220B1DD5200AEED4E /* Resources */,
 				38C9CC70F1A010E296BCC9D3 /* [CP] Embed Pods Frameworks */,
-				CF54E164843E9B711124AF65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,8 +279,6 @@
 				9D694E7420B1DD5300AEED4E /* Sources */,
 				9D694E7520B1DD5300AEED4E /* Frameworks */,
 				9D694E7620B1DD5300AEED4E /* Resources */,
-				D0595F5DAE7A06B5DDF216C7 /* [CP] Embed Pods Frameworks */,
-				CBD1F2C01683930AE78037C1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,8 +298,6 @@
 				9D694E7F20B1DD5300AEED4E /* Sources */,
 				9D694E8020B1DD5300AEED4E /* Frameworks */,
 				9D694E8120B1DD5300AEED4E /* Resources */,
-				95A04E77DFB006EF7F5A6C5A /* [CP] Embed Pods Frameworks */,
-				F2CFDF4A614EB83162534CEA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,6 +324,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -462,66 +462,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95A04E77DFB006EF7F5A6C5A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EatUITests/Pods-EatUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CBD1F2C01683930AE78037C1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EatTests/Pods-EatTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CF54E164843E9B711124AF65 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eat/Pods-Eat-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D0595F5DAE7A06B5DDF216C7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EatTests/Pods-EatTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F1BF2917E72DA79309FCEC5F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -538,21 +478,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2CFDF4A614EB83162534CEA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EatUITests/Pods-EatUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -772,7 +697,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A264F16ACEF0C97563464A1 /* Pods-Eat.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-6";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-9";
+				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				INFOPLIST_FILE = Eat/Info.plist;
@@ -789,7 +715,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-6";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-9";
+				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				INFOPLIST_FILE = Eat/Info.plist;

@@ -16,6 +16,7 @@ import UserNotifications
 import SwiftyStoreKit
 import StoreKit
 import FBSDKCoreKit
+import UserNotifications
 
 enum RegisteredPurchase: String {
     
@@ -113,15 +114,16 @@ class PurchaseViewController: UIViewController {
         
         //        generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("7 Day Pressed")
+        FBSDKAppEvents.logEvent("OneTimePurchase")
         
-        purchase(purchase: sevenday)
+        purchase(purchase: onetime)
+        
         
 //        
 //        DispatchQueue.main.async {
-//            
+//
 //            self.performSegue(withIdentifier: "PurchaseToLogin2", sender: self)
-//            
+//
 //        }
         
 //        login()
@@ -188,7 +190,7 @@ class PurchaseViewController: UIViewController {
 
                                             DispatchQueue.main.async {
 
-                                            self.performSegue(withIdentifier: "PurchaseToLogin2", sender: self)
+                                            self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
                                                         
                                             }
                                             
@@ -198,6 +200,11 @@ class PurchaseViewController: UIViewController {
                                             
                                             self.showAlert(alert: self.alertForPurchaseResult(result: result))
                                             
+                                            DispatchQueue.main.async {
+                                                
+                                                self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
+                                                
+                                            }
                                         }
                                         
                                         
