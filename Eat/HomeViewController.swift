@@ -41,6 +41,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var healthyvalues = [CGFloat]()
     var unhealthyvalues = [CGFloat]()
     
+    @IBAction func addHealthy(_ sender: Any) {
+        
+        mealhealth = "4"
+        
+        calculatenewmealvalues()
+        
+    }
+    @IBAction func addUnhealthy(_ sender: Any) {
+        
+        mealhealth = "1"
+        
+        calculatenewmealvalues()
+    }
     @IBOutlet weak var healthynumber: UILabel!
     
     @IBOutlet weak var totalnumber: UILabel!
@@ -74,7 +87,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let calendar = Calendar.current
         var weekOfYear = calendar.component(.weekOfYear, from: Date.init(timeIntervalSinceNow: 0))
         var monthOfYear = calendar.component(.month, from: Date.init(timeIntervalSinceNow: 0))
-        
+        dayofweek = Date().dayNumberOfWeek()!
         
         thisweek = String(weekOfYear)
         thismonth = String(monthOfYear)
@@ -112,7 +125,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             seeifthisisanewweek { () -> () in
                 
                 self.findlastloggeddata()
-                
+             
+                self.updatelabels()
             }
             
             collectionView?.backgroundColor = .white
@@ -141,7 +155,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         var unhealthymeals = "0"
         self.healthynumber.text = "0"
         self.totalnumber.text = "0"
-        
+        self.healthypercent.text = "0"
+
         if totalmealtoday != "" && totalmealtoday != "0" {
             
             self.totalnumber.text = totalmealtoday
@@ -152,52 +167,30 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 unhealthymeals = String(Int(totalmealtoday)! - Int(totahealthymealtoday)!)
                 self.totalnumber.text = unhealthymeals
                 self.healthynumber.text = totahealthymealtoday
-
-                if unhealthymeals == "0" && Int(totahealthymealtoday)! >= 10  {
-                    
-                    healthypercent.text = "1"
-                    
-                } else {
-                    
-                    if Int(unhealthymeals)! < 1 && Int(totahealthymealtoday)! >= 20  {
-                        
-                        healthypercent.text = "2"
-                        
-                    }  else {
-                        
-                        if Int(unhealthymeals)! == 1 && Int(totahealthymealtoday)! >= 20  {
-                            
-                            healthypercent.text = "1"
-                            
-                        } else {
-                            
-                            healthypercent.text = "0"
-                            
-                            }
-                        }
-                    
-                    }
                 
-                }
+                var currencyDouble: Float = Float(totalmealtoday)!
+                var totalSpending: Float = Float(totahealthymealtoday)!
+                
+                let perCent = 100*(totalSpending/currencyDouble)
+                
+                var perCentCGFloat =  CGFloat(perCent)
+                
+                healthypercent.text = String(Int(perCentCGFloat))
+                
+                
+            } else {
+                
+
+            }
             }
         }
         
         //        if totalmealtoday != "0" && totahealthymealtoday != "0" && totahealthymealtoday != "" && totalmealtoday != "" {
         //
-        //            var currencyDouble: Float = Float(totalmealtoday)!
-        //            var totalSpending: Float = Float(totahealthymealtoday)!
-        //
-        //            let perCent = 100*(totalSpending/currencyDouble)
-        //
-        //            var perCentCGFloat =  CGFloat(perCent)
-        //
-        //            healthypercent.text = String(Int(perCentCGFloat))
-        //
-        //        } else {
-        //
-        //            healthypercent.text = "0"
-        //        }
-        
+
+    
+    
+
 
     
     func seeifthisisanewweek(completed: @escaping (() -> ()) ) {
@@ -543,81 +536,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     @IBOutlet weak var collectionVie2: UICollectionView!
     
-    func calculatenewmealvalues() {
-        
-        var newweek = Int(weekmeals)! + 1
-        var newmonth = Int(monthmeals)! + 1
-        var newyear = Int(totalmealsyear)! + 1
-        var newday = Int(totalmealtoday)! + 1
-        
-        weekmeals = String(newweek)
-        monthmeals = String(newmonth)
-        totalmealsyear = String(newyear)
-        totalmealtoday = String(newday)
-        
-        if mealhealth == "4" || mealhealth == "3" {
-            
-            var newhealthweek = Int(weekhealthymeals)! + 1
-            var newhealthmonth = Int(monthhealthymeals)! + 1
-            var newhealthyear = Int(totalhealthymeals)! + 1
-            var newhealthyday = Int(totahealthymealtoday)! + 1
-            
-            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek)])
-            
-            ref?.child("OurUsers").child(uid).child(thismonth).updateChildValues(["TotalMonthMeals" : String(newmonth), "TotalHealthyMonthMeals" : String(newhealthmonth)])
-            
-            ref?.child("OurUsers").child(uid).child(thisyear).updateChildValues(["TotalYearMeals" : String(newyear), "TotalHealthyYearMeals" : String(newhealthyear)])
-            
-            ref?.child("OurUsers").child(uid).child(thisday).updateChildValues(["TotalDayMeals" : String(newday), "TotalHealthyDayMeals" : String(newhealthyday)])
-            
-            
-            ref?.child("OurUsers").child(uid).updateChildValues(["LastLoggedWeek" : thisweek, "LastLoggedMonth" : thismonth, "LastLoggedYear" : thisyear, "LastLoggedDay" : thisday])
-            
-            weekhealthymeals = String(newhealthweek)
-            
-            monthhealthymeals = String(newhealthmonth)
-            
-            totalhealthymeals = String(newhealthyear)
-            
-            totahealthymealtoday = String(newhealthyday)
-            
-            updatelabels()
-        } else {
-            
-            var newhealthweek = weekhealthymeals
-            
-            var newhealthmonth = monthhealthymeals
-            
-            var newhealthyear = totalhealthymeals
-            
-            var newhealthyday = totahealthymealtoday
-            
-            
-            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek)])
-            
-            ref?.child("OurUsers").child(uid).child(thismonth).updateChildValues(["TotalMonthMeals" : String(newmonth), "TotalHealthyMonthMeals" : String(newhealthmonth)])
-            
-            ref?.child("OurUsers").child(uid).child(thisyear).updateChildValues(["TotalYearMeals" : String(newyear), "TotalHealthyYearMeals" : String(newhealthyear)])
-            
-            ref?.child("OurUsers").child(uid).child(thisday).updateChildValues(["TotalDayMeals" : String(newday), "TotalHealthyDayMeals" : String(newhealthyday)])
-            
-            
-            ref?.child("OurUsers").child(uid).updateChildValues(["LastLoggedWeek" : thisweek, "LastLoggedMonth" : thismonth, "LastLoggedYear" : thisyear, "LastLoggedDay" : thisday])
-            
-            weekhealthymeals = String(newhealthweek)
-            
-            monthhealthymeals = String(newhealthmonth)
-            
-            totalhealthymeals = String(newhealthyear)
-            
-            totahealthymealtoday = String(newhealthyday)
-            
-            updatelabels()
-        }
-        
-        
-        
-    }
+ 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 30
@@ -733,6 +652,135 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 75, left: 20, bottom: 30, right: 0)
     }
+    
+    func calculatenewmealvalues() {
+        
+        var newweek = Int(weekmeals)! + 1
+        var newmonth = Int(monthmeals)! + 1
+        var newyear = Int(totalmealsyear)! + 1
+        var newday = Int(totalmealtoday)! + 1
+        
+        weekmeals = String(newweek)
+        monthmeals = String(newmonth)
+        totalmealsyear = String(newyear)
+        totalmealtoday = String(newday)
+        
+        if mealhealth == "4" || mealhealth == "3" {
+            
+            var newhealthweek = Int(weekhealthymeals)! + 1
+            var newhealthmonth = Int(monthhealthymeals)! + 1
+            var newhealthyear = Int(totalhealthymeals)! + 1
+            var newhealthyday = Int(totahealthymealtoday)! + 1
+            
+            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek), "Healthy\(dayofweek)" : String(newhealthyday),"unHealthy\(dayofweek)" : String(newday-newhealthyday)])
+            
+            
+            ref?.child("OurUsers").child(uid).child(thismonth).updateChildValues(["TotalMonthMeals" : String(newmonth), "TotalHealthyMonthMeals" : String(newhealthmonth)])
+            
+            ref?.child("OurUsers").child(uid).child(thisyear).updateChildValues(["TotalYearMeals" : String(newyear), "TotalHealthyYearMeals" : String(newhealthyear)])
+            
+            ref?.child("OurUsers").child(uid).child(thisday).updateChildValues(["TotalDayMeals" : String(newday), "TotalHealthyDayMeals" : String(newhealthyday)])
+            
+            
+            ref?.child("OurUsers").child(uid).updateChildValues(["LastLoggedWeek" : thisweek, "LastLoggedMonth" : thismonth, "LastLoggedYear" : thisyear, "LastLoggedDay" : thisday])
+            
+            weekhealthymeals = String(newhealthweek)
+            
+            monthhealthymeals = String(newhealthmonth)
+            
+            totalhealthymeals = String(newhealthyear)
+            
+            totahealthymealtoday = String(newhealthyday)
+//            self.performSegue(withIdentifier: "BackToHome", sender: self)
+            
+            seeifthisisanewweek { () -> () in
+                
+                self.findlastloggeddata()
+                
+                self.updatelabels()
+            }
+            
+        } else {
+            
+            var newhealthweek = weekhealthymeals
+            
+            var newhealthmonth = monthhealthymeals
+            
+            var newhealthyear = totalhealthymeals
+            
+            var newhealthyday = totahealthymealtoday
+            
+            
+            ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek), "Healthy\(dayofweek)" : String(newhealthyday), "unHealthy\(dayofweek)" : String(Int(newday) - Int(newhealthyday)!)])
+            
+            ref?.child("OurUsers").child(uid).child(thismonth).updateChildValues(["TotalMonthMeals" : String(newmonth), "TotalHealthyMonthMeals" : String(newhealthmonth)])
+            
+            ref?.child("OurUsers").child(uid).child(thisyear).updateChildValues(["TotalYearMeals" : String(newyear), "TotalHealthyYearMeals" : String(newhealthyear)])
+            
+            ref?.child("OurUsers").child(uid).child(thisday).updateChildValues(["TotalDayMeals" : String(newday), "TotalHealthyDayMeals" : String(newhealthyday)])
+            
+            
+            ref?.child("OurUsers").child(uid).updateChildValues(["LastLoggedWeek" : thisweek, "LastLoggedMonth" : thismonth, "LastLoggedYear" : thisyear, "LastLoggedDay" : thisday])
+            
+            weekhealthymeals = String(newhealthweek)
+            
+            monthhealthymeals = String(newhealthmonth)
+            
+            totalhealthymeals = String(newhealthyear)
+            
+            totahealthymealtoday = String(newhealthyday)
+//            self.performSegue(withIdentifier: "BackToHome", sender: self)
+            
+            seeifthisisanewweek { () -> () in
+                
+                self.findlastloggeddata()
+                
+                self.updatelabels()
+            }
+            
+        }
+        
+    }
+        
+        func loadvalues() {
+            
+            
+            if weekmeals == "" {
+                
+                weekmeals = "0"
+            }
+            
+            if monthmeals == "" {
+                
+                monthmeals = "0"
+            }
+            if totalmealsyear == "" {
+                
+                totalmealsyear = "0"
+            }
+            if totalmealtoday == "" {
+                
+                totalmealtoday = "0"
+            }
+            
+            
+            if weekhealthymeals == "" {
+                
+                weekhealthymeals = "0"
+            }
+            if monthhealthymeals == "" {
+                
+                monthhealthymeals = "0"
+            }
+            if totalhealthymeals == "" {
+                
+                totalhealthymeals = "0"
+            }
+            if totahealthymealtoday == "" {
+                
+                totahealthymealtoday = "0"
+            }
+        }
     /*
      // MARK: - Navigation
      

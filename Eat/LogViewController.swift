@@ -229,7 +229,6 @@ class LogViewController: UIViewController {
 
     
  
-    
     func calculatenewmealvalues() {
         
         var newweek = Int(weekmeals)! + 1
@@ -250,7 +249,7 @@ class LogViewController: UIViewController {
             var newhealthyday = Int(totahealthymealtoday)! + 1
             
             ref?.child("OurUsers").child(uid).child(thisweek).updateChildValues(["TotalWeekMeals" : String(newweek), "TotalHealthyWeekMeals" : String(newhealthweek), "Healthy\(dayofweek)" : String(newhealthyday),"unHealthy\(dayofweek)" : String(newday-newhealthyday)])
-
+            
             
             ref?.child("OurUsers").child(uid).child(thismonth).updateChildValues(["TotalMonthMeals" : String(newmonth), "TotalHealthyMonthMeals" : String(newhealthmonth)])
             
@@ -269,7 +268,7 @@ class LogViewController: UIViewController {
             
             totahealthymealtoday = String(newhealthyday)
             self.performSegue(withIdentifier: "BackToHome", sender: self)
-
+            
         } else {
             
             var newhealthweek = weekhealthymeals
@@ -300,8 +299,9 @@ class LogViewController: UIViewController {
             
             totahealthymealtoday = String(newhealthyday)
             self.performSegue(withIdentifier: "BackToHome", sender: self)
-
+            
         }
+
         
         
     }
