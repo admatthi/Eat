@@ -102,7 +102,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             DispatchQueue.main.async {
                 
-                self.performSegue(withIdentifier: "HomeToIntroduction", sender: self)
+                self.performSegue(withIdentifier: "PulseToHome", sender: self)
                 
             }
             
