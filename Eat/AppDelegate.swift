@@ -1,3 +1,5 @@
+
+
 //
 //  AppDelegate.swift
 //  Eat
@@ -15,9 +17,10 @@ import UserNotifications
 import FirebaseInstanceID
 import FirebaseMessaging
 import UXCam
+import AVFoundation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, AVCaptureMetadataOutputObjectsDelegate {
 
     var window: UIWindow?
 

@@ -63,9 +63,11 @@
 		9DA370C920C0E31300AB8C49 /* NewWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8762520BB073E00040683 /* NewWeightViewController.swift */; };
 		9DA370CB20C0E32500AB8C49 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */; };
 		9DADF65C20C2041500F5BEA3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */; };
+		9DB54FFC20C2FDCC00BA858E /* PostPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */; };
 		9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBB8B3620B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBB8B3720B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
+		9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBC5C220C2F77C00C38DFC /* DataService.swift */; };
 		9DE8762620BB073E00040683 /* NewWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8762520BB073E00040683 /* NewWeightViewController.swift */; };
 		C3552F51131E596A3143D483 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E85CEF3FB24BB9D7280F9A /* Pods_EatTests.framework */; };
 /* End PBXBuildFile section */
@@ -123,7 +125,9 @@
 		9D7B36E620BC7D3F00C38251 /* Eat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eat.entitlements; sourceTree = "<group>"; };
 		9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
 		9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoViewController.swift; sourceTree = "<group>"; };
 		9DBB8B3420B64F06004C36D1 /* BarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
+		9DBBC5C220C2F77C00C38DFC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9DE8762520BB073E00040683 /* NewWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWeightViewController.swift; sourceTree = "<group>"; };
 		A88B6C258942DD8C488A6364 /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF9B31F77D99EB6CC4E6816D /* Pods_Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,11 +211,13 @@
 				9D63811D20B1F27000350C4D /* LoginViewController.swift */,
 				9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */,
 				9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */,
+				9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */,
 				9D694E6E20B1DD5300AEED4E /* Assets.xcassets */,
 				9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */,
 				9D694E7320B1DD5300AEED4E /* Info.plist */,
 				9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */,
 				9DBB8B3420B64F06004C36D1 /* BarCell.swift */,
+				9DBBC5C220C2F77C00C38DFC /* DataService.swift */,
 			);
 			path = Eat;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -435,6 +442,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -524,6 +532,8 @@
 				9DADF65C20C2041500F5BEA3 /* CameraViewController.swift in Sources */,
 				9D6380FE20B1E03D00350C4D /* EViewController.swift in Sources */,
 				9D63811220B1E07500350C4D /* InsightsViewController.swift in Sources */,
+				9DB54FFC20C2FDCC00BA858E /* PostPhotoViewController.swift in Sources */,
+				9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -58,5 +58,10 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Take Photos of Your Food</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
