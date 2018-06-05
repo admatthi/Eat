@@ -57,7 +57,7 @@ class PulseViewController: UIViewController {
     
     func loadtodaysvalues() {
         
-        calories.setTitle(todayscalories, for: .normal)
+        calories.text = todayscalories
         n1.text = "\(today1)g"
         n2.text = "\(today2)g"
         n3.text = "\(today3)g"
@@ -73,11 +73,11 @@ class PulseViewController: UIViewController {
 
     }
     
-    @IBOutlet weak var calories: UIButton!
+    @IBOutlet weak var calories: UILabel!
     func switchtogoals() {
         
         if viewingtoday {
-        calories.setTitle(caloriesgoal, for: .normal)
+        calories.text = caloriesgoal
         n1.text = "\(goal1)g"
         n2.text = "\(goal2)g"
         n3.text = "\(goal3)g"

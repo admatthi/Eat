@@ -194,6 +194,7 @@ var croppedimage = UIImage()
         tapgroup.alpha = 1
         tapfood.alpha = 1
         tapservingsize.alpha = 1
+        taptake.alpha = 0
     }
     
     func prephoto() {
@@ -205,12 +206,13 @@ var croppedimage = UIImage()
         tapgroup.alpha = 0
         tapfood.alpha = 0
         tapservingsize.alpha = 0
+        taptake.alpha = 1
     }
     
     func editgroup() {
         
-        tapx.alpha = 0
         tapsubmit.alpha = 0
+        taptake.alpha = 0
         outline.alpha = 0
         pickerView.alpha = 1
         capturedImage.alpha = 1
@@ -238,7 +240,10 @@ var croppedimage = UIImage()
 
         prephoto()
         defaultnutrientvalues()
-
+        tapgroup.contentHorizontalAlignment = .left
+        tapfood.contentHorizontalAlignment = .left
+        tapservingsize.contentHorizontalAlignment = .left
+        
         ref = Database.database().reference()
 
         captureSession = AVCaptureSession()
@@ -385,9 +390,13 @@ var croppedimage = UIImage()
                     
                     DispatchQueue.main.async {
 
-                        self.tapgroup.setTitle(groups[0], for: .normal)
-                        self.tapfood.setTitle(foods[0], for: .normal)
-                        self.tapservingsize.setTitle(servingoptions[0], for: .normal)
+                        
+                        if groups[0] != nil && foods[0] != nil && groups.count > 0 && foods.count > 0  {
+                        self.tapgroup.setTitle(groups.first, for: .normal)
+                        self.tapfood.setTitle(foods.first, for: .normal)
+                        self.tapservingsize.setTitle("\(servingoptions[0]) servings", for: .normal)
+                            
+                        }
                         
                     }
  
@@ -470,6 +479,8 @@ var croppedimage = UIImage()
         return image
     }
     
+    var results : All?
+    
     func sendPhoto (completed: @escaping (() -> ()) )  {
     
     var myURL = NSURL(string: "https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition?user_key=ffd81b65582979b97f4579046882c46c")
@@ -507,33 +518,81 @@ var croppedimage = UIImage()
 
                     var functioncounter = 0
                     
-                    var results = try JSONDecoder().decode(All.self, from: data!)
+                    var thirdcounter = 0
                     
-                    for group in results.results {
+                    self.results = try JSONDecoder().decode(All.self, from: data!)
+                    
+                    for group in (self.results?.results)! {
                         
+                        if thirdcounter < 5 {
+                            
+    
                         groups.append(group.group!)
-                        
 
                         print(groups)
+                            
+                        thirdcounter += 1
                         
                         for item in group.items {
 
                             foods.append(item.name!)
+                            
                             var thisfood = foods[0]
                             
-                                
                                 for serving in item.servingSizes {
                                     if counter == 0 {
 
+                                        
                                     var thisisit = serving.servingWeight
-                                    nutrients = item.nutrition
+                                        
+                                        if thisisit != nil {
+                                            nutrients = item.nutrition
+                                        
+                                        if nutrients["totalCarbs"] != nil {
+                                            
                                         var intcarbs = nutrients["totalCarbs"]! * thisisit!
-                                        var intprotein = nutrients["protein"]! * thisisit!
-                                        var intcalories = nutrients["calories"]! * thisisit!
-                                    
-                                    newcarbs = String(format: "%.1f", intcarbs * 1000)
-                                    newprotein = String(format: "%.1f", intprotein * 1000)
-                                    newcalories = String(format: "%.1f", intcalories)
+                                            newcarbs = String(format: "%.1f", intcarbs * 1000)
+
+                                        }
+                                        if nutrients["protein"] != nil {
+
+                                            var intprotein = nutrients["protein"]! * thisisit!
+                                            newprotein = String(format: "%.1f", intprotein * 1000)
+
+                                        }
+                                        
+                                        if nutrients["calories"] != nil {
+                                         
+                                            var intcalories = nutrients["calories"]! * thisisit!
+                                            newcalories = String(format: "%.1f", intcalories)
+
+                                        }
+
+                                        } else {
+                                            
+                                            nutrients = item.nutrition
+                                            
+                                            if nutrients["totalCarbs"] != nil {
+                                                
+                                                var intcarbs = nutrients["totalCarbs"]!
+                                                newcarbs = String(format: "%.1f", intcarbs * 1000)
+                                                
+                                            }
+                                            if nutrients["protein"] != nil {
+                                                
+                                                var intprotein = nutrients["protein"]!
+                                                newprotein = String(format: "%.1f", intprotein * 1000)
+                                                
+                                            }
+                                            
+                                            if nutrients["calories"] != nil {
+                                                
+                                                var intcalories = nutrients["calories"]!
+                                                newcalories = String(format: "%.1f", intcalories)
+                                                
+                                            }
+                                            
+                                        }
                                     
                                     completed()
 
@@ -548,6 +607,8 @@ var croppedimage = UIImage()
                             
                             
                             
+                            
+                        }
                             
                         }
                     }
@@ -664,40 +725,22 @@ var croppedimage = UIImage()
         
         if groupressed {
             
-            if groups.count > 0 {
-                
-                return groups[row]
-                
-            } else {
-                
-                return ""
-            }
+
+        return groups[row]
+
             
         } else {
             
             if foodpressed {
                 
-                if foods.count > 0 {
-                    
-                    return groups[row]
-                    
-                } else {
-                    
-                    return ""
-                }
+                return foods[row]
+
             } else {
                 
                 if servingspressed {
                     
-                    if servingoptions.count > 0 {
-                        
-                        return servingoptions[row]
-                        
-                        
-                    } else {
-                        
-                        return ""
-                    }
+                    return servingoptions[row]
+
                     
                 } else {
                     
@@ -711,13 +754,8 @@ var croppedimage = UIImage()
         
         if groupressed {
             
-            if groups.count > 0 {
-                
-                return groups.count
-            } else {
-                
-                return 0
-            }
+            return groups.count
+
             
         } else {
             
@@ -729,15 +767,8 @@ var croppedimage = UIImage()
                 
                 if servingspressed {
                     
-                    if servingoptions.count > 0 {
-                        
-                        return servingoptions.count
-                        
-                        
-                    } else {
-                        
-                        return 0
-                    }
+                    return servingoptions.count
+
                     
                 } else {
                     
@@ -748,6 +779,7 @@ var croppedimage = UIImage()
         
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         
@@ -755,32 +787,50 @@ var croppedimage = UIImage()
             
             selectedgroup = groups[row]
             
+            selectedfood = foods[0]
+
             tapgroup.setTitle(selectedgroup, for: .normal)
             
             groupressed = false
             foodpressed = false
             servingspressed = false
+            
+            foods.removeAll()
+
+            loadfoods()
+            
         } else {
             
             if foodpressed {
                 
-//                selectedfood = firstfoods[row]
+                selectedgroup = (tapgroup.titleLabel?.text!)!
+
+                selectedfood = foods[row]
                 
                 tapfood.setTitle(selectedfood, for: .normal)
                 
                 groupressed = false
                 foodpressed = false
                 servingspressed = false
+                
+                loadfoods2()
+                
             } else {
                 
                 if servingspressed {
                     
+                    selectedgroup = (tapgroup.titleLabel?.text)!
+                    selectedfood = (tapfood.titleLabel?.text!)!
+                    
                     selectedservings = servingoptions[row]
                     
-                    tapservingsize.setTitle(selectedservings, for: .normal)
+                    tapservingsize.setTitle("\(selectedservings ) servings", for: .normal)
                     groupressed = false
                     foodpressed = false
                     servingspressed = false
+                    
+                    multiplynutrition()
+                    
                 }
             }
         }
@@ -804,6 +854,201 @@ var croppedimage = UIImage()
         newseleneium = "0"
         newiron = "0"
         newvitamina = "0"
+    }
+    
+    func loadfoods() {
+        
+        var groupcounter = 0
+        var foodcounter = 0
+        for group in (results?.results)! {
+            
+            if groupcounter == groups.index(of: selectedgroup) as! Int {
+                
+                
+                for item in group.items {
+                    
+                    foods.append(item.name!)
+                    
+                    selectedfood = foods[0]
+                    
+                    tapfood.setTitle(selectedfood, for: .normal)
+                    
+                    if foodcounter == foods.index(of: selectedfood) as! Int {
+
+                        for serving in item.servingSizes {
+                            
+                                var thisisit = serving.servingWeight
+                                
+                                if thisisit != nil {
+                                    nutrients = item.nutrition
+                                    
+                                    if nutrients["totalCarbs"] != nil {
+                                        
+                                        var intcarbs = nutrients["totalCarbs"]! * thisisit!
+                                        newcarbs = String(format: "%.1f", intcarbs * 1000)
+                                        
+                                    }
+                                    if nutrients["protein"] != nil {
+                                        
+                                        var intprotein = nutrients["protein"]! * thisisit!
+                                        newprotein = String(format: "%.1f", intprotein * 1000)
+                                        
+                                    }
+                                    
+                                    if nutrients["calories"] != nil {
+                                        
+                                        var intcalories = nutrients["calories"]! * thisisit!
+                                        newcalories = String(format: "%.1f", intcalories)
+                                        
+                                    }
+                                    
+                                } else {
+                                    
+                                    nutrients = item.nutrition
+                                    
+                                    if nutrients["totalCarbs"] != nil {
+                                        
+                                        var intcarbs = nutrients["totalCarbs"]!
+                                        newcarbs = String(format: "%.1f", intcarbs * 1000)
+                                        
+                                    }
+                                    if nutrients["protein"] != nil {
+                                        
+                                        var intprotein = nutrients["protein"]!
+                                        newprotein = String(format: "%.1f", intprotein * 1000)
+                                        
+                                    }
+                                    
+                                    if nutrients["calories"] != nil {
+                                        
+                                        var intcalories = nutrients["calories"]!
+                                        newcalories = String(format: "%.1f", intcalories)
+                                        
+                                    }
+                                    
+                                }
+                                
+                                
+                                
+                            
+                            }
+                            
+
+                        }
+                    foodcounter += 1
+
+                    }
+                }
+            
+                groupcounter += 1
+
+            }
+            
+        }
+
+    
+    
+    func loadfoods2() {
+        
+        var groupcounter = 0
+        var foodcounter = 0
+        for group in (results?.results)! {
+            
+            if groupcounter == groups.index(of: selectedgroup) as! Int {
+                
+                
+                for item in group.items {
+                    
+                    foods.append(item.name!)
+                    
+                    
+                    tapfood.setTitle(selectedfood, for: .normal)
+                    
+                    if foodcounter == foods.index(of: selectedfood) as! Int {
+                        
+                        var servingcounter = 0
+                        
+                        for serving in item.servingSizes {
+                            
+                            if servingcounter == 0 {
+                            var thisisit = serving.servingWeight
+                            
+                            if thisisit != nil {
+                                nutrients = item.nutrition
+                                
+                                if nutrients["totalCarbs"] != nil {
+                                    
+                                    var intcarbs = nutrients["totalCarbs"]! * thisisit!
+                                    newcarbs = String(format: "%.1f", intcarbs * 1000)
+                                    
+                                }
+                                if nutrients["protein"] != nil {
+                                    
+                                    var intprotein = nutrients["protein"]! * thisisit!
+                                    newprotein = String(format: "%.1f", intprotein * 1000)
+                                    
+                                }
+                                
+                                if nutrients["calories"] != nil {
+                                    
+                                    var intcalories = nutrients["calories"]! * thisisit!
+                                    newcalories = String(format: "%.1f", intcalories)
+                                    
+                                }
+                                
+                            } else {
+                                
+                                nutrients = item.nutrition
+                                
+                                if nutrients["totalCarbs"] != nil {
+                                    
+                                    var intcarbs = nutrients["totalCarbs"]!
+                                    newcarbs = String(format: "%.1f", intcarbs * 1000)
+                                    
+                                }
+                                if nutrients["protein"] != nil {
+                                    
+                                    var intprotein = nutrients["protein"]!
+                                    newprotein = String(format: "%.1f", intprotein * 1000)
+                                    
+                                }
+                                
+                                if nutrients["calories"] != nil {
+                                    
+                                    var intcalories = nutrients["calories"]!
+                                    newcalories = String(format: "%.1f", intcalories)
+                                    
+                                }
+                                
+                            }
+                            
+                            }
+                            
+                            servingcounter += 1
+                        }
+                        
+                        
+                    }
+                    foodcounter += 1
+
+                }
+            }
+            
+            groupcounter += 1
+            
+        }
+        
+    }
+    
+    func multiplynutrition() {
+        
+        
+        newcarbs = String(format: "%.1f", Double(newcarbs)! * Double(selectedservings)!)
+
+        newprotein = String(format: "%.1f", Double(newprotein)! * Double(selectedservings)!)
+        
+        newcalories = String(format: "%.1f", Double(newcalories)! * Double(selectedservings)!)
+        
     }
     
     func storenewnutrientvalues() {
