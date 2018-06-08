@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 dateFormatter.dateFormat = "MM-dd-yy"
                 var todaysdate =  dateFormatter.string(from: date)
                 
-                
+                newuser = false
                 
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "HomeToVitals", sender: self)
@@ -101,11 +101,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
                 
 
-                
+                newuser = false
+
                 DispatchQueue.main.async {
                     
         self.performSegue(withIdentifier: "HomeToVitals", sender: self)
-                    
                 }
             }
             
@@ -118,6 +118,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         
     }
+    @IBOutlet weak var tapcreate: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -132,6 +133,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         errorlabel.alpha = 0
         
         FBSDKAppEvents.logEvent("LoginScreen")
+        
+        if newuser == true {
+            
+            tapcreate.alpha = 0
+            
+        } else {
+            
+            tapcreate.alpha = 1
+        }
         
     }
     

@@ -47,14 +47,19 @@ var today13 = String()
 
 var viewingtoday = Bool()
 var tapped = Bool()
+
+var newuser = Bool()
+
 class PulseViewController: UIViewController {
 
+    @IBOutlet weak var goallabel: UILabel!
     @IBAction func tapGoals(_ sender: Any) {
         
         switchtogoals()
         
     }
     
+    @IBOutlet weak var remaininglabel: UILabel!
     func loadtodaysvalues() {
         
         calories.text = todayscalories
@@ -71,6 +76,9 @@ class PulseViewController: UIViewController {
         n11.text = "\(today11)mg"
         n12.text = "\(today12) IU"
 
+        remaininglabel.text = String(Int(2000 - Double(todayscalories)!))
+        
+        
     }
     
     @IBOutlet weak var calories: UILabel!
@@ -159,14 +167,14 @@ class PulseViewController: UIViewController {
             // Do smth if user is not logged in
             
             DispatchQueue.main.async {
-                
-                self.performSegue(withIdentifier: "PulseToHome", sender: self)
-                
+                newuser = true
+
+                self.performSegue(withIdentifier: "PulseToPhoto", sender: self)
             }
             
         } else {
             
-            
+            newuser = false
             // Do any additional setup after loading the view.
             
             let date = Date()

@@ -12,7 +12,7 @@ import Firebase
 import FirebaseStorage
 
 var counter = Int()
-
+var newimage = UIImage()
 var groups = [String]()
 var foods = [String]()
 var nutrients = [String:Double]()
@@ -41,137 +41,36 @@ var selectedgroup = String()
 var selectedfood = String()
 var selectedservings = String()
 
-class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, AVCapturePhotoCaptureDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+var logoimagedata = Data()
+
+var results : All?
+
+var logodownloadURL = String()
+
+class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, AVCapturePhotoCaptureDelegate {
 
 var croppedimage = UIImage()
     
 
-    @IBOutlet weak var tapservingsize: UIButton!
-    @IBOutlet weak var tapfood: UIButton!
-    @IBOutlet weak var tapgroup: UIButton!
+
     @IBOutlet weak var overlayCamera: UIView!
     @IBOutlet weak var capturedImage: UIImageView!
-    @IBOutlet weak var tapsubmit: UIButton!
-    @IBOutlet weak var tapx: UIButton!
+
     var captureSession: AVCaptureSession?
     var stillImageOutput: AVCaptureStillImageOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?
     
-    @IBOutlet weak var pickerView: UIPickerView!
-    
-    @IBAction func tapServings(_ sender: Any) {
-        
-        groupressed = false
-        foodpressed = false
-        servingspressed = true
-        editgroup()
-    }
-    @IBAction func tapFood(_ sender: Any) {
-      
-        groupressed = false
-        foodpressed = true
-        servingspressed = false
-        editgroup()
-    }
-    @IBAction func tapGroup(_ sender: Any) {
-        
-        groupressed = true
-        foodpressed = false
-        servingspressed = false
-        editgroup()
-    }
-    @IBAction func tapX(_ sender: Any) {
-        
-        prephoto()
-        
-        capturedImage.alpha = 0
-        
-//        captureSession = AVCaptureSession()
-//        captureSession?.sessionPreset = AVCaptureSession.Preset.photo
-        
-        captureSession?.startRunning()
-        
-    }
-    var logoimagedata = Data()
-
-    @IBAction func tapSubmit(_ sender: Any) {
-        
-        let storage = Storage.storage()
-        let storageRef = storage.reference()
-        let currentUser = Auth.auth().currentUser
-        
-//        croppedimage = cropToBounds(image: capturedImage.image!, width: 544, height: 544)
-//
-//        croppedimage = resizeImage(image: croppedimage, targetSize: CGSize(width:544.0, height:544.0))
-//
-//        if self.capturedImage.image != nil {
-//
-//            logoimagedata = UIImageJPEGRepresentation(croppedimage, 0.2)!
-//
-//            self.sendPhoto()
-//
-//
-//        } else {
-//
-//            print("No fucking photo")
-//        }
-
-        let metaData = StorageMetadata()
-
-        metaData.contentType = "image/jpg"
-
-        counter += 1
-
-        let filePath = "\(uid)\(counter)"
-
-//        let filePath = "\(counter)"
-
-        storageRef.child(filePath).putData(logoimagedata, metadata: metaData){(metaData,error) in
-
-            if let error = error {
-
-                print(error.localizedDescription)
-
-                return
-
-            } else {
-
-                // store download url
-                self.logodownloadURL = metaData!.downloadURL()!.absoluteString
 
 
-                let currentUser = Auth.auth().currentUser
 
-                var uid = String()
-
-                uid = currentUser!.uid
-
-                ref = Database.database().reference()
-
-            ref?.child("Users").child(uid).child(todaysdate).childByAutoId().updateChildValues(["Image": "\(self.logodownloadURL)"])
-                
-                self.storenewnutrientvalues()
-                
-
-            }
-
-        }
-
-        
-    }
-    var logodownloadURL = String()
     
     @IBAction func tapPhoto(_ sender: Any) {
         
         groups.removeAll()
         foods.removeAll()
         captureScreenshot()
-        
-        postphoto()
-        
 
         
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -185,40 +84,7 @@ var croppedimage = UIImage()
         
     }
     
-    func postphoto() {
-        
-        tapx.alpha = 1
-        tapsubmit.alpha = 1
-        outline.alpha = 0
-        pickerView.alpha = 0
-        tapgroup.alpha = 1
-        tapfood.alpha = 1
-        tapservingsize.alpha = 1
-        taptake.alpha = 0
-    }
-    
-    func prephoto() {
 
-        tapx.alpha = 0
-        tapsubmit.alpha = 0
-        outline.alpha = 1
-        pickerView.alpha = 0
-        tapgroup.alpha = 0
-        tapfood.alpha = 0
-        tapservingsize.alpha = 0
-        taptake.alpha = 1
-    }
-    
-    func editgroup() {
-        
-        tapsubmit.alpha = 0
-        taptake.alpha = 0
-        outline.alpha = 0
-        pickerView.alpha = 1
-        capturedImage.alpha = 1
-        
-        pickerView.reloadAllComponents()
-    }
     
     func cameraWithPosition(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
         
@@ -235,28 +101,25 @@ var croppedimage = UIImage()
     
     @IBOutlet weak var outline: UIImageView!
     
+    @IBOutlet weak var tapback: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        prephoto()
+        if newuser == true {
+            
+            tapback.alpha = 0
+            uid = "4GE57CaA21R6EOSRGKeCkRd9DXq1"
+            
+        } else {
+            
+            tapback.alpha = 1
+        }
         defaultnutrientvalues()
-        tapgroup.contentHorizontalAlignment = .left
-        tapfood.contentHorizontalAlignment = .left
-        tapservingsize.contentHorizontalAlignment = .left
-        
         ref = Database.database().reference()
 
         captureSession = AVCaptureSession()
         
-        servingoptions.append("1")
-        servingoptions.append("2")
-        servingoptions.append("3")
-        servingoptions.append("4")
-        servingoptions.append("5")
-        servingoptions.append("6")
-        servingoptions.append("7")
-        servingoptions.append("8")
-        servingoptions.append("9")
+
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         previewLayer?.frame = view.layer.bounds;
         previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -376,6 +239,8 @@ var croppedimage = UIImage()
             self.capturedImage.image = image
             self.capturedImage.alpha = 1
             
+            newimage = image
+            
             self.captureSession?.stopRunning()
             
             croppedimage = cropToBounds(image: capturedImage.image!, width: 544, height: 544)
@@ -390,17 +255,13 @@ var croppedimage = UIImage()
                     
                     DispatchQueue.main.async {
 
-                        
-                        if groups[0] != nil && foods[0] != nil && groups.count > 0 && foods.count > 0  {
-                        self.tapgroup.setTitle(groups.first, for: .normal)
-                        self.tapfood.setTitle(foods.first, for: .normal)
-                        self.tapservingsize.setTitle("\(servingoptions[0]) servings", for: .normal)
-                            
+                        self.performSegue(withIdentifier: "PreToPost", sender: self)
+
                         }
                         
                     }
  
-                }
+
                 
                 //            self.performSegue(withIdentifier: "PhotoToSwiping", sender: self)
                 
@@ -479,7 +340,6 @@ var croppedimage = UIImage()
         return image
     }
     
-    var results : All?
     
     func sendPhoto (completed: @escaping (() -> ()) )  {
     
@@ -520,13 +380,13 @@ var croppedimage = UIImage()
                     
                     var thirdcounter = 0
                     
-                    self.results = try JSONDecoder().decode(All.self, from: data!)
+                    results = try JSONDecoder().decode(All.self, from: data!)
                     
-                    for group in (self.results?.results)! {
+                    for group in (results?.results)! {
                         
-                        if thirdcounter < 5 {
+                        if thirdcounter < 10 {
                             
-    
+
                         groups.append(group.group!)
 
                         print(groups)
@@ -542,6 +402,9 @@ var croppedimage = UIImage()
                                 for serving in item.servingSizes {
                                     if counter == 0 {
 
+                                    unitofmeasure = serving.unit!
+                                    
+                                        unitofmeasure = unitofmeasure.components(separatedBy: " ").dropFirst().joined(separator: " ")
                                         
                                     var thisisit = serving.servingWeight
                                         
@@ -567,6 +430,13 @@ var croppedimage = UIImage()
                                             newcalories = String(format: "%.1f", intcalories)
 
                                         }
+                                            
+                                            if nutrients["totalFat"] != nil {
+                                                
+                                                var intfat = nutrients["totalFat"]! * thisisit!
+                                                newfats = String(format: "%.1f", intfat)
+                                                
+                                            }
 
                                         } else {
                                             
@@ -589,6 +459,13 @@ var croppedimage = UIImage()
                                                 
                                                 var intcalories = nutrients["calories"]!
                                                 newcalories = String(format: "%.1f", intcalories)
+                                                
+                                            }
+                                            
+                                            if nutrients["totalFat"] != nil {
+                                                
+                                                var intfat = nutrients["totalFat"]!
+                                                newfats = String(format: "%.1f", intfat)
                                                 
                                             }
                                             
@@ -674,18 +551,17 @@ var croppedimage = UIImage()
             let code = readableObject.stringValue
             
             
-            self.delegate?.barcodeReaded(barcode: code!)
+//            self.delegate?.barcodeReaded(barcode: code!)
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             captureScreenshot()
             
-            postphoto()
             
             print(code!)
             
             
         }
     }
-    var delegate: BarcodeDelegate?
+//    var delegate: BarcodeDelegate?
 
     func barcodeDetected(code: String) {
         
@@ -718,127 +594,6 @@ var croppedimage = UIImage()
         
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        if groupressed {
-            
-
-        return groups[row]
-
-            
-        } else {
-            
-            if foodpressed {
-                
-                return foods[row]
-
-            } else {
-                
-                if servingspressed {
-                    
-                    return servingoptions[row]
-
-                    
-                } else {
-                    
-                    return ""
-                }
-            }
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        if groupressed {
-            
-            return groups.count
-
-            
-        } else {
-            
-            if foodpressed {
-                
-                return foods.count
-                
-            } else {
-                
-                if servingspressed {
-                    
-                    return servingoptions.count
-
-                    
-                } else {
-                    
-                    return 0
-                }
-            }
-        }
-        
-    }
-    
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        
-        if groupressed {
-            
-            selectedgroup = groups[row]
-            
-            selectedfood = foods[0]
-
-            tapgroup.setTitle(selectedgroup, for: .normal)
-            
-            groupressed = false
-            foodpressed = false
-            servingspressed = false
-            
-            foods.removeAll()
-
-            loadfoods()
-            
-        } else {
-            
-            if foodpressed {
-                
-                selectedgroup = (tapgroup.titleLabel?.text!)!
-
-                selectedfood = foods[row]
-                
-                tapfood.setTitle(selectedfood, for: .normal)
-                
-                groupressed = false
-                foodpressed = false
-                servingspressed = false
-                
-                loadfoods2()
-                
-            } else {
-                
-                if servingspressed {
-                    
-                    selectedgroup = (tapgroup.titleLabel?.text)!
-                    selectedfood = (tapfood.titleLabel?.text!)!
-                    
-                    selectedservings = servingoptions[row]
-                    
-                    tapservingsize.setTitle("\(selectedservings ) servings", for: .normal)
-                    groupressed = false
-                    foodpressed = false
-                    servingspressed = false
-                    
-                    multiplynutrition()
-                    
-                }
-            }
-        }
-        
-        postphoto()
-
-    }
-    
     func defaultnutrientvalues() {
         
         newcalories = "0"
@@ -854,227 +609,6 @@ var croppedimage = UIImage()
         newseleneium = "0"
         newiron = "0"
         newvitamina = "0"
-    }
-    
-    func loadfoods() {
-        
-        var groupcounter = 0
-        var foodcounter = 0
-        for group in (results?.results)! {
-            
-            if groupcounter == groups.index(of: selectedgroup) as! Int {
-                
-                
-                for item in group.items {
-                    
-                    foods.append(item.name!)
-                    
-                    selectedfood = foods[0]
-                    
-                    tapfood.setTitle(selectedfood, for: .normal)
-                    
-                    if foodcounter == foods.index(of: selectedfood) as! Int {
-
-                        for serving in item.servingSizes {
-                            
-                                var thisisit = serving.servingWeight
-                                
-                                if thisisit != nil {
-                                    nutrients = item.nutrition
-                                    
-                                    if nutrients["totalCarbs"] != nil {
-                                        
-                                        var intcarbs = nutrients["totalCarbs"]! * thisisit!
-                                        newcarbs = String(format: "%.1f", intcarbs * 1000)
-                                        
-                                    }
-                                    if nutrients["protein"] != nil {
-                                        
-                                        var intprotein = nutrients["protein"]! * thisisit!
-                                        newprotein = String(format: "%.1f", intprotein * 1000)
-                                        
-                                    }
-                                    
-                                    if nutrients["calories"] != nil {
-                                        
-                                        var intcalories = nutrients["calories"]! * thisisit!
-                                        newcalories = String(format: "%.1f", intcalories)
-                                        
-                                    }
-                                    
-                                } else {
-                                    
-                                    nutrients = item.nutrition
-                                    
-                                    if nutrients["totalCarbs"] != nil {
-                                        
-                                        var intcarbs = nutrients["totalCarbs"]!
-                                        newcarbs = String(format: "%.1f", intcarbs * 1000)
-                                        
-                                    }
-                                    if nutrients["protein"] != nil {
-                                        
-                                        var intprotein = nutrients["protein"]!
-                                        newprotein = String(format: "%.1f", intprotein * 1000)
-                                        
-                                    }
-                                    
-                                    if nutrients["calories"] != nil {
-                                        
-                                        var intcalories = nutrients["calories"]!
-                                        newcalories = String(format: "%.1f", intcalories)
-                                        
-                                    }
-                                    
-                                }
-                                
-                                
-                                
-                            
-                            }
-                            
-
-                        }
-                    foodcounter += 1
-
-                    }
-                }
-            
-                groupcounter += 1
-
-            }
-            
-        }
-
-    
-    
-    func loadfoods2() {
-        
-        var groupcounter = 0
-        var foodcounter = 0
-        for group in (results?.results)! {
-            
-            if groupcounter == groups.index(of: selectedgroup) as! Int {
-                
-                
-                for item in group.items {
-                    
-                    foods.append(item.name!)
-                    
-                    
-                    tapfood.setTitle(selectedfood, for: .normal)
-                    
-                    if foodcounter == foods.index(of: selectedfood) as! Int {
-                        
-                        var servingcounter = 0
-                        
-                        for serving in item.servingSizes {
-                            
-                            if servingcounter == 0 {
-                            var thisisit = serving.servingWeight
-                            
-                            if thisisit != nil {
-                                nutrients = item.nutrition
-                                
-                                if nutrients["totalCarbs"] != nil {
-                                    
-                                    var intcarbs = nutrients["totalCarbs"]! * thisisit!
-                                    newcarbs = String(format: "%.1f", intcarbs * 1000)
-                                    
-                                }
-                                if nutrients["protein"] != nil {
-                                    
-                                    var intprotein = nutrients["protein"]! * thisisit!
-                                    newprotein = String(format: "%.1f", intprotein * 1000)
-                                    
-                                }
-                                
-                                if nutrients["calories"] != nil {
-                                    
-                                    var intcalories = nutrients["calories"]! * thisisit!
-                                    newcalories = String(format: "%.1f", intcalories)
-                                    
-                                }
-                                
-                            } else {
-                                
-                                nutrients = item.nutrition
-                                
-                                if nutrients["totalCarbs"] != nil {
-                                    
-                                    var intcarbs = nutrients["totalCarbs"]!
-                                    newcarbs = String(format: "%.1f", intcarbs * 1000)
-                                    
-                                }
-                                if nutrients["protein"] != nil {
-                                    
-                                    var intprotein = nutrients["protein"]!
-                                    newprotein = String(format: "%.1f", intprotein * 1000)
-                                    
-                                }
-                                
-                                if nutrients["calories"] != nil {
-                                    
-                                    var intcalories = nutrients["calories"]!
-                                    newcalories = String(format: "%.1f", intcalories)
-                                    
-                                }
-                                
-                            }
-                            
-                            }
-                            
-                            servingcounter += 1
-                        }
-                        
-                        
-                    }
-                    foodcounter += 1
-
-                }
-            }
-            
-            groupcounter += 1
-            
-        }
-        
-    }
-    
-    func multiplynutrition() {
-        
-        
-        newcarbs = String(format: "%.1f", Double(newcarbs)! * Double(selectedservings)!)
-
-        newprotein = String(format: "%.1f", Double(newprotein)! * Double(selectedservings)!)
-        
-        newcalories = String(format: "%.1f", Double(newcalories)! * Double(selectedservings)!)
-        
-    }
-    
-    func storenewnutrientvalues() {
-        
-        var newcaloriess = Double(todayscalories)! + Double(newcalories)!
-        var new1 = Double(today1)! + Double(newprotein)!
-        var new2 = Double(today2)! + Double(newcarbs)!
-        var new3 = Double(today3)! + Double(newfats)!
-        var new4 = Double(today4)! + Double(newpotassium)!
-        var new5 = Double(today5)! + Double(newsodium)!
-        var new6 = Double(today6)! + Double(newcholesterol)!
-        var new7 = Double(today7)! + Double(newzinc)!
-        var new8 = Double(today8)! + Double(newfiber)!
-        var new9 = Double(today9)! + Double(newvitaminD)!
-        var new10 = Double(today10)! + Double(newseleneium)!
-        var new11 = Double(today11)! + Double(newiron)!
-        var new12 = Double(today12)! + Double(newvitamina)!
-        
-        ref?.child("OurUsers").child(uid).child(todaysdate).updateChildValues(["Calories" : String(newcaloriess), "Protein" : String(new1), "Carbs" : String(new2), "Fats" : String(new3), "Potassium" : String(new4), "Sodium" : String(new5), "Cholesterol" : String(new6), "Zinc" : String(new7), "Fiber" : String(new8), "Vitamin D" : String(new9), "Selenium" : String(new10), "Iron" : String(new11), "Vitamin A" : String(new12)])
-
-        
-        DispatchQueue.main.async {
-            
-            self.performSegue(withIdentifier: "CameraToHome", sender: self)
-            
-        }
     }
     
 }

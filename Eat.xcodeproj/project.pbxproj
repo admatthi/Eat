@@ -212,6 +212,7 @@
 				9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */,
 				9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */,
 				9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */,
+				9D63810120B1E04600350C4D /* PurchaseViewController.swift */,
 				9D694E6E20B1DD5300AEED4E /* Assets.xcassets */,
 				9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */,
 				9D694E7320B1DD5300AEED4E /* Info.plist */,
@@ -247,7 +248,6 @@
 				9D6380F120B1E01A00350C4D /* BViewController.swift */,
 				9D6380F520B1E02300350C4D /* CViewController.swift */,
 				9D6380F920B1E03100350C4D /* DViewController.swift */,
-				9D63810120B1E04600350C4D /* PurchaseViewController.swift */,
 				9D63810520B1E05700350C4D /* HomeViewController.swift */,
 				9D63810920B1E05F00350C4D /* LogViewController.swift */,
 				9D63810D20B1E06A00350C4D /* FoodsViewController.swift */,
@@ -729,7 +729,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A264F16ACEF0C97563464A1 /* Pods-Eat.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-11";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-13";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
@@ -747,7 +747,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-11";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-13";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
