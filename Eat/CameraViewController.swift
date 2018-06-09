@@ -20,6 +20,9 @@ var servingsizes = [String:Double]()
 
 var servingoptions = [String]()
 var newcalories = String()
+var newcalcium = String()
+var newsatfat = String()
+var newsugars = String()
 var newprotein = String()
 var newcarbs = String()
 var newfats = String()
@@ -343,7 +346,7 @@ var croppedimage = UIImage()
     
     func sendPhoto (completed: @escaping (() -> ()) )  {
     
-    var myURL = NSURL(string: "https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition?user_key=ffd81b65582979b97f4579046882c46c")
+    var myURL = NSURL(string: "https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition/full?user_key=ffd81b65582979b97f4579046882c46c")
         let request = NSMutableURLRequest(url: myURL as! URL)
     
         request.httpMethod = "POST"
@@ -406,68 +409,19 @@ var croppedimage = UIImage()
                                     
                                         unitofmeasure = unitofmeasure.components(separatedBy: " ").dropFirst().joined(separator: " ")
                                         
-                                    var thisisit = serving.servingWeight
                                         
-                                        if thisisit != nil {
+                                        if serving.servingWeight != nil {
+                                            
+                                            self.thisisit = serving.servingWeight!
+
                                             nutrients = item.nutrition
                                         
-                                        if nutrients["totalCarbs"] != nil {
-                                            
-                                        var intcarbs = nutrients["totalCarbs"]! * thisisit!
-                                            newcarbs = String(format: "%.1f", intcarbs * 1000)
-
-                                        }
-                                        if nutrients["protein"] != nil {
-
-                                            var intprotein = nutrients["protein"]! * thisisit!
-                                            newprotein = String(format: "%.1f", intprotein * 1000)
-
-                                        }
-                                        
-                                        if nutrients["calories"] != nil {
-                                         
-                                            var intcalories = nutrients["calories"]! * thisisit!
-                                            newcalories = String(format: "%.1f", intcalories)
-
-                                        }
-                                            
-                                            if nutrients["totalFat"] != nil {
-                                                
-                                                var intfat = nutrients["totalFat"]! * thisisit!
-                                                newfats = String(format: "%.1f", intfat)
-                                                
-                                            }
-
+                                            self.loadnutrientlabelswithservings()
                                         } else {
                                             
                                             nutrients = item.nutrition
                                             
-                                            if nutrients["totalCarbs"] != nil {
-                                                
-                                                var intcarbs = nutrients["totalCarbs"]!
-                                                newcarbs = String(format: "%.1f", intcarbs * 1000)
-                                                
-                                            }
-                                            if nutrients["protein"] != nil {
-                                                
-                                                var intprotein = nutrients["protein"]!
-                                                newprotein = String(format: "%.1f", intprotein * 1000)
-                                                
-                                            }
-                                            
-                                            if nutrients["calories"] != nil {
-                                                
-                                                var intcalories = nutrients["calories"]!
-                                                newcalories = String(format: "%.1f", intcalories)
-                                                
-                                            }
-                                            
-                                            if nutrients["totalFat"] != nil {
-                                                
-                                                var intfat = nutrients["totalFat"]!
-                                                newfats = String(format: "%.1f", intfat)
-                                                
-                                            }
+                                            self.loadnutrientlabelsnoservings()
                                             
                                         }
                                     
@@ -608,7 +562,203 @@ var croppedimage = UIImage()
         newvitaminD = "0"
         newseleneium = "0"
         newiron = "0"
+        newcalcium = "0"
+        newsatfat = "0"
+        newsodium = "0"
+        newsugars = "0"
         newvitamina = "0"
+    }
+    
+    var thisisit = Double()
+    
+    func loadnutrientlabelswithservings() {
+        
+        if nutrients["totalCarbs"] != nil {
+            
+            var intcarbs = nutrients["totalCarbs"]! * thisisit
+            newcarbs = String(format: "%.1f", intcarbs * 1000)
+            
+        }
+        if nutrients["protein"] != nil {
+            
+            var intprotein = nutrients["protein"]! * thisisit
+            newprotein = String(format: "%.1f", intprotein * 1000)
+            
+        }
+        
+        if nutrients["calcium"] != nil {
+            
+            var intcalcium = nutrients["calcium"]! * thisisit
+            newcalcium = String(format: "%.1f", intcalcium * 1000)
+            
+        }
+        
+        if nutrients["saturedFat"] != nil {
+            
+            var intsatfat = nutrients["saturedFat"]! * thisisit
+            newsatfat = String(format: "%.1f", intsatfat * 1000)
+            
+        }
+        
+        if nutrients["sodium"] != nil {
+            
+            var intsodium = nutrients["sodium"]! * thisisit
+            newsodium = String(format: "%.1f", intsodium * 1000)
+            
+        }
+        
+        if nutrients["cholesterol"] != nil {
+            
+            var intchol = nutrients["cholesterol"]! * thisisit
+            newcholesterol = String(format: "%.1f", intchol * 1000)
+            
+        }
+        
+        if nutrients["vitaminA"] != nil {
+            
+            var inta = nutrients["vitaminA"]! * thisisit
+            newvitamina = String(format: "%.1f", inta * 1000)
+            
+        }
+        
+        if nutrients["iron"] != nil {
+            
+            var intiron = nutrients["iron"]! * thisisit
+            newiron = String(format: "%.1f", intiron * 1000)
+            
+        }
+        
+        
+        if nutrients["sugars"] != nil {
+            
+            var intsugar = nutrients["sugars"]! * thisisit
+            newsugars = String(format: "%.1f", intsugar * 1000)
+            
+        }
+        
+        if nutrients["potassium"] != nil {
+            
+            var intpotass = nutrients["potassium"]! * thisisit
+            newpotassium = String(format: "%.1f", intpotass * 1000)
+            
+        }
+        
+        if nutrients["dietaryFiber"] != nil {
+            
+            var intfiber = nutrients["dietaryFiber"]! * thisisit
+            newfiber = String(format: "%.1f", intfiber * 1000)
+            
+        }
+        
+        if nutrients["calories"] != nil {
+            
+            var intcalories = nutrients["calories"]! * thisisit
+            newcalories = String(format: "%.1f", intcalories)
+            
+        }
+        
+        if nutrients["totalFat"] != nil {
+            
+            var intfat = nutrients["totalFat"]! * thisisit
+            newfats = String(format: "%.1f", intfat * 1000)
+            
+        }
+        
+    }
+    
+    func loadnutrientlabelsnoservings() {
+        
+        if nutrients["totalCarbs"] != nil {
+            
+            var intcarbs = nutrients["totalCarbs"]!
+            newcarbs = String(format: "%.1f", intcarbs * 1000)
+            
+        }
+        if nutrients["protein"] != nil {
+            
+            var intprotein = nutrients["protein"]!
+            newprotein = String(format: "%.1f", intprotein * 1000)
+            
+        }
+        
+        if nutrients["calcium"] != nil {
+            
+            var intcalcium = nutrients["calcium"]!
+            newcalcium = String(format: "%.1f", intcalcium * 1000)
+            
+        }
+        
+        if nutrients["saturedFat"] != nil {
+            
+            var intsatfat = nutrients["saturedFat"]!
+            newsatfat = String(format: "%.1f", intsatfat * 1000)
+            
+        }
+        
+        if nutrients["sodium"] != nil {
+            
+            var intsodium = nutrients["sodium"]!
+            newsodium = String(format: "%.1f", intsodium * 1000)
+            
+        }
+        
+        if nutrients["cholesterol"] != nil {
+            
+            var intchol = nutrients["cholesterol"]!
+            newcholesterol = String(format: "%.1f", intchol * 1000)
+            
+        }
+        
+        if nutrients["vitaminA"] != nil {
+            
+            var inta = nutrients["vitaminA"]!
+            newvitamina = String(format: "%.1f", inta * 1000)
+            
+        }
+        
+        if nutrients["iron"] != nil {
+            
+            var intiron = nutrients["iron"]!
+            newiron = String(format: "%.1f", intiron * 1000)
+            
+        }
+        
+        
+        if nutrients["sugars"] != nil {
+            
+            var intsugar = nutrients["sugars"]!
+            newsugars = String(format: "%.1f", intsugar * 1000)
+            
+        }
+        
+        if nutrients["potassium"] != nil {
+            
+            var intpotass = nutrients["potassium"]!
+            newpotassium = String(format: "%.1f", intpotass * 1000)
+            
+        }
+        
+        if nutrients["dietaryFiber"] != nil {
+            
+            var intfiber = nutrients["dietaryFiber"]!
+            newfiber = String(format: "%.1f", intfiber * 1000)
+            
+        }
+        
+        if nutrients["calories"] != nil {
+            
+            var intcalories = nutrients["calories"]!
+            newcalories = String(format: "%.1f", intcalories)
+            
+        }
+        
+        if nutrients["totalFat"] != nil {
+            
+            var intfat = nutrients["totalFat"]!
+            newfats = String(format: "%.1f", intfat * 1000)
+            
+        }
+        
     }
     
 }
