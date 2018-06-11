@@ -69,8 +69,16 @@ class PulseViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var background: UILabel!
     @IBOutlet weak var calories: UILabel!
 
+    @IBOutlet weak var c: UILabel!
+    @IBOutlet weak var tf: UILabel!
+    @IBOutlet weak var s: UILabel!
+    @IBOutlet weak var ch: UILabel!
+    @IBOutlet weak var so: UILabel!
+    @IBOutlet weak var tc: UILabel!
+    @IBOutlet weak var p: UILabel!
     
     func defaulttoday() {
         
@@ -97,6 +105,13 @@ class PulseViewController: UIViewController {
 
         ref = Database.database().reference()
 
+        c.addCharacterSpacing()
+        tf.addCharacterSpacing()
+        s.addCharacterSpacing()
+        ch.addCharacterSpacing()
+        so.addCharacterSpacing()
+        tc.addCharacterSpacing()
+        p.addCharacterSpacing()
         // Do any additional setup after loading the view.
         
         if Auth.auth().currentUser == nil {
@@ -105,7 +120,7 @@ class PulseViewController: UIViewController {
             DispatchQueue.main.async {
                 newuser = true
 
-                self.performSegue(withIdentifier: "PulseToPhoto", sender: self)
+                self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
             }
             
         } else {
@@ -125,6 +140,7 @@ class PulseViewController: UIViewController {
             defaulttoday()
             loadtodaysvalues()
             queryfortodaysvalues()
+            
         }
     }
     
@@ -194,4 +210,14 @@ ref?.child("OurUsers").child(uid).child(todaysdate).observeSingleEvent(of: .valu
     }
     */
 
+}
+
+extension UILabel {
+    func addCharacterSpacing() {
+        if let labelText = text, labelText.count > 0 {
+            let attributedString = NSMutableAttributedString(string: labelText)
+            attributedString.addAttribute(NSAttributedStringKey.kern, value: 2.0, range: NSRange(location: 0, length: attributedString.length - 1))
+            attributedText = attributedString
+        }
+    }
 }

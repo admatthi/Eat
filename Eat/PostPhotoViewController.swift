@@ -194,8 +194,27 @@ class PostPhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             }
                 
         }
+    @IBOutlet weak var background: UILabel!
+    
+    
+    @IBOutlet weak var c: UILabel!
+    @IBOutlet weak var tf: UILabel!
+    @IBOutlet weak var s: UILabel!
+    @IBOutlet weak var ch: UILabel!
+    @IBOutlet weak var so: UILabel!
+    @IBOutlet weak var tc: UILabel!
+    @IBOutlet weak var p: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        s.addCharacterSpacing()
+        tf.addCharacterSpacing()
+        s.addCharacterSpacing()
+        ch.addCharacterSpacing()
+        so.addCharacterSpacing()
+        tc.addCharacterSpacing()
+        p.addCharacterSpacing()
         
         ourimage.layer.masksToBounds = false
         ourimage.layer.cornerRadius = ourimage.frame.height/2
@@ -211,7 +230,11 @@ class PostPhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         loadfirstbuttons()
         
         ref = Database.database().reference()
-
+        
+        background.layer.cornerRadius = 10.0
+        background.clipsToBounds = true
+        
+        
     }
     
             func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -87,7 +87,7 @@ class PurchaseViewController: UIViewController {
     @IBOutlet weak var tapterms: UIButton!
     @IBAction func tapTerms(_ sender: Any) {
         
-        if let url = NSURL(string: "https://tryeatfree.weebly.com/terms--policy.html"
+        if let url = NSURL(string: "https://www.tryeatfree.com/privacy-policy.html"
             ) {
             UIApplication.shared.openURL(url as URL)
         }
