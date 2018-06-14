@@ -54,7 +54,7 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
 
 var croppedimage = UIImage()
     
-
+var upccode = Bool()
 
     @IBOutlet weak var overlayCamera: UIView!
     @IBOutlet weak var capturedImage: UIImageView!
@@ -68,7 +68,7 @@ var croppedimage = UIImage()
 
     
     @IBAction func tapPhoto(_ sender: Any) {
-        
+        upccode = false
         groups.removeAll()
         foods.removeAll()
         captureScreenshot()
@@ -107,7 +107,9 @@ var croppedimage = UIImage()
     @IBOutlet weak var tapback: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.becomeFirstResponder() // To get shake gesture
 
+        upccode = false
         if newuser == true {
             
             tapback.alpha = 0
@@ -254,7 +256,7 @@ var croppedimage = UIImage()
                 
                 logoimagedata = UIImageJPEGRepresentation(croppedimage, 0.2)!
                 
-                self.sendPhoto() { () -> () in
+                self.sendUPC() { () -> () in
                     
                     DispatchQueue.main.async {
 
@@ -263,14 +265,12 @@ var croppedimage = UIImage()
                         }
                         
                     }
- 
-
-                
                 //            self.performSegue(withIdentifier: "PhotoToSwiping", sender: self)
                 
-            }
         } else {
             print("some error here")
+        }
+            
         }
     }
     /*
@@ -463,6 +463,126 @@ var croppedimage = UIImage()
  
  
     }
+        
+        func sendUPC (completed: @escaping (() -> ()) )  {
+            
+            var myURL = NSURL(string: "https://api-2445582032290.production.gw.apicast.io/v1/foodrecognition/pg?user_key=ffd81b65582979b97f4579046882c46c")
+            let request = NSMutableURLRequest(url: myURL as! URL)
+            
+            request.httpMethod = "POST"
+            
+            var imageData = logoimagedata
+            
+            let boundary = generateBoundaryString()
+            
+            let param = [
+                
+                "firstName" : "Alek"
+                
+            ]
+            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            //        request.httpBody = postString.data(using: String.Encoding.utf8)
+            
+            request.httpBody = createBodyWithParameters(parameters: param, filePathKey: "file", imageDataKey: imageData as NSData, boundary: boundary) as Data
+            
+            let task = URLSession.shared.dataTask(with: request as URLRequest) {(data, response, error) in
+                
+                
+                if error != nil {
+                    
+                    print("error=\(error)")
+                    
+                } else {
+                    
+                    print("response=\(response)")
+                    
+                    do {
+                        var counter = 0
+                        
+                        var functioncounter = 0
+                        
+                        var thirdcounter = 0
+                        
+                        results = try JSONDecoder().decode(All.self, from: data!)
+                        
+                        for group in (results?.results)! {
+                            
+                            if thirdcounter < 10 {
+                                
+                                
+                                groups.append(group.group!)
+                                
+                                print(groups)
+                                
+                                thirdcounter += 1
+                                
+                                for item in group.items {
+                                    
+                                    foods.append(item.name!)
+                                    
+                                    var thisfood = foods[0]
+                                    
+                                    for serving in item.servingSizes {
+                                        if counter == 0 {
+                                            
+                                            unitofmeasure = serving.unit!
+                                            
+                                            unitofmeasure = unitofmeasure.components(separatedBy: " ").dropFirst().joined(separator: " ")
+                                            
+                                            
+                                            if serving.servingWeight != nil {
+                                                
+                                                self.thisisit = serving.servingWeight!
+                                                
+                                                nutrients = item.nutrition
+                                                
+                                                self.loadnutrientlabelswithservings()
+                                            } else {
+                                                
+                                                nutrients = item.nutrition
+                                                
+                                                self.loadnutrientlabelsnoservings()
+                                                
+                                            }
+                                            
+                                            completed()
+                                            
+                                            
+                                            
+                                            counter += 1
+                                            
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                }
+                                
+                            }
+                        }
+                        
+                        
+                        //                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                        //
+                        //                    print(json)
+                        
+                    } catch let jsonErr {
+                        
+                        print("Error", jsonErr)
+                        
+                    }
+                }
+                
+            }
+            
+            task.resume()
+            
+            
+            
+        }
     
     
     func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
@@ -504,7 +624,7 @@ var croppedimage = UIImage()
             let readableObject = metadata as! AVMetadataMachineReadableCodeObject
             let code = readableObject.stringValue
             
-            
+            upccode = true
 //            self.delegate?.barcodeReaded(barcode: code!)
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             captureScreenshot()
@@ -759,6 +879,60 @@ var croppedimage = UIImage()
             
         }
         
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            
+            takeScreenshot(true)
+            showalert()
+            
+        }
+    }
+    
+    
+    func showalert() {
+        
+        let alert = UIAlertController(title: "Shake To Report", message: "Please report any issues you found!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Send Feedback", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "Feedback") as! FeedbackViewController
+                self.present(vc, animated: true, completion: nil)
+
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    open func takeScreenshot(_ shouldSave: Bool = true) -> UIImage? {
+        var screenshotImage :UIImage?
+        let layer = UIApplication.shared.keyWindow!.layer
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+        guard let context = UIGraphicsGetCurrentContext() else {return nil}
+        layer.render(in:context)
+        screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = screenshotImage, shouldSave {
+            
+            screenshot = image
+            
+        }
+        return screenshotImage
     }
     
 }

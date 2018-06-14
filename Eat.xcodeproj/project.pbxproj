@@ -60,6 +60,7 @@
 		9D694E7220B1DD5300AEED4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */; };
 		9D694E7D20B1DD5300AEED4E /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E7C20B1DD5300AEED4E /* EatTests.swift */; };
 		9D694E8820B1DD5300AEED4E /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E8720B1DD5300AEED4E /* EatUITests.swift */; };
+		9D916F5020CF5DB700C6245E /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */; };
 		9DA370C820C0E31300AB8C49 /* NewWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8762520BB073E00040683 /* NewWeightViewController.swift */; };
 		9DA370C920C0E31300AB8C49 /* NewWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8762520BB073E00040683 /* NewWeightViewController.swift */; };
 		9DA370CB20C0E32500AB8C49 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */; };
@@ -125,6 +126,7 @@
 		9D694E8720B1DD5300AEED4E /* EatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatUITests.swift; sourceTree = "<group>"; };
 		9D694E8920B1DD5300AEED4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D7B36E620BC7D3F00C38251 /* Eat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eat.entitlements; sourceTree = "<group>"; };
+		9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
 		9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */,
 				9D62591220CD833700383CEB /* CodeViewController.swift */,
 				9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */,
+				9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */,
 				9D694E6E20B1DD5300AEED4E /* Assets.xcassets */,
 				9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */,
 				9D694E7320B1DD5300AEED4E /* Info.plist */,
@@ -525,6 +528,7 @@
 				9D6380FA20B1E03100350C4D /* DViewController.swift in Sources */,
 				9D6380F220B1E01A00350C4D /* BViewController.swift in Sources */,
 				9D6380F620B1E02300350C4D /* CViewController.swift in Sources */,
+				9D916F5020CF5DB700C6245E /* FeedbackViewController.swift in Sources */,
 				9D63810620B1E05700350C4D /* HomeViewController.swift in Sources */,
 				9D63810E20B1E06A00350C4D /* FoodsViewController.swift in Sources */,
 				9D6380EE20B1E01000350C4D /* AViewController.swift in Sources */,
@@ -733,12 +737,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A264F16ACEF0C97563464A1 /* Pods-Eat.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-17";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-18";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				INFOPLIST_FILE = Eat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.Eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -751,12 +755,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-17";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-18";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
 				INFOPLIST_FILE = Eat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aatech.Eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
