@@ -67,12 +67,12 @@ class PostPhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBAction func tapSubmit(_ sender: Any) {
         
-        if newuser == true {
-            
-            self.performSegue(withIdentifier: "PostToPurchase", sender: self)
-            
-        } else {
-            
+//        if newuser == true {
+//
+//            self.performSegue(withIdentifier: "PostToPurchase", sender: self)
+//
+//        } else {
+        
             let storage = Storage.storage()
             let storageRef = storage.reference()
             let currentUser = Auth.auth().currentUser
@@ -118,8 +118,7 @@ class PostPhotoViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 }
                 
             }
-        }
-       
+
         
     }
         

@@ -123,7 +123,7 @@ class PulseViewController: UIViewController {
             DispatchQueue.main.async {
                 newuser = true
 
-                self.performSegue(withIdentifier: "PulseToPhoto", sender: self)
+                self.performSegue(withIdentifier: "PulseToHome", sender: self)
             }
             
         } else {

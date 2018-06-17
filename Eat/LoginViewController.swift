@@ -134,15 +134,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         FBSDKAppEvents.logEvent("LoginScreen")
         
-        if newuser == true {
-            
-            tapcreate.alpha = 0
-            
-        } else {
-            
-            tapcreate.alpha = 1
-        }
-        
+//        if newuser == true {
+//            
+//            tapcreate.alpha = 0
+//            
+//        } else {
+//            
+//            tapcreate.alpha = 1
+//        }
+//        
     }
     
     override func didReceiveMemoryWarning() {

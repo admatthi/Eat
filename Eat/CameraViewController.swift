@@ -110,15 +110,15 @@ var upccode = Bool()
         self.becomeFirstResponder() // To get shake gesture
 
         upccode = false
-        if newuser == true {
-            
-            tapback.alpha = 0
-            uid = "4GE57CaA21R6EOSRGKeCkRd9DXq1"
-            
-        } else {
-            
-            tapback.alpha = 1
-        }
+//        if newuser == true {
+//            
+//            tapback.alpha = 0
+//            uid = "4GE57CaA21R6EOSRGKeCkRd9DXq1"
+//            
+//        } else {
+//            
+//            tapback.alpha = 1
+//        }
         defaultnutrientvalues()
         ref = Database.database().reference()
 

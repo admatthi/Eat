@@ -18,41 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ColoredRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="cRn-Pf-ruj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If0-B0-yf2">
-                                <rect key="frame" x="83" y="271.5" width="209" height="34"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SlayColored" translatesAutoresizingMaskIntoConstraints="NO" id="ggM-Nk-VCa">
+                                <rect key="frame" x="122" y="299" width="130" height="69"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="209" id="4au-Q9-bWv"/>
-                                    <constraint firstAttribute="height" constant="34" id="c42-GB-aTj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteCleanLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="17F-1C-5eW">
-                                <rect key="frame" x="139" y="308" width="97" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="5Tl-bB-CPb"/>
-                                    <constraint firstAttribute="width" constant="97" id="dAn-5C-qkR"/>
+                                    <constraint firstAttribute="height" constant="69" id="G1I-yj-7yS"/>
+                                    <constraint firstAttribute="width" constant="130" id="um3-wO-O62"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cRn-Pf-ruj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AfN-A7-bR8"/>
-                            <constraint firstItem="cRn-Pf-ruj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FKt-Bw-psb"/>
-                            <constraint firstItem="17F-1C-5eW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LwW-nS-ic2"/>
-                            <constraint firstItem="If0-B0-yf2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ML7-4f-Etz"/>
-                            <constraint firstItem="cRn-Pf-ruj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OcE-0c-DAc"/>
-                            <constraint firstItem="cRn-Pf-ruj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a2Q-EM-btY"/>
-                            <constraint firstItem="cRn-Pf-ruj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bjC-1z-XVN"/>
-                            <constraint firstItem="cRn-Pf-ruj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dE5-8H-XSk"/>
-                            <constraint firstItem="cRn-Pf-ruj" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="nM8-bv-kFx"/>
-                            <constraint firstItem="17F-1C-5eW" firstAttribute="top" secondItem="If0-B0-yf2" secondAttribute="bottom" constant="2.5" id="neh-qZ-kAO"/>
-                            <constraint firstItem="cRn-Pf-ruj" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="rFN-Ba-Dax"/>
-                            <constraint firstItem="If0-B0-yf2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="251.5" id="tUb-Gb-g7t"/>
+                            <constraint firstItem="ggM-Nk-VCa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7JI-Zr-Kzq"/>
+                            <constraint firstItem="ggM-Nk-VCa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="VRn-Z0-Dc7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -63,7 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ColoredRectangle" width="1242" height="2208"/>
-        <image name="WhiteCleanLogo-1" width="364" height="127"/>
+        <image name="SlayColored" width="347" height="175"/>
     </resources>
 </document>
