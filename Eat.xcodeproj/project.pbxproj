@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		795997E15950346E54F8E7FF /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9B31F77D99EB6CC4E6816D /* Pods_Eat.framework */; };
 		7FC40C4A1A586544C4162912 /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA55BB637A5AE4E79D6FA796 /* Pods_EatUITests.framework */; };
+		9D4E2C3820D6A1510032107F /* WorkoutOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */; };
 		9D62591320CD833700383CEB /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62591220CD833700383CEB /* CodeViewController.swift */; };
 		9D6380EA20B1DE9500350C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */; };
 		9D6380EB20B1DE9500350C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */; };
@@ -71,6 +72,9 @@
 		9DBB8B3720B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBC5C220C2F77C00C38DFC /* DataService.swift */; };
 		9DE8762620BB073E00040683 /* NewWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8762520BB073E00040683 /* NewWeightViewController.swift */; };
+		9DFB9D5020D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */; };
+		9DFB9D5220D6A6B700DFA8A4 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */; };
+		9DFB9D5420D6A6CE00DFA8A4 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */; };
 		C3552F51131E596A3143D483 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E85CEF3FB24BB9D7280F9A /* Pods_EatTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +100,7 @@
 		0A264F16ACEF0C97563464A1 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		645BA5FDB84ADDFFA0E8BB26 /* Pods-EatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatUITests/Pods-EatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOptionsViewController.swift; sourceTree = "<group>"; };
 		9D62591220CD833700383CEB /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D6380ED20B1E01000350C4D /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +138,9 @@
 		9DBB8B3420B64F06004C36D1 /* BarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		9DBBC5C220C2F77C00C38DFC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9DE8762520BB073E00040683 /* NewWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWeightViewController.swift; sourceTree = "<group>"; };
+		9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		A88B6C258942DD8C488A6364 /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF9B31F77D99EB6CC4E6816D /* Pods_Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E85CEF3FB24BB9D7280F9A /* Pods_EatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +190,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9D4E2C3620D6A1280032107F /* FoodSnap */ = {
+			isa = PBXGroup;
+			children = (
+				9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */,
+				9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */,
+				9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */,
+			);
+			path = FoodSnap;
+			sourceTree = "<group>";
+		};
 		9D694E5B20B1DD5200AEED4E = {
 			isa = PBXGroup;
 			children = (
@@ -208,21 +226,23 @@
 			isa = PBXGroup;
 			children = (
 				9D7B36E620BC7D3F00C38251 /* Eat.entitlements */,
+				9DA370C720C0E30000AB8C49 /* Cleanse */,
 				9D694E6720B1DD5200AEED4E /* AppDelegate.swift */,
 				9D694E6920B1DD5300AEED4E /* ViewController.swift */,
 				9D694E6B20B1DD5300AEED4E /* Main.storyboard */,
+				9D4E2C3620D6A1280032107F /* FoodSnap */,
 				9D6380ED20B1E01000350C4D /* AViewController.swift */,
 				9D6380F120B1E01A00350C4D /* BViewController.swift */,
 				9D6380F520B1E02300350C4D /* CViewController.swift */,
 				9D6380F920B1E03100350C4D /* DViewController.swift */,
 				9D63810120B1E04600350C4D /* PurchaseViewController.swift */,
-				9DA370C720C0E30000AB8C49 /* Cleanse */,
 				9D63811D20B1F27000350C4D /* LoginViewController.swift */,
-				9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */,
-				9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */,
 				9D62591220CD833700383CEB /* CodeViewController.swift */,
-				9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */,
 				9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */,
+				9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */,
+				9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */,
+				9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */,
+				9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */,
 				9D694E6E20B1DD5300AEED4E /* Assets.xcassets */,
 				9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */,
 				9D694E7320B1DD5300AEED4E /* Info.plist */,
@@ -531,13 +551,17 @@
 				9D916F5020CF5DB700C6245E /* FeedbackViewController.swift in Sources */,
 				9D63810620B1E05700350C4D /* HomeViewController.swift in Sources */,
 				9D63810E20B1E06A00350C4D /* FoodsViewController.swift in Sources */,
+				9DFB9D5420D6A6CE00DFA8A4 /* WorkoutViewController.swift in Sources */,
 				9D6380EE20B1E01000350C4D /* AViewController.swift in Sources */,
 				9D63811A20B1F23100350C4D /* SettingsViewController.swift in Sources */,
+				9DFB9D5020D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift in Sources */,
 				9D694E6820B1DD5300AEED4E /* AppDelegate.swift in Sources */,
+				9D4E2C3820D6A1510032107F /* WorkoutOptionsViewController.swift in Sources */,
 				9D63811620B1E96800350C4D /* FoodsTableViewCell.swift in Sources */,
 				9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */,
 				9DADF65C20C2041500F5BEA3 /* CameraViewController.swift in Sources */,
 				9D6380FE20B1E03D00350C4D /* EViewController.swift in Sources */,
+				9DFB9D5220D6A6B700DFA8A4 /* WorkoutTableViewCell.swift in Sources */,
 				9D63811220B1E07500350C4D /* InsightsViewController.swift in Sources */,
 				9DB54FFC20C2FDCC00BA858E /* PostPhotoViewController.swift in Sources */,
 				9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */,
@@ -737,7 +761,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A264F16ACEF0C97563464A1 /* Pods-Eat.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-18";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-19";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
@@ -755,7 +779,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-18";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-19";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;

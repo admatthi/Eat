@@ -107,8 +107,8 @@ class PurchaseViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("Lifetime Pressed")
         
-        purchase(purchase: onetime)
-        
+        purchase(purchase: yearpurchase)
+
     }
     @IBAction func tapButton2(_ sender: Any) {
         
@@ -116,8 +116,8 @@ class PurchaseViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("3 Day Pressed")
         
-        purchase(purchase: threeday)
-        
+        purchase(purchase: yearpurchase)
+
         
         
     }
@@ -127,8 +127,8 @@ class PurchaseViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("OneTimePurchase")
         
-        purchase(purchase: onetime)
-        
+        purchase(purchase: yearpurchase)
+
         
 //        
 //        DispatchQueue.main.async {

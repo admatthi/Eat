@@ -25,11 +25,23 @@
                                     <constraint firstAttribute="width" constant="130" id="um3-wO-O62"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-OM-e6u">
+                                <rect key="frame" x="83" y="257" width="209" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="alX-SU-Yt6"/>
+                                    <constraint firstAttribute="height" constant="34" id="cQE-KN-2hz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                <color key="textColor" red="0.20962880710000001" green="0.20962880710000001" blue="0.20962880710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ggM-Nk-VCa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7JI-Zr-Kzq"/>
                             <constraint firstItem="ggM-Nk-VCa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="VRn-Z0-Dc7"/>
+                            <constraint firstItem="ggM-Nk-VCa" firstAttribute="top" secondItem="TRn-OM-e6u" secondAttribute="bottom" constant="8" id="gNd-68-T2O"/>
+                            <constraint firstItem="TRn-OM-e6u" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tqa-3U-ZL8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
