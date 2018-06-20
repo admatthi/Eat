@@ -9,6 +9,10 @@
 import UIKit
 import FBSDKCoreKit
 
+var currentweight = String()
+var goalweight = String()
+
+
 class DViewController: UIViewController, UITextFieldDelegate {
 
     

@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
+var counter = Int()
+var logodownloadurl = String()
+
 class FeedbackViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tapx: UIButton!
@@ -55,7 +58,7 @@ class FeedbackViewController: UIViewController, UITextFieldDelegate {
                     } else {
                         
                         // store download url
-                        logodownloadURL = metaData!.downloadURL()!.absoluteString
+                        logodownloadurl = metaData!.downloadURL()!.absoluteString
                         
                         
                         let currentUser = Auth.auth().currentUser
@@ -66,7 +69,7 @@ class FeedbackViewController: UIViewController, UITextFieldDelegate {
                         
                         ref = Database.database().reference()
                         
-                        ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadURL])
+                        ref?.child("Feedback").child(uid).childByAutoId().updateChildValues(["Text" : self.tf.text!, "Image" : logodownloadurl])
                         
                         self.dismiss(animated: true, completion: {
                             

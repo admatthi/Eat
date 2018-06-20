@@ -19,6 +19,12 @@ import FirebaseMessaging
 import UXCam
 import AVFoundation
 
+var uid = String()
+var ref: DatabaseReference?
+
+var newuser = Bool()
+var todaysdate = String()
+var screenshot = UIImage()
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, AVCaptureMetadataOutputObjectsDelegate {
 

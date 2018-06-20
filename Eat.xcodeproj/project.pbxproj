@@ -26,30 +26,9 @@
 		9D6380FA20B1E03100350C4D /* DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6380F920B1E03100350C4D /* DViewController.swift */; };
 		9D6380FB20B1E03100350C4D /* DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6380F920B1E03100350C4D /* DViewController.swift */; };
 		9D6380FC20B1E03100350C4D /* DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6380F920B1E03100350C4D /* DViewController.swift */; };
-		9D6380FE20B1E03D00350C4D /* EViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6380FD20B1E03D00350C4D /* EViewController.swift */; };
-		9D6380FF20B1E03D00350C4D /* EViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6380FD20B1E03D00350C4D /* EViewController.swift */; };
-		9D63810020B1E03D00350C4D /* EViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6380FD20B1E03D00350C4D /* EViewController.swift */; };
 		9D63810220B1E04600350C4D /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810120B1E04600350C4D /* PurchaseViewController.swift */; };
 		9D63810320B1E04600350C4D /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810120B1E04600350C4D /* PurchaseViewController.swift */; };
 		9D63810420B1E04600350C4D /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810120B1E04600350C4D /* PurchaseViewController.swift */; };
-		9D63810620B1E05700350C4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810520B1E05700350C4D /* HomeViewController.swift */; };
-		9D63810720B1E05700350C4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810520B1E05700350C4D /* HomeViewController.swift */; };
-		9D63810820B1E05700350C4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810520B1E05700350C4D /* HomeViewController.swift */; };
-		9D63810A20B1E05F00350C4D /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810920B1E05F00350C4D /* LogViewController.swift */; };
-		9D63810B20B1E05F00350C4D /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810920B1E05F00350C4D /* LogViewController.swift */; };
-		9D63810C20B1E05F00350C4D /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810920B1E05F00350C4D /* LogViewController.swift */; };
-		9D63810E20B1E06A00350C4D /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810D20B1E06A00350C4D /* FoodsViewController.swift */; };
-		9D63810F20B1E06A00350C4D /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810D20B1E06A00350C4D /* FoodsViewController.swift */; };
-		9D63811020B1E06A00350C4D /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63810D20B1E06A00350C4D /* FoodsViewController.swift */; };
-		9D63811220B1E07500350C4D /* InsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811120B1E07500350C4D /* InsightsViewController.swift */; };
-		9D63811320B1E07500350C4D /* InsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811120B1E07500350C4D /* InsightsViewController.swift */; };
-		9D63811420B1E07500350C4D /* InsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811120B1E07500350C4D /* InsightsViewController.swift */; };
-		9D63811620B1E96800350C4D /* FoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811520B1E96800350C4D /* FoodsTableViewCell.swift */; };
-		9D63811720B1E96800350C4D /* FoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811520B1E96800350C4D /* FoodsTableViewCell.swift */; };
-		9D63811820B1E96800350C4D /* FoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811520B1E96800350C4D /* FoodsTableViewCell.swift */; };
-		9D63811A20B1F23100350C4D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811920B1F23100350C4D /* SettingsViewController.swift */; };
-		9D63811B20B1F23100350C4D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811920B1F23100350C4D /* SettingsViewController.swift */; };
-		9D63811C20B1F23100350C4D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811920B1F23100350C4D /* SettingsViewController.swift */; };
 		9D63811E20B1F27000350C4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811D20B1F27000350C4D /* LoginViewController.swift */; };
 		9D63811F20B1F27000350C4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811D20B1F27000350C4D /* LoginViewController.swift */; };
 		9D63812020B1F27000350C4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811D20B1F27000350C4D /* LoginViewController.swift */; };
@@ -62,16 +41,10 @@
 		9D694E7D20B1DD5300AEED4E /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E7C20B1DD5300AEED4E /* EatTests.swift */; };
 		9D694E8820B1DD5300AEED4E /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E8720B1DD5300AEED4E /* EatUITests.swift */; };
 		9D916F5020CF5DB700C6245E /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */; };
-		9DA370C820C0E31300AB8C49 /* NewWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8762520BB073E00040683 /* NewWeightViewController.swift */; };
-		9DA370C920C0E31300AB8C49 /* NewWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8762520BB073E00040683 /* NewWeightViewController.swift */; };
-		9DA370CB20C0E32500AB8C49 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */; };
-		9DADF65C20C2041500F5BEA3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */; };
-		9DB54FFC20C2FDCC00BA858E /* PostPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */; };
 		9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBB8B3620B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBB8B3720B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBC5C220C2F77C00C38DFC /* DataService.swift */; };
-		9DE8762620BB073E00040683 /* NewWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8762520BB073E00040683 /* NewWeightViewController.swift */; };
 		9DFB9D5020D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */; };
 		9DFB9D5220D6A6B700DFA8A4 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */; };
 		9DFB9D5420D6A6CE00DFA8A4 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */; };
@@ -107,14 +80,7 @@
 		9D6380F120B1E01A00350C4D /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		9D6380F520B1E02300350C4D /* CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewController.swift; sourceTree = "<group>"; };
 		9D6380F920B1E03100350C4D /* DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DViewController.swift; sourceTree = "<group>"; };
-		9D6380FD20B1E03D00350C4D /* EViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EViewController.swift; sourceTree = "<group>"; };
 		9D63810120B1E04600350C4D /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
-		9D63810520B1E05700350C4D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		9D63810920B1E05F00350C4D /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
-		9D63810D20B1E06A00350C4D /* FoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsViewController.swift; sourceTree = "<group>"; };
-		9D63811120B1E07500350C4D /* InsightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsViewController.swift; sourceTree = "<group>"; };
-		9D63811520B1E96800350C4D /* FoodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsTableViewCell.swift; sourceTree = "<group>"; };
-		9D63811920B1F23100350C4D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9D63811D20B1F27000350C4D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9D63812120B201C800350C4D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9D694E6420B1DD5200AEED4E /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,12 +98,8 @@
 		9D694E8920B1DD5300AEED4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D7B36E620BC7D3F00C38251 /* Eat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eat.entitlements; sourceTree = "<group>"; };
 		9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
-		9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
-		9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoViewController.swift; sourceTree = "<group>"; };
 		9DBB8B3420B64F06004C36D1 /* BarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		9DBBC5C220C2F77C00C38DFC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		9DE8762520BB073E00040683 /* NewWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWeightViewController.swift; sourceTree = "<group>"; };
 		9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
@@ -190,16 +152,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9D4E2C3620D6A1280032107F /* FoodSnap */ = {
-			isa = PBXGroup;
-			children = (
-				9DA370CA20C0E32500AB8C49 /* PulseViewController.swift */,
-				9DADF65B20C2041500F5BEA3 /* CameraViewController.swift */,
-				9DB54FFB20C2FDCC00BA858E /* PostPhotoViewController.swift */,
-			);
-			path = FoodSnap;
-			sourceTree = "<group>";
-		};
 		9D694E5B20B1DD5200AEED4E = {
 			isa = PBXGroup;
 			children = (
@@ -226,11 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				9D7B36E620BC7D3F00C38251 /* Eat.entitlements */,
-				9DA370C720C0E30000AB8C49 /* Cleanse */,
 				9D694E6720B1DD5200AEED4E /* AppDelegate.swift */,
 				9D694E6920B1DD5300AEED4E /* ViewController.swift */,
 				9D694E6B20B1DD5300AEED4E /* Main.storyboard */,
-				9D4E2C3620D6A1280032107F /* FoodSnap */,
 				9D6380ED20B1E01000350C4D /* AViewController.swift */,
 				9D6380F120B1E01A00350C4D /* BViewController.swift */,
 				9D6380F520B1E02300350C4D /* CViewController.swift */,
@@ -269,21 +219,6 @@
 				9D694E8920B1DD5300AEED4E /* Info.plist */,
 			);
 			path = EatUITests;
-			sourceTree = "<group>";
-		};
-		9DA370C720C0E30000AB8C49 /* Cleanse */ = {
-			isa = PBXGroup;
-			children = (
-				9D63810520B1E05700350C4D /* HomeViewController.swift */,
-				9D63810920B1E05F00350C4D /* LogViewController.swift */,
-				9D63810D20B1E06A00350C4D /* FoodsViewController.swift */,
-				9D63811520B1E96800350C4D /* FoodsTableViewCell.swift */,
-				9D63811120B1E07500350C4D /* InsightsViewController.swift */,
-				9DE8762520BB073E00040683 /* NewWeightViewController.swift */,
-				9D63811920B1F23100350C4D /* SettingsViewController.swift */,
-				9D6380FD20B1E03D00350C4D /* EViewController.swift */,
-			);
-			path = Cleanse;
 			sourceTree = "<group>";
 		};
 		D3D14CBD962151FCAE977A7E /* Frameworks */ = {
@@ -539,31 +474,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA370CB20C0E32500AB8C49 /* PulseViewController.swift in Sources */,
 				9D694E6A20B1DD5300AEED4E /* ViewController.swift in Sources */,
-				9D63810A20B1E05F00350C4D /* LogViewController.swift in Sources */,
 				9D63810220B1E04600350C4D /* PurchaseViewController.swift in Sources */,
-				9DE8762620BB073E00040683 /* NewWeightViewController.swift in Sources */,
 				9D63811E20B1F27000350C4D /* LoginViewController.swift in Sources */,
 				9D6380FA20B1E03100350C4D /* DViewController.swift in Sources */,
 				9D6380F220B1E01A00350C4D /* BViewController.swift in Sources */,
 				9D6380F620B1E02300350C4D /* CViewController.swift in Sources */,
 				9D916F5020CF5DB700C6245E /* FeedbackViewController.swift in Sources */,
-				9D63810620B1E05700350C4D /* HomeViewController.swift in Sources */,
-				9D63810E20B1E06A00350C4D /* FoodsViewController.swift in Sources */,
 				9DFB9D5420D6A6CE00DFA8A4 /* WorkoutViewController.swift in Sources */,
 				9D6380EE20B1E01000350C4D /* AViewController.swift in Sources */,
-				9D63811A20B1F23100350C4D /* SettingsViewController.swift in Sources */,
 				9DFB9D5020D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift in Sources */,
 				9D694E6820B1DD5300AEED4E /* AppDelegate.swift in Sources */,
 				9D4E2C3820D6A1510032107F /* WorkoutOptionsViewController.swift in Sources */,
-				9D63811620B1E96800350C4D /* FoodsTableViewCell.swift in Sources */,
 				9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */,
-				9DADF65C20C2041500F5BEA3 /* CameraViewController.swift in Sources */,
-				9D6380FE20B1E03D00350C4D /* EViewController.swift in Sources */,
 				9DFB9D5220D6A6B700DFA8A4 /* WorkoutTableViewCell.swift in Sources */,
-				9D63811220B1E07500350C4D /* InsightsViewController.swift in Sources */,
-				9DB54FFC20C2FDCC00BA858E /* PostPhotoViewController.swift in Sources */,
 				9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */,
 				9D62591320CD833700383CEB /* CodeViewController.swift in Sources */,
 			);
@@ -576,18 +500,10 @@
 				9D63811F20B1F27000350C4D /* LoginViewController.swift in Sources */,
 				9DBB8B3620B64F06004C36D1 /* BarCell.swift in Sources */,
 				9D6380EF20B1E01000350C4D /* AViewController.swift in Sources */,
-				9D63811720B1E96800350C4D /* FoodsTableViewCell.swift in Sources */,
 				9D6380FB20B1E03100350C4D /* DViewController.swift in Sources */,
 				9D6380F320B1E01A00350C4D /* BViewController.swift in Sources */,
-				9D63810B20B1E05F00350C4D /* LogViewController.swift in Sources */,
-				9D63810720B1E05700350C4D /* HomeViewController.swift in Sources */,
 				9D63810320B1E04600350C4D /* PurchaseViewController.swift in Sources */,
-				9DA370C920C0E31300AB8C49 /* NewWeightViewController.swift in Sources */,
-				9D63811320B1E07500350C4D /* InsightsViewController.swift in Sources */,
-				9D63810F20B1E06A00350C4D /* FoodsViewController.swift in Sources */,
 				9D6380F720B1E02300350C4D /* CViewController.swift in Sources */,
-				9D63811B20B1F23100350C4D /* SettingsViewController.swift in Sources */,
-				9D6380FF20B1E03D00350C4D /* EViewController.swift in Sources */,
 				9D694E7D20B1DD5300AEED4E /* EatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,18 +515,10 @@
 				9D63812020B1F27000350C4D /* LoginViewController.swift in Sources */,
 				9DBB8B3720B64F06004C36D1 /* BarCell.swift in Sources */,
 				9D6380F020B1E01000350C4D /* AViewController.swift in Sources */,
-				9D63811820B1E96800350C4D /* FoodsTableViewCell.swift in Sources */,
 				9D6380FC20B1E03100350C4D /* DViewController.swift in Sources */,
 				9D6380F420B1E01B00350C4D /* BViewController.swift in Sources */,
-				9D63810C20B1E05F00350C4D /* LogViewController.swift in Sources */,
-				9D63810820B1E05700350C4D /* HomeViewController.swift in Sources */,
 				9D63810420B1E04600350C4D /* PurchaseViewController.swift in Sources */,
-				9DA370C820C0E31300AB8C49 /* NewWeightViewController.swift in Sources */,
-				9D63811420B1E07500350C4D /* InsightsViewController.swift in Sources */,
-				9D63811020B1E06A00350C4D /* FoodsViewController.swift in Sources */,
 				9D6380F820B1E02300350C4D /* CViewController.swift in Sources */,
-				9D63811C20B1F23100350C4D /* SettingsViewController.swift in Sources */,
-				9D63810020B1E03D00350C4D /* EViewController.swift in Sources */,
 				9D694E8820B1DD5300AEED4E /* EatUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

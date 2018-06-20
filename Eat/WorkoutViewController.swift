@@ -207,6 +207,12 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Exercises", for: indexPath) as! WorkoutTableViewCell
         
+        cell.photo1.layer.masksToBounds = true
+        cell.photo1.layer.cornerRadius = cell.photo1.frame.height/2
+        
+        cell.photo2.layer.masksToBounds = true
+        cell.photo2.layer.cornerRadius = cell.photo2.frame.height/2
+        
         if etitles.count > indexPath.row {
 
             cell.title.text = etitles[exerciseids[indexPath.row]]
