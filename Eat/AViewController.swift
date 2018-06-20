@@ -22,6 +22,7 @@ class AViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        newuser = true
         // Do any additional setup after loading the view.
         
         FBSDKAppEvents.logEvent("First Screen")

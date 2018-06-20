@@ -90,11 +90,11 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
         descriptions.removeAll()
         betterimages.removeAll()
         
-        betterimages.append(UIImage(named: "Export")!)
-        betterimages.append(UIImage(named: "2-1")!)
-        betterimages.append(UIImage(named: "3-1")!)
-        betterimages.append(UIImage(named: "4-1")!)
-        betterimages.append(UIImage(named: "5")!)
+        betterimages.append(UIImage(named: "WaistM")!)
+        betterimages.append(UIImage(named: "GlutesM")!)
+        betterimages.append(UIImage(named: "InnerThighsM")!)
+        betterimages.append(UIImage(named: "ArmsM")!)
+        betterimages.append(UIImage(named: "AbsM")!)
         
         var functioncounter = 0
         

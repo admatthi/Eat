@@ -48,6 +48,7 @@
 		9DFB9D5020D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */; };
 		9DFB9D5220D6A6B700DFA8A4 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */; };
 		9DFB9D5420D6A6CE00DFA8A4 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */; };
+		9DFB9D5620D9D39100DFA8A4 /* Settings2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5520D9D39100DFA8A4 /* Settings2ViewController.swift */; };
 		C3552F51131E596A3143D483 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E85CEF3FB24BB9D7280F9A /* Pods_EatTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		9DFB9D5520D9D39100DFA8A4 /* Settings2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings2ViewController.swift; sourceTree = "<group>"; };
 		A88B6C258942DD8C488A6364 /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF9B31F77D99EB6CC4E6816D /* Pods_Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E85CEF3FB24BB9D7280F9A /* Pods_EatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 				9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */,
 				9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */,
 				9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */,
+				9DFB9D5520D9D39100DFA8A4 /* Settings2ViewController.swift */,
 				9D694E6E20B1DD5300AEED4E /* Assets.xcassets */,
 				9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */,
 				9D694E7320B1DD5300AEED4E /* Info.plist */,
@@ -477,6 +480,7 @@
 				9D694E6A20B1DD5300AEED4E /* ViewController.swift in Sources */,
 				9D63810220B1E04600350C4D /* PurchaseViewController.swift in Sources */,
 				9D63811E20B1F27000350C4D /* LoginViewController.swift in Sources */,
+				9DFB9D5620D9D39100DFA8A4 /* Settings2ViewController.swift in Sources */,
 				9D6380FA20B1E03100350C4D /* DViewController.swift in Sources */,
 				9D6380F220B1E01A00350C4D /* BViewController.swift in Sources */,
 				9D6380F620B1E02300350C4D /* CViewController.swift in Sources */,
