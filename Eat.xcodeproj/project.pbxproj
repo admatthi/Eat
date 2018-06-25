@@ -673,7 +673,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A264F16ACEF0C97563464A1 /* Pods-Eat.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-19";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-20";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
@@ -691,7 +691,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-19";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-20";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;

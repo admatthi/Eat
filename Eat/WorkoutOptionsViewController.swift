@@ -221,6 +221,7 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
         cell.backimage.image = betterimages[indexPath.row]
             
         }
+
         
         return cell
     }
@@ -232,6 +233,12 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
         self.performSegue(withIdentifier: "HomeToWorkout", sender: self)
         
     }
+    
+
+        
+
+        
+    
     /*
     // MARK: - Navigation
 

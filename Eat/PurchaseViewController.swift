@@ -93,21 +93,15 @@ class PurchaseViewController: UIViewController {
         }
         
     }
-    
-    @IBAction func tapYearPurchase(_ sender: Any) {
-        
-        FBSDKAppEvents.logEvent("YearPurchase")
-        
-        purchase(purchase: yearpurchase)
-    }
+
     @IBOutlet weak var tapPurchase: UIButton!
     @IBAction func tapButton1(_ sender: Any) {
         
         //        generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("Lifetime Pressed")
+        FBSDKAppEvents.logEvent("OneTime Pressed")
         
-        purchase(purchase: yearpurchase)
+        purchase(purchase: onetime)
 
     }
     @IBAction func tapButton2(_ sender: Any) {
@@ -116,7 +110,7 @@ class PurchaseViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("3 Day Pressed")
         
-        purchase(purchase: yearpurchase)
+        purchase(purchase: threeday)
 
         
         
@@ -125,7 +119,7 @@ class PurchaseViewController: UIViewController {
         
         //        generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("OneTimePurchase")
+        FBSDKAppEvents.logEvent("YearPurchase")
         
         purchase(purchase: yearpurchase)
 
@@ -205,13 +199,17 @@ class PurchaseViewController: UIViewController {
                                             FBSDKAppEvents.logEvent("Purchased Completed")
                                         
                                             newuser = false
-                                            DispatchQueue.main.async {
-
+                                            
                                             self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-                                                        
+
+                                            self.showAlert(alert: self.alertForPurchaseResult(result: result))
+
+                                            DispatchQueue.main.async {
+                                                
+
+                                                
                                             }
                                             
-                                            self.showAlert(alert: self.alertForPurchaseResult(result: result))
                                             
                                         } else {
                                             
@@ -458,6 +456,7 @@ class PurchaseViewController: UIViewController {
             
         case .success(let product):
             print("Purchase Succesful: \(product.productId)")
+            
             
             return alertWithTitle(title: "You're all set", message: "Your purchase was successful")
             

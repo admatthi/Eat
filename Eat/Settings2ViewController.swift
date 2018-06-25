@@ -24,6 +24,11 @@ class Settings2ViewController: UIViewController {
         self.performSegue(withIdentifier: "SettingsToLogin", sender: self)
     }
     @IBAction func tapTerms(_ sender: Any) {
+        
+        if let url = NSURL(string: "https://www.tryeatfree.com/privacy-policy.html"
+            ) {
+            UIApplication.shared.openURL(url as URL)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
