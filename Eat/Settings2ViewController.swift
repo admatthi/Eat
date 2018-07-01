@@ -16,14 +16,43 @@ import FBSDKCoreKit
 import UserNotifications
 
 class Settings2ViewController: UIViewController {
-
+    @IBAction func tapBilling(_ sender: Any) {
+        
+        if let url = NSURL(string: "https://www.tryeatfree.com/billing-terms.html"
+            ) {
+            UIApplication.shared.openURL(url as URL)
+        }
+    }
+    @IBAction func tapAbout(_ sender: Any) {
+        
+        if let url = NSURL(string: "https://www.tryeatfree.com"
+            ) {
+            UIApplication.shared.openURL(url as URL)
+        }
+    }
+    
     @IBAction func tapLogout(_ sender: Any) {
         
         try! Auth.auth().signOut()
 
         self.performSegue(withIdentifier: "SettingsToLogin", sender: self)
     }
+    @IBAction func tapSubscription(_ sender: Any) {
+        
+//        if let url = NSURL(string: "https://www.tryeatfree.com/subscription.html"
+//            ) {
+//            UIApplication.shared.openURL(url as URL)
+//        }
+    }
     @IBAction func tapTerms(_ sender: Any) {
+        
+        if let url = NSURL(string: "https://www.tryeatfree.com/terms.html"
+            ) {
+            UIApplication.shared.openURL(url as URL)
+        }
+    }
+    
+    @IBAction func tapPrivacy(_ sender: Any) {
         
         if let url = NSURL(string: "https://www.tryeatfree.com/privacy-policy.html"
             ) {

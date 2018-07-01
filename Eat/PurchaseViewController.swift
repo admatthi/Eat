@@ -99,7 +99,7 @@ class PurchaseViewController: UIViewController {
         
         //        generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("OneTime Pressed")
+        FBSDKAppEvents.logEvent("YearPressed")
         
         purchase(purchase: onetime)
 
@@ -108,7 +108,7 @@ class PurchaseViewController: UIViewController {
         
         //        generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("3 Day Pressed")
+        FBSDKAppEvents.logEvent("MonthlyPressed")
         
         purchase(purchase: threeday)
 
@@ -119,7 +119,7 @@ class PurchaseViewController: UIViewController {
         
         //        generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("YearPurchase")
+        FBSDKAppEvents.logEvent("6MonthPressed")
         
         purchase(purchase: yearpurchase)
 

@@ -90,11 +90,11 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
         descriptions.removeAll()
         betterimages.removeAll()
         
-        betterimages.append(UIImage(named: "WaistM")!)
-        betterimages.append(UIImage(named: "GlutesM")!)
-        betterimages.append(UIImage(named: "InnerThighsM")!)
-        betterimages.append(UIImage(named: "ArmsM")!)
-        betterimages.append(UIImage(named: "AbsM")!)
+        betterimages.append(UIImage(named: "Waist-1")!)
+        betterimages.append(UIImage(named: "LegsThighs")!)
+        betterimages.append(UIImage(named: "LowBack")!)
+        betterimages.append(UIImage(named: "SlimArms")!)
+        betterimages.append(UIImage(named: "Core")!)
         
         var functioncounter = 0
         
@@ -216,7 +216,7 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
         if titles.count > indexPath.row {
             
         cell.category.text = titles[workoutids[indexPath.row]]
-        cell.difficulty.text = levels[workoutids[indexPath.row]]
+//        cell.difficulty.text = levels[workoutids[indexPath.row]]
         cell.intro.text = descriptions[workoutids[indexPath.row]]
         cell.backimage.image = betterimages[indexPath.row]
             

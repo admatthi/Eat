@@ -217,7 +217,7 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             cell.title.text = etitles[exerciseids[indexPath.row]]
 
-            cell.rest.text = rest[exerciseids[indexPath.row]]
+//            cell.rest.text = rest[exerciseids[indexPath.row]]
             cell.setsreps.text = setsreps[exerciseids[indexPath.row]]
             cell.photo1.image = image1[exerciseids[indexPath.row]]
             cell.photo2.image = image2[exerciseids[indexPath.row]]
