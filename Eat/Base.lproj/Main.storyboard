@@ -329,7 +329,7 @@
                                 <color key="textColor" red="0.36470588240000001" green="0.38823529410000002" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namaste Premium account includes all yoga programs adapted to your fitness level." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijS-XS-GMT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewYou Premium account includes all yoga programs adapted to your fitness level." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijS-XS-GMT">
                                 <rect key="frame" x="16" y="249" width="343" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="1FN-3W-OV0"/>
@@ -768,7 +768,7 @@
                                     <segue destination="ny6-z1-1xH" kind="show" id="aq7-Y2-A2A"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NamasteColored" translatesAutoresizingMaskIntoConstraints="NO" id="T1L-1Q-8Nf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewYou" translatesAutoresizingMaskIntoConstraints="NO" id="T1L-1Q-8Nf">
                                 <rect key="frame" x="146" y="40" width="82" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="est-3N-HKA"/>
@@ -895,7 +895,7 @@
                                     <segue destination="jtV-IT-HH5" kind="show" customClass="SegueFromRight" customModule="Eat" customModuleProvider="target" id="zKd-nT-EWr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NamasteColored" translatesAutoresizingMaskIntoConstraints="NO" id="UMd-m8-3mk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewYou" translatesAutoresizingMaskIntoConstraints="NO" id="UMd-m8-3mk">
                                 <rect key="frame" x="136" y="44" width="102" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="3aJ-0N-SIO"/>
@@ -995,7 +995,7 @@
                                     <segue destination="5vy-yy-aU1" kind="show" id="gJo-qU-GAN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NamasteColored" translatesAutoresizingMaskIntoConstraints="NO" id="bmh-xG-v9Z">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewYou" translatesAutoresizingMaskIntoConstraints="NO" id="bmh-xG-v9Z">
                                 <rect key="frame" x="136" y="41" width="102" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="7W7-kX-JDZ"/>
@@ -1159,7 +1159,7 @@
                                 <color key="textColor" red="0.052216703779999998" green="0.055655896929999997" blue="0.073802347719999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namaste Premium account includes all yoga programs adapted to your fitness level." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8G-qM-voN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NewYou Premium account includes all yoga programs adapted to your fitness level." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8G-qM-voN">
                                 <rect key="frame" x="29" y="375" width="343" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="fVG-1K-r81"/>
@@ -1287,8 +1287,8 @@
                                     <action selector="tapTerms:" destination="PcP-Wv-fbZ" eventType="touchUpInside" id="bQY-MP-xpU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRY IT FREE!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dae-TK-fWP">
-                                <rect key="frame" x="43" y="395" width="290" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRY IT NOW!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dae-TK-fWP">
+                                <rect key="frame" x="43" y="386" width="290" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="Zbf-Ss-mfW"/>
                                     <constraint firstAttribute="height" constant="42" id="xYk-Ic-ILR"/>
@@ -1337,13 +1337,13 @@
                                 <color key="textColor" red="0.42745098039215684" green="0.45098039215686275" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*extends to $4.99 / mo. for 12 mo. after FREE 7 day free trial" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-Ll-kX1">
-                                <rect key="frame" x="51" y="448" width="273" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*cancel anytime during 7 days. Will extend to $4.99 / mo. for 12 mo." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-Ll-kX1">
+                                <rect key="frame" x="51" y="446" width="273" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="273" id="jVl-h7-4mb"/>
                                     <constraint firstAttribute="height" constant="30" id="qlG-D8-0p6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="8"/>
                                 <color key="textColor" red="0.42745098039215684" green="0.45490196078431372" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1408,6 +1408,16 @@
                                     <segue destination="SEt-1l-FFb" kind="show" id="Dcn-FR-y5Z"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 Day Free Trial*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwU-mZ-u9O">
+                                <rect key="frame" x="43" y="421" width="290" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="GAP-jF-Afv"/>
+                                    <constraint firstAttribute="width" constant="290" id="aeg-r2-7vw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1420,9 +1430,10 @@
                             <constraint firstItem="I73-yp-w6e" firstAttribute="leading" secondItem="Vw0-g8-d3c" secondAttribute="trailing" constant="-290" id="EFd-FS-4j6"/>
                             <constraint firstItem="Unf-7M-pQL" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="FIo-b4-Fac"/>
                             <constraint firstItem="Vw0-g8-d3c" firstAttribute="leading" secondItem="ib1-nn-yoS" secondAttribute="trailing" constant="-316" id="J2h-XJ-3xG"/>
-                            <constraint firstItem="d5u-Sg-1eZ" firstAttribute="top" secondItem="dae-TK-fWP" secondAttribute="bottom" constant="-52" id="Mzj-8k-DpZ"/>
+                            <constraint firstItem="d5u-Sg-1eZ" firstAttribute="top" secondItem="dae-TK-fWP" secondAttribute="bottom" constant="-43" id="Mzj-8k-DpZ"/>
                             <constraint firstItem="Unf-7M-pQL" firstAttribute="top" secondItem="MsZ-I5-gJN" secondAttribute="bottom" constant="26" id="N5i-D0-Is4"/>
                             <constraint firstItem="vE9-Gt-cpy" firstAttribute="top" secondItem="EBM-z0-Bav" secondAttribute="top" constant="72" id="OM8-Pa-IDf"/>
+                            <constraint firstItem="GwU-mZ-u9O" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="QQT-Lv-Jd0"/>
                             <constraint firstItem="mfN-jp-djX" firstAttribute="leading" secondItem="Unf-7M-pQL" secondAttribute="trailing" constant="-316" id="Vqn-Gk-M2n"/>
                             <constraint firstItem="EBM-z0-Bav" firstAttribute="bottom" secondItem="BPB-mD-7mh" secondAttribute="bottom" constant="7" id="WAd-BQ-aE0"/>
                             <constraint firstItem="d5u-Sg-1eZ" firstAttribute="top" secondItem="ib1-nn-yoS" secondAttribute="bottom" constant="9" id="WR8-Wl-0wP"/>
@@ -1437,15 +1448,16 @@
                             <constraint firstItem="ib1-nn-yoS" firstAttribute="top" secondItem="Vw0-g8-d3c" secondAttribute="bottom" constant="-42" id="e1V-nt-aue"/>
                             <constraint firstItem="G3e-8r-nT1" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="ffO-cn-1g6"/>
                             <constraint firstItem="EBM-z0-Bav" firstAttribute="trailing" secondItem="uj0-Er-zqp" secondAttribute="trailing" constant="16" id="fis-Nm-Tgl"/>
-                            <constraint firstItem="dae-TK-fWP" firstAttribute="top" secondItem="d5u-Sg-1eZ" secondAttribute="bottom" constant="-51" id="g3a-Ik-4EF"/>
+                            <constraint firstItem="dae-TK-fWP" firstAttribute="top" secondItem="d5u-Sg-1eZ" secondAttribute="bottom" constant="-60" id="g3a-Ik-4EF"/>
                             <constraint firstItem="MsZ-I5-gJN" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="gVQ-ui-KdJ"/>
                             <constraint firstItem="5Ua-Lm-z7k" firstAttribute="top" secondItem="EBM-z0-Bav" secondAttribute="top" constant="14" id="ih4-yg-wus"/>
                             <constraint firstItem="d5u-Sg-1eZ" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="jkg-wW-SGc"/>
                             <constraint firstItem="dae-TK-fWP" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" constant="0.5" id="lHR-01-XCw"/>
                             <constraint firstItem="uj0-Er-zqp" firstAttribute="top" secondItem="EBM-z0-Bav" secondAttribute="top" constant="7" id="mR8-Ha-J8k"/>
                             <constraint firstItem="BPB-mD-7mh" firstAttribute="centerX" secondItem="q4K-cR-Ig4" secondAttribute="centerX" id="pUe-d3-dcY"/>
+                            <constraint firstItem="GwU-mZ-u9O" firstAttribute="top" secondItem="dae-TK-fWP" secondAttribute="bottom" constant="-7" id="qH5-Jv-2y2"/>
                             <constraint firstItem="Ogf-jt-lw8" firstAttribute="leading" secondItem="mfN-jp-djX" secondAttribute="trailing" constant="-290" id="r9h-E2-bPl"/>
-                            <constraint firstItem="pwr-Ll-kX1" firstAttribute="top" secondItem="d5u-Sg-1eZ" secondAttribute="bottom" constant="2" id="u4f-Ml-0uo"/>
+                            <constraint firstItem="pwr-Ll-kX1" firstAttribute="top" secondItem="d5u-Sg-1eZ" secondAttribute="bottom" id="u4f-Ml-0uo"/>
                             <constraint firstItem="Unf-7M-pQL" firstAttribute="top" secondItem="mfN-jp-djX" secondAttribute="bottom" constant="-40" id="xg5-aM-okl"/>
                             <constraint firstItem="EBM-z0-Bav" firstAttribute="bottom" secondItem="BPB-mD-7mh" secondAttribute="bottom" constant="7" id="z02-wV-ETs"/>
                         </constraints>
@@ -2154,7 +2166,7 @@
                                     <segue destination="HGi-Hl-bEq" kind="show" customClass="SegueFromRight" customModule="Eat" customModuleProvider="target" id="EqS-2J-Ia9"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NamasteColored" translatesAutoresizingMaskIntoConstraints="NO" id="prU-e7-18O">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewYou" translatesAutoresizingMaskIntoConstraints="NO" id="prU-e7-18O">
                                 <rect key="frame" x="136" y="46" width="102" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Jr1-aN-avs"/>
@@ -2236,7 +2248,7 @@
         <image name="InfoIcon" width="134" height="134"/>
         <image name="LightGreen" width="350" height="61"/>
         <image name="MealsUntapped" width="16" height="16"/>
-        <image name="NamasteColored" width="637" height="112"/>
+        <image name="NewYou" width="417" height="77"/>
         <image name="OPEN" width="1146" height="231"/>
         <image name="PinkOutline" width="958" height="189"/>
         <image name="PlainJane" width="795" height="1658"/>
@@ -2254,13 +2266,12 @@
         <image name="solidgreen" width="958" height="189"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dcn-FR-y5Z"/>
         <segue reference="X5n-Cy-mff"/>
         <segue reference="n47-FR-FVK"/>
         <segue reference="Zhh-wy-7bd"/>
         <segue reference="Cx6-R9-lMb"/>
-        <segue reference="nRD-N8-Le1"/>
-        <segue reference="Sfx-zm-p7H"/>
-        <segue reference="aq7-Y2-A2A"/>
+        <segue reference="gJo-qU-GAN"/>
+        <segue reference="vNd-z8-MGp"/>
+        <segue reference="WBk-0A-KD8"/>
     </inferredMetricsTieBreakers>
 </document>
