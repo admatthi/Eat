@@ -56,6 +56,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 newuser = false
                 
+                ref?.child("Users").child(uid).updateChildValues(["LastOpened" : todaysdate])
+
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "LoginToWorkouts", sender: self)
                     
@@ -94,9 +96,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 
                 
-                if goalweight != "" && currentweight != "" {
+                if bodymonthlygoal != "" && careermonthlygoal != "" {
                     
-                ref?.child("OurUsers").child(uid).updateChildValues(["Goal Weight" : goalweight, "Current Weight" : currentweight])
+                    ref?.child("Users").child(uid).updateChildValues(["LastOpened" : todaysdate, "BodyMonthlyGoal" : bodymonthlygoal, "CareerMonthlyGoal" : careermonthlygoal, "PeopleMonthlyGoal" : peoplemonthlygoal])
                     
                 }
                 

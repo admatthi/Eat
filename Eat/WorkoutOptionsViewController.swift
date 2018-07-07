@@ -17,25 +17,95 @@ import UserNotifications
 
 let bigblack = UIColor(red:0.18, green:0.18, blue:0.24, alpha:1.0)
 
-var workoutids = [String]()
-var titles = [String:String]()
-var levels = [String:String]()
-var descriptions = [String:String]()
-var betterimages = [UIImage]()
+var selectedcategory = String()
+var activityids = [String]()
+var activitylabels = [String:String]()
+var finished = [String:String]()
+var tags = [String:String]()
 
-var selectedworkout = String()
+var bodymonthlygoal = String()
+var careermonthlygoal = String()
+var peoplemonthlygoal = String()
 
-class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+var selectedtask = String()
+var selectedtaskid = String()
 
-    @IBOutlet weak var collectionView: UICollectionView!
+class WorkoutOptionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-
+    @IBOutlet weak var tappeople: UIButton!
+    
+    @IBOutlet weak var tapcareer: UIButton!
+    @IBOutlet weak var tapbody: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var goallabel: UILabel!
+    @IBAction func tapPeople(_ sender: Any) {
+        
+        peopletapped()
+    }
+    @IBAction func tapBody(_ sender: Any) {
+        
+        bodytapped()
+    }
+    @IBAction func tapCareer(_ sender: Any) {
+        
+        careertapped()
+    }
+    
+    func bodytapped() {
+        
+        tapbody.alpha = 1
+        tapcareer.alpha = 0.5
+        tappeople.alpha = 0.5
+        
+        selectedcategory = "Body"
+        
+        queryforlastopened  { () -> () in
+            
+            self.goallabel.text = bodymonthlygoal
+            
+            self.seeifnewday()
+            
+        }
+    }
+    
+    func careertapped() {
+        
+        tapcareer.alpha = 1
+        tapbody.alpha = 0.5
+        tappeople.alpha = 0.5
+        
+        selectedcategory = "Career"
+        
+        queryforlastopened  { () -> () in
+            
+            self.goallabel.text = careermonthlygoal
+            
+            self.seeifnewday()
+            
+        }
+    }
+    
+    func peopletapped() {
+        
+        tappeople.alpha = 1
+        tapbody.alpha = 0.5
+        tapcareer.alpha = 0.5
+        
+        selectedcategory = "People"
+        
+        queryforlastopened  { () -> () in
+            
+            self.goallabel.text = peoplemonthlygoal
+            
+            self.seeifnewday()
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ref = Database.database().reference()
-        collectionView.layer.cornerRadius = 10.0
-        collectionView.backgroundColor = bigblack
  
 
 
@@ -65,11 +135,7 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
 
             uid = (Auth.auth().currentUser?.uid)!
 
-
-            queryforworkoutids { () -> () in
-                
-                self.queryforworkoutinfo()
-            }
+            bodytapped()
 
         }
 //
@@ -81,24 +147,93 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    func queryforworkoutids(completed: @escaping (() -> ()) ) {
+
+    
+    var lastopened = String()
+    
+    func queryforlastopened(completed: @escaping (() -> ()) ) {
+        
+        ref?.child("Users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+
+            var value = snapshot.value as? NSDictionary
+
+            if var activityvalue = value?["LastOpened"] as? String {
+
+                self.lastopened = activityvalue
+
+            }
+            
+            if var activityvalue1 = value?["BodyMonthlyGoal"] as? String {
+                
+                bodymonthlygoal = activityvalue1
+                
+            }
+            
+            if var activityvalue2 = value?["PeopleMonthlyGoal"] as? String {
+                
+                peoplemonthlygoal = activityvalue2
+                
+            }
+            
+            if var activityvalue3 = value?["CareerMonthlyGoal"] as? String {
+                
+                careermonthlygoal = activityvalue3
+                
+                completed()
+
+            }
+
+            
+        })
+    
+    }
+    
+    func seeifnewday() {
+        
+        if lastopened == todaysdate {
+            
+            thedate = todaysdate
+            
+            queryforactivityids { () -> () in
+            
+                            self.queryforworkoutinfo()
+                        }
+        } else {
+            
+
+            let calendar = Calendar.current
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM-dd-yy"
+            yesterdaydate =  dateFormatter.string(from: Date().yesterday)
+            
+            self.tableView.reloadData()
+//            thedate = yesterdaydate
+//
+//            queryforactivityids { () -> () in
+//
+//                self.queryforworkoutinfo()
+//            }
+            
+        }
+    }
+    
+    var yesterdaydate = String()
+    
+    var thedate = String()
+
+
+    func queryforactivityids(completed: @escaping (() -> ()) ) {
         
         
-        workoutids.removeAll()
-        titles.removeAll()
-        levels.removeAll()
-        descriptions.removeAll()
-        betterimages.removeAll()
-        
-        betterimages.append(UIImage(named: "Waist-1")!)
-        betterimages.append(UIImage(named: "LegsThighs")!)
-        betterimages.append(UIImage(named: "LowBack")!)
-        betterimages.append(UIImage(named: "SlimArms")!)
-        betterimages.append(UIImage(named: "Core")!)
+        activityids.removeAll()
+        activitylabels.removeAll()
+        finished.removeAll()
+        tags.removeAll()
+        tableView.reloadData()
         
         var functioncounter = 0
         
-            ref?.child("Workouts").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child("Users").child(uid).child(selectedcategory).child(thedate).observeSingleEvent(of: .value, with: { (snapshot) in
         
                     var value = snapshot.value as? NSDictionary
         
@@ -108,7 +243,7 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
         
                             let ids = each.key
         
-                            workoutids.append(ids)
+                            activityids.append(ids)
         
                             functioncounter += 1
         
@@ -131,64 +266,40 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
         
         var functioncounter = 0
         
-        for each in workoutids {
+        for each in activityids {
             
-            ref?.child("Workouts").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
-                
+            ref?.child("Users").child(uid).child(selectedcategory).child(thedate).child(each).observeSingleEvent(of: .value, with: { (snapshot) in
+
                 var value = snapshot.value as? NSDictionary
                 
-                if var activityvalue = value?["Title"] as? String {
+                if var activityvalue = value?["Activity"] as? String {
                     
-                    titles[each] = activityvalue
-                    
-                    
-                }
-                
-                
-                if var activityvalue = value?["Level"] as? String {
-                    
-                    levels[each] = activityvalue
+                    activitylabels[each] = activityvalue
                     
                     
                 }
                 
                 
-                if var activityvalue = value?["Description"] as? String {
+                if var activityvalue = value?["Tag"] as? String {
                     
-                    descriptions[each] = activityvalue
+                    tags[each] = activityvalue
                     
                     
                 }
                 
                 
-                if var productimagee = value?["Image"] as? String {
+                if var activityvalue = value?["Completed"] as? String {
                     
-                    if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
-                        
-                        let url = URL(string: productimagee)
-                        
-                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                        
-                        if data != nil {
-                            
-                            let productphoto = UIImage(data: (data)!)
-                            
-                            //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
-                            let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
-                            
-//                            betterimages[each] = productphoto
-                            
-                            
-                        }
-                        
-                        
-                    }
+                    finished[each] = activityvalue
+                    
+                    
                 }
+                
                 
                 functioncounter += 1
-                if functioncounter == workoutids.count {
+                if functioncounter == activityids.count {
                     
-                    self.collectionView.reloadData()
+                    self.tableView.reloadData()
                 }
             })
             
@@ -196,47 +307,76 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        
-        if titles.count > 0 {
+    
 
-            return titles.count
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if activitylabels.count > 0 {
+            
+            return activitylabels.count
+            
+        } else {
+            
+            return 1
+        }
+        
+        
+    }
+    
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Activities", for: indexPath) as! ActivitiesTableViewCell
+        
+        if activitylabels.count > indexPath.row {
+            
+            cell.activitylabel.text = activitylabels[activityids[indexPath.row]]
+            
+            if tags[activityids[indexPath.row]] == "Lesson Learned" {
+                
+                cell.tagg.image = UIImage(named: "Lesson Learned")
+            }
+            
+            if tags[activityids[indexPath.row]] == "Win" {
+                
+                cell.tagg.image = UIImage(named: "Win")
+
+            }
+            
+            if tags[activityids[indexPath.row]] == "Gratitude" {
+                
+                cell.tagg.image = UIImage(named: "Gratitude")
+
+            }
+            
+            if finished[activityids[indexPath.row]] == "True" {
+                
+                cell.check.image = UIImage(named: "BlueCheck")
+                
+            } else {
+                
+                cell.check.image = UIImage(named: "GreyCheck")
+
+            }
+
 
         } else {
-
-            return 0
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Workouts", for: indexPath) as! WorkoutCategoryCollectionViewCell
-
-        if titles.count > indexPath.row {
             
-        cell.category.text = titles[workoutids[indexPath.row]]
-//        cell.difficulty.text = levels[workoutids[indexPath.row]]
-        cell.intro.text = descriptions[workoutids[indexPath.row]]
-        cell.backimage.image = betterimages[indexPath.row]
-            
-        }
+            cell.activitylabel.text = "You haven't added any tasks for today today yet"
 
-        
+        }
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        selectedworkout = titles[workoutids[indexPath.row]]!
-        selectedexercise = workoutids[indexPath.row]
-        self.performSegue(withIdentifier: "HomeToWorkout", sender: self)
         
     }
+
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-
+        selectedtask = activitylabels[activityids[indexPath.row]]!
+        
+        selectedtaskid = activityids[indexPath.row]
+        
+        self.performSegue(withIdentifier: "HomeToEditTask", sender: self)
+    }
         
     
     /*
@@ -249,4 +389,22 @@ class WorkoutOptionsViewController: UIViewController, UICollectionViewDelegate, 
     }
     */
 
+}
+
+extension Date {
+    var yesterday: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+    }
+    var tomorrow: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+    var month: Int {
+        return Calendar.current.component(.month,  from: self)
+    }
+    var isLastDayOfMonth: Bool {
+        return tomorrow.month != month
+    }
 }

@@ -15,33 +15,47 @@ import FirebaseAuth
 import FBSDKCoreKit
 import UserNotifications
 
-var exerciseids = [String]()
-var etitles = [String:String]()
-var setsreps = [String:String]()
-var rest = [String:String]()
-var image1 = [String:UIImage]()
-var image2 = [String:UIImage]()
+var categories = [String]()
 
-var selectedexercise = String()
+class WorkoutViewController: UIViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
-class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var musclegrouplabel: UILabel!
+    @IBAction func tapCategory(_ sender: Any) {
+        
+        pickerView.alpha = 1
+    }
     
+    @IBAction func tapAdd(_ sender: Any) {
+        
+        if tf.text != "" {
+    ref?.child("Users").child(uid).updateChildValues(["LastOpened" : todaysdate])
+
+    ref?.child("Users").child(uid).child(selectedcategory).child(todaysdate).childByAutoId().updateChildValues(["Activity" : tf.text!, "Completed" : "False", "Tag" : ""])
+            
+            self.performSegue(withIdentifier: "NewTaskToHome", sender: self)
+        }
+
+        
+    }
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+
+    @IBOutlet weak var tapcategory: UIButton!
+    @IBOutlet weak var tf: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
 
-        tableView.reloadData()
+        tf.delegate = self
         
-        musclegrouplabel.text = selectedworkout
+        tf.becomeFirstResponder()
+
+        categories.removeAll()
+        categories.append("Body")
+        categories.append("People")
+        categories.append("Career")
         
-        queryforexerciseids { () -> () in
-            
-            self.queryforexerciseinfo()
-            
-        }
+        pickerView.alpha = 0
         // Do any additional setup after loading the view.
     }
 
@@ -50,182 +64,51 @@ class WorkoutViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func queryforexerciseids(completed: @escaping (() -> ()) ) {
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        exerciseids.removeAll()
-        etitles.removeAll()
-        image1.removeAll()
-        image2.removeAll()
-        setsreps.removeAll()
-        rest.removeAll()
-        var functioncounter = 0
-        
-        ref?.child("Exercises").child(selectedexercise).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            var value = snapshot.value as? NSDictionary
-            
-            if let snapDict = snapshot.value as? [String:AnyObject] {
-                
-                for each in snapDict {
-                    
-                    let ids = each.key
-                    
-                    exerciseids.append(ids)
-                    
-                    functioncounter += 1
-                    
-                    if functioncounter == snapDict.count {
-                        
-                        completed()
-                        
-                    }
-                    
-                    
-                }
-                
-            }
-            
-        })
+        self.view.endEditing(true)
         
     }
     
-    func queryforexerciseinfo() {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
-        var functioncounter = 0
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        for each in exerciseids {
+        if categories.count > 0 {
             
-            ref?.child("Exercises").child(selectedexercise).child(each).observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                var value = snapshot.value as? NSDictionary
-                
-                if var activityvalue = value?["Title"] as? String {
-                    
-                    etitles[each] = activityvalue
-                    
-                    
-                }
-                
-                
-                if var activityvalue = value?["setsreps"] as? String {
-                    
-                    setsreps[each] = activityvalue
-                    
-                    
-                }
-                
-                
-                if var activityvalue = value?["rest"] as? String {
-                    
-                    rest[each] = activityvalue
-                    
-                    
-                }
-                
-                
-                if var productimagee = value?["Image1"] as? String {
-                    
-                    if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
-                        
-                        let url = URL(string: productimagee)
-                        
-                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                        
-                        if data != nil {
-                            
-                            let productphoto = UIImage(data: (data)!)
-                            
-                            //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
-                            let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
-                            
-                            image1[each] = productphoto
-                            //                            matchimages[each] = productphoto!
-                            
-                            self.tableView.reloadData()
-                            
-                        }
-                        
-                        
-                    }
-                }
-                
-                
-                if var productimagee = value?["Image2"] as? String {
-                    
-                    if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
-                        
-                        let url = URL(string: productimagee)
-                        
-                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                        
-                        if data != nil {
-                            
-                            let productphoto = UIImage(data: (data)!)
-                            
-                            //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
-                            let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
-                            
-                            image2[each] = productphoto
-                            //                            matchimages[each] = productphoto!
-                            self.tableView.reloadData()
-
-                            
-                        }
-                        
-                        
-                    }
-                }
-                
-                self.tableView.reloadData()
-
-                functioncounter += 1
-                if functioncounter == exerciseids.count {
-                    
-                    self.tableView.reloadData()
-                }
-            })
+            return categories[row]
             
+        } else {
+            
+            return "0"
             
         }
+        
     }
     
-    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        if etitles.count > 0 {
-
-            return etitles.count
-
+        if categories.count > 0 {
+            
+            return categories.count
+            
         } else {
-
+            
             return 1
         }
-        
-        
     }
     
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Exercises", for: indexPath) as! WorkoutTableViewCell
-        
-        cell.photo1.layer.masksToBounds = true
-        cell.photo1.layer.cornerRadius = cell.photo1.frame.height/2
-        
-        cell.photo2.layer.masksToBounds = true
-        cell.photo2.layer.cornerRadius = cell.photo2.frame.height/2
-        
-        if etitles.count > indexPath.row {
-
-            cell.title.text = etitles[exerciseids[indexPath.row]]
-
-//            cell.rest.text = rest[exerciseids[indexPath.row]]
-            cell.setsreps.text = setsreps[exerciseids[indexPath.row]]
-            cell.photo1.image = image1[exerciseids[indexPath.row]]
-            cell.photo2.image = image2[exerciseids[indexPath.row]]
-
-        }
-        return cell
-        
+        tapcategory.setTitle(categories[row], for: .normal)
+        pickerView.alpha = 0 
     }
+
+
     /*
     // MARK: - Navigation
 
