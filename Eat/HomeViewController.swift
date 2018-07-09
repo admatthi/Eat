@@ -14,6 +14,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import FBSDKCoreKit
 import UserNotifications
+import AudioToolbox
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -52,13 +53,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         selectedcategory = "Health"
         
-        queryforlastopened  { () -> () in
-            
             self.goallabel.text = bodymonthlygoal
             
-            self.seeifnewday()
-            
-        }
+            self.queryforworkoutids { () -> () in
+                
+                self.queryforworkoutinfo()
+                
+            }
     }
     
     func careertapped() {
@@ -70,13 +71,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         selectedcategory = "Wealth"
         
-        queryforlastopened  { () -> () in
-            
             self.goallabel.text = careermonthlygoal
             
-            self.seeifnewday()
-            
-        }
+            self.queryforworkoutids { () -> () in
+                
+                self.queryforworkoutinfo()
+                
+            }
     }
     
     func peopletapped() {
@@ -88,13 +89,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         selectedcategory = "Love"
         
-        queryforlastopened  { () -> () in
-            
             self.goallabel.text = peoplemonthlygoal
             
-            self.seeifnewday()
-            
-        }
+            self.queryforworkoutids { () -> () in
+                
+                self.queryforworkoutinfo()
+                
+            }
     }
     
     func happinesstapped() {
@@ -106,13 +107,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         selectedcategory = "Happiness"
         
-        queryforlastopened  { () -> () in
-            
+        
             self.goallabel.text = happinessmonthlygoal
             
-            self.seeifnewday()
-            
-        }
+            self.queryforworkoutids { () -> () in
+                
+                self.queryforworkoutinfo()
+                
+            }
     }
     
     override func viewDidLoad() {
@@ -146,7 +148,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             uid = (Auth.auth().currentUser?.uid)!
             
-            bodytapped()
+            queryforlastopened  { () -> () in
+                
+                self.bodytapped()
+
+            }
+            
             
         }
         //
@@ -204,82 +211,81 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func seeifnewday() {
-        
-        if lastopened == todaysdate {
-            
-            thedate = todaysdate
-            
-            self.queryforworkoutinfo()
-            
-        } else {
-            
-            
-            let calendar = Calendar.current
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM-dd-yy"
-            yesterdaydate =  dateFormatter.string(from: Date().yesterday)
-            
-            
-        }
-    }
     
     var yesterdaydate = String()
     
     var thedate = String()
     
-    
-    func queryforworkoutinfo() {
+     func queryforworkoutids(completed: @escaping (() -> ()) ) {
         
         var functioncounter = 0
-        
+       
+        activityids.removeAll()
+        activitylabels.removeAll()
+        tags.removeAll()
+        tableView.reloadData()
         ref?.child("Users").child(uid).child(selectedcategory).observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             
-            if var activityvalue = value?["Targets1"] as? String {
+            if let snapDict = snapshot.value as? [String:AnyObject] {
                 
-                
-            }
-            
-            
-            if var activityvalue = value?["Targets2"] as? String {
-                                
-                
-            }
-            
-            
-            if var activityvalue = value?["morning"] as? String {
-                
-                self.morning.text = activityvalue
-                
-                
-            }
-            
-            if var activityvalue = value?["lessons"] as? String {
-                
-                self.lessons.text = activityvalue
-                
+                for each in snapDict {
+                    
+                    let ids = each.key
+                    
+                    activityids.append(ids)
+                    
+                    functioncounter += 1
+                    
+                    if functioncounter == snapDict.count {
+                        
+                        completed()
+                        
+                    }
+                    
+                    
+                }
                 
             }
-            
-            if var activityvalue = value?["wins"] as? String {
-                
-                self.wins.text = activityvalue
-                
-                
-            }
-            
-            if var activityvalue = value?["evening"] as? String {
-                
-                self.evening.text = activityvalue
-                
-                
-            }
-            
             
         })
         
+    }
+    @IBOutlet weak var tableView: UITableView!
+    func queryforworkoutinfo() {
+        
+        var functioncounter = 0
+        
+        for each in activityids  {
+            
+            ref?.child("Users").child(uid).child(selectedcategory).child(each).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            var value = snapshot.value as? NSDictionary
+            
+            if var activityvalue = value?["Activity"] as? String {
+                
+                activitylabels[each] = activityvalue
+                
+            }
+                
+                
+            if var activityvalue2 = value?["Tag"] as? String {
+                    
+                    tags[each] = activityvalue2
+                    
+                }
+            
+                functioncounter += 1
+                
+                if functioncounter == activityids.count {
+                    
+                    self.tableView.reloadData()
+                    
+                }
+        })
+        
+        }
         
     }
     
@@ -291,8 +297,59 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if activitylabels.count > 0 {
+            
+            return activitylabels.count
+            
+        } else {
+            
+            return 1
+        }
+        
+    }
     
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Activities", for: indexPath) as! ActivitiesTableViewCell
+        
+        cell.selectionStyle = .none
+        cell.seperator.alpha = 1
+        cell.tagimage.alpha = 1
+        
+        if activitylabels.count > indexPath.row {
+            
+            cell.activitylabel.text = activitylabels[activityids[indexPath.row]]
+            
+            cell.tagimage.image = UIImage(named: "\(tags[activityids[indexPath.row]]!)")
+            
+            print("\(tags[activityids[indexPath.row]]!)")
+            
+            cell.tagimage.alpha = 1
+
+        } else {
+            
+            cell.activitylabel.text = "You haven't addded any tasks here yet."
+            cell.seperator.alpha = 0
+            cell.tagimage.alpha = 0
+        }
+        return cell
+        
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        let row = indexPath.row
+//        let cellWhereIsTheLabel = tableView.cellForRow(at: IndexPath(row: row, section: 0)) as! ActivitiesTableViewCell
+//
+//        cellWhereIsTheLabel.check.image = UIImage(named: "BlueCheck")
+//
+//        cellWhereIsTheLabel.activitylabel.alpha = 0.3
+
+//    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+
+    }
     
     /*
      // MARK: - Navigation
@@ -306,20 +363,3 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 }
 
-extension Date {
-    var yesterday: Date {
-        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
-    }
-    var tomorrow: Date {
-        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
-    }
-    var noon: Date {
-        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
-    }
-    var month: Int {
-        return Calendar.current.component(.month,  from: self)
-    }
-    var isLastDayOfMonth: Bool {
-        return tomorrow.month != month
-    }
-}

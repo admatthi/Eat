@@ -16,6 +16,7 @@ import FBSDKCoreKit
 import UserNotifications
 
 var tags3 = [String]()
+var actualtags = [String]()
 class EditTaskViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
 
     @IBAction func tapTag(_ sender: Any) {

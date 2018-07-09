@@ -19,20 +19,29 @@ var categories = [String]()
 
 class WorkoutViewController: UIViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
-
-    @IBAction func tapCategory(_ sender: Any) {
+    var tagselected = Bool()
+    @IBOutlet weak var taptag: UIButton!
+    @IBAction func tapTag(_ sender: Any) {
         
+        tagselected = true
+        pickerView.reloadAllComponents()
+        pickerView.alpha = 1
+    }
+    @IBAction func tapCategory(_ sender: Any) {
+        tagselected = false
+        pickerView.reloadAllComponents()
         pickerView.alpha = 1
     }
     
     @IBAction func tapAdd(_ sender: Any) {
         
         if tf.text != "" {
+   
     ref?.child("Users").child(uid).updateChildValues(["LastOpened" : todaysdate])
 
-    ref?.child("Users").child(uid).child(selectedcategory).child(todaysdate).childByAutoId().updateChildValues(["Activity" : tf.text!, "Completed" : "False", "Tag" : ""])
+    ref?.child("Users").child(uid).child(selectedcategory).childByAutoId().updateChildValues(["Activity" : tf.text!, "Tag" : selectedtag])
             
-            self.performSegue(withIdentifier: "NewTaskToHome", sender: self)
+            self.performSegue(withIdentifier: "AddToHome", sender: self)
         }
 
         
@@ -51,9 +60,15 @@ class WorkoutViewController: UIViewController,UITextFieldDelegate, UIPickerViewD
         tf.becomeFirstResponder()
 
         categories.removeAll()
-        categories.append("Body")
-        categories.append("People")
-        categories.append("Career")
+        categories.append("Health")
+        categories.append("Wealth")
+        categories.append("Love")
+        categories.append("Happiness")
+        
+        actualtags.removeAll()
+        actualtags.append("Lesson Learned")
+        actualtags.append("Win")
+        actualtags.append("Grateful")
         
         pickerView.alpha = 0
         // Do any additional setup after loading the view.
@@ -78,37 +93,76 @@ class WorkoutViewController: UIViewController,UITextFieldDelegate, UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        if categories.count > 0 {
+        
+        if tagselected {
             
-            return categories[row]
+            return actualtags[row]
             
         } else {
             
-            return "0"
+            if tagselected == false {
+                
+                return categories[row]
+                
+            } else {
+                
+                return "0"
+                
+            }
             
         }
+
         
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        if categories.count > 0 {
+        
+        if tagselected {
             
-            return categories.count
+            return actualtags.count
             
         } else {
             
-            return 1
+            if tagselected == false {
+                
+                return categories.count
+                
+            } else {
+                
+                return 1
+                
+            }
+            
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        tapcategory.setTitle(categories[row], for: .normal)
+        
+        if tagselected {
+            
+            selectedtag = actualtags[row]
+            taptag.setTitle("", for: .normal)
+            taptag.setBackgroundImage(UIImage(named: actualtags[row]), for: .normal)
+            
+        } else {
+            
+            if tagselected == false {
+                
+                selectedcategory = categories [row]
+                tapcategory.setTitle(categories[row], for: .normal)
+
+            } else {
+                
+            }
+            
+        }
+        
         pickerView.alpha = 0 
     }
 
-
+var selectedtag = String()
     /*
     // MARK: - Navigation
 

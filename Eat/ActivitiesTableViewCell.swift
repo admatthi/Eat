@@ -10,9 +10,9 @@ import UIKit
 
 class ActivitiesTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var tagg: UIImageView!
+    @IBOutlet weak var tagimage: UIImageView!
+    @IBOutlet weak var seperator: UILabel!
     @IBOutlet weak var activitylabel: UILabel!
-    @IBOutlet weak var check: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
