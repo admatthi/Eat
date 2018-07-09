@@ -18,213 +18,142 @@ class BViewController: UIViewController {
     var b2pressed = Bool()
     var b3pressed = Bool()
     var b4pressed = Bool()
-    
-    @IBOutlet weak var tapbutton1: UIButton!
-    @IBOutlet weak var tapbutton2: UIButton!
-    @IBOutlet weak var tapbutton3: UIButton!
-    @IBOutlet weak var tapbutton4: UIButton!
-    
-    @IBOutlet weak var tapwaist: UIButton!
-    @IBOutlet weak var taparms: UIButton!
-    @IBOutlet weak var tapthighs: UIButton!
-    @IBOutlet weak var tapabs: UIButton!
-    @IBOutlet weak var waist: UIImageView!
-    @IBOutlet weak var arms: UIImageView!
-    @IBOutlet weak var thighs: UIImageView!
-    @IBOutlet weak var abs: UIImageView!
-    @IBAction func tapWaist(_ sender: Any) {
+
+    @IBOutlet weak var taplove: UIButton!
+    @IBOutlet weak var taphealth: UIButton!
+    @IBOutlet weak var tapwealth: UIButton!
+    @IBOutlet weak var taphappiness: UIButton!
+    @IBOutlet weak var love: UIImageView!
+    @IBOutlet weak var health: UIImageView!
+    @IBOutlet weak var wealth: UIImageView!
+    @IBOutlet weak var happiness: UIImageView!
+    @IBAction func tapLove(_ sender: Any) {
         
-        if waistb {
+        if loveb {
             
-            waisttapped()
+            lovetapped()
             
         } else {
             
-            waistuntapped()
+            loveuntapped()
         }
     }
-    @IBAction func tapArms(_ sender: Any) {
+    @IBAction func tapHealth(_ sender: Any) {
         
-        if armsb {
+        if healthb {
             
-            armstapped()
+            healthtapped()
             
         } else {
             
-            armsuntapped()
+            healthuntapped()
         }
     }
-    @IBAction func tapThighs(_ sender: Any) {
+    @IBAction func tapWealth(_ sender: Any) {
         
-        if thighsb {
+        if wealthb {
             
-            thighstapped()
+            wealthtapped()
             
         } else {
             
-            thighsuntapped()
+            wealthuntapped()
         }
     }
-    @IBAction func tapAbs(_ sender: Any) {
+    @IBAction func tapHappiness(_ sender: Any) {
         
-        if absb {
+        if happinessb {
             
-            abstapped()
+            happinesstapped()
             
         } else {
             
-            absuntapped()
+            happinessuntapped()
         }
     }
     @IBAction func tapGetStarted(_ sender: Any) {
      
-        if thighsb {
+        if wealthb {
             
-            thighstapped()
+            wealthtapped()
             
         } else {
             
-            thighsuntapped()
+            wealthuntapped()
         }
     }
     
-    var absb = Bool()
-    var thighsb = Bool()
-    var armsb = Bool()
-    var waistb = Bool()
+    var happinessb = Bool()
+    var wealthb = Bool()
+    var healthb = Bool()
+    var loveb = Bool()
     
-    func absuntapped() {
+    func happinessuntapped() {
         
-        abs.image = UIImage(named: "Abs")
-        tapabs.setBackgroundImage(UIImage(named: "GreyOutline"), for: .normal)
-        tapabs.setTitleColor(darkblue, for: .normal)
+        taphappiness.setBackgroundImage(UIImage(named: "HappinessLite"), for: .normal)
         
-        absb = true
+        happinessb = true
 
     }
     
-    func abstapped() {
+    func happinesstapped() {
         
-        abs.image = UIImage(named: "AbsColored")
-        tapabs.setBackgroundImage(UIImage(named: "ColoredOutline"), for: .normal)
-        tapabs.setTitleColor(.white, for: .normal)
+        taphappiness.setBackgroundImage(UIImage(named: "Happiness"), for: .normal)
      
-        absb = false
+        happinessb = false
 
     }
     
-    func waistuntapped() {
+    func loveuntapped() {
         
-        waist.image = UIImage(named: "Waist")
-        tapwaist.setBackgroundImage(UIImage(named: "GreyOutline"), for: .normal)
-        tapwaist.setTitleColor(darkblue, for: .normal)
+        taplove.setBackgroundImage(UIImage(named: "LoveLite"), for: .normal)
         
-        waistb = true
+        loveb = true
         
     }
     
-    func waisttapped() {
+    func lovetapped() {
         
-        waist.image = UIImage(named: "WaistColored")
-        tapwaist.setBackgroundImage(UIImage(named: "ColoredOutline"), for: .normal)
-        tapwaist.setTitleColor(.white, for: .normal)
+        taplove.setBackgroundImage(UIImage(named: "Love"), for: .normal)
         
-        waistb = false
+        loveb = false
         
     }
     
-    func armsuntapped() {
+    func healthuntapped() {
         
-        arms.image = UIImage(named: "Arms")
-        taparms.setBackgroundImage(UIImage(named: "GreyOutline"), for: .normal)
-        taparms.setTitleColor(darkblue, for: .normal)
+        taphealth.setBackgroundImage(UIImage(named: "HealthLite"), for: .normal)
         
-        armsb = true
+        healthb = true
         
     }
     
-    func armstapped() {
+    func healthtapped() {
         
-        arms.image = UIImage(named: "ArmsColored")
-        taparms.setBackgroundImage(UIImage(named: "ColoredOutline"), for: .normal)
-        taparms.setTitleColor(.white, for: .normal)
+        taphealth.setBackgroundImage(UIImage(named: "Health"), for: .normal)
         
-        armsb = false
+        healthb = false
         
     }
     
-    func thighsuntapped() {
+    func wealthuntapped() {
         
-        thighs.image = UIImage(named: "Thighs")
-        tapthighs.setBackgroundImage(UIImage(named: "GreyOutline"), for: .normal)
-        tapthighs.setTitleColor(darkblue, for: .normal)
+        tapwealth.setBackgroundImage(UIImage(named: "MoneyLite"), for: .normal)
+        tapwealth.setTitleColor(darkblue, for: .normal)
         
-        thighsb = true
-        
-    }
-    
-    func thighstapped() {
-        
-        thighs.image = UIImage(named: "ThighsColored")
-        tapthighs.setBackgroundImage(UIImage(named: "ColoredOutline"), for: .normal)
-        tapthighs.setTitleColor(.white, for: .normal)
-        
-        thighsb = false
+        wealthb = true
         
     }
     
-    @IBAction func tapButton1(_ sender: Any) {
+    func wealthtapped() {
         
-        //        if b1pressed {
-        //
-        //            tapbutton1.alpha = 1.0
-        //            b1pressed = false
-        //
-        //
-        //        } else {
-        //
-        //            tapbutton1.alpha = 0.5
-        //
-        //            b1pressed = true
-        //        }
+        tapwealth.setBackgroundImage(UIImage(named: "Money"), for: .normal)
         
-
-        tapbutton1.setBackgroundImage(UIImage(named:"ColoredButton"), for: .normal)
-        tapbutton1.setTitleColor(.white, for: .normal)
-        tapbutton2.setTitleColor(.black, for: .normal)
-        tapbutton3.setTitleColor(.black, for: .normal)
-        tapbutton2.setBackgroundImage(UIImage(named:"WhiteButton"), for: .normal)
-        tapbutton3.setBackgroundImage(UIImage(named:"WhiteButton"), for: .normal)
-        
+        wealthb = false
         
     }
-    @IBAction func tapButton2(_ sender: Any) {
-        
-        tapbutton2.setBackgroundImage(UIImage(named:"ColoredButton"), for: .normal)
-        tapbutton2.setTitleColor(.white, for: .normal)
-        tapbutton1.setTitleColor(.black, for: .normal)
-        tapbutton3.setTitleColor(.black, for: .normal)
-        tapbutton1.setBackgroundImage(UIImage(named:"WhiteButton"), for: .normal)
-        tapbutton3.setBackgroundImage(UIImage(named:"WhiteButton"), for: .normal)
-        
-        
-    }
-    @IBAction func tapButton3(_ sender: Any) {
-        
-        tapbutton3.setBackgroundImage(UIImage(named:"ColoredButton"), for: .normal)
-        tapbutton3.setTitleColor(.white, for: .normal)
-        tapbutton2.setTitleColor(.black, for: .normal)
-        tapbutton1.setTitleColor(.black, for: .normal)
-        tapbutton2.setBackgroundImage(UIImage(named:"WhiteButton"), for: .normal)
-        tapbutton1.setBackgroundImage(UIImage(named:"WhiteButton"), for: .normal)
-        
-        
-    }
-    @IBAction func tapButton4(_ sender: Any) {
-        
-        
-        
-    }
+    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -236,10 +165,10 @@ class BViewController: UIViewController {
         b3pressed = true
         b4pressed = true
         
-        absb = true
-        thighsb = true
-        waistb = true
-        armsb = true
+        happinessb = true
+        wealthb = true
+        loveb = true
+        healthb = true
         // Do any additional setup after loading the view.
     }
     

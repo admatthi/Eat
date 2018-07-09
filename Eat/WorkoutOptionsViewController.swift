@@ -23,10 +23,6 @@ var activitylabels = [String:String]()
 var finished = [String:String]()
 var tags = [String:String]()
 
-var bodymonthlygoal = String()
-var careermonthlygoal = String()
-var peoplemonthlygoal = String()
-var happinessmonthlygoal = String()
 
 var selectedtask = String()
 var selectedtaskid = String()

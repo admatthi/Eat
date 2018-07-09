@@ -17,22 +17,66 @@ import UserNotifications
 
 var categories = [String]()
 
-class WorkoutViewController: UIViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class WorkoutViewController: UIViewController,UITextFieldDelegate {
 
     var tagselected = Bool()
     @IBOutlet weak var taptag: UIButton!
     @IBAction func tapTag(_ sender: Any) {
         
-        tagselected = true
-        pickerView.reloadAllComponents()
-        pickerView.alpha = 1
+
+        selectedtag = "Effective"
+        taptag.alpha = 1
+        tapEffective.alpha = 0.5
+        
     }
     @IBAction func tapCategory(_ sender: Any) {
         tagselected = false
-        pickerView.reloadAllComponents()
-        pickerView.alpha = 1
+
+        selectedcategory = "Love"
+        tapcategory.alpha = 1
+        taphealth.alpha = 0.5
+        tapwealth.alpha = 0.5
+        taphappiness.alpha = 0.5
     }
+    @IBOutlet weak var tapwealth: UIButton!
+    @IBOutlet weak var taphappiness: UIButton!
+    @IBOutlet weak var taphealth: UIButton!
     
+    @IBAction func tapE(_ sender: Any) {
+        
+        selectedtag = "Ineffective"
+        taptag.alpha = 0.5
+        tapEffective.alpha = 1
+        
+    }
+    @IBAction func tapHappiness(_ sender: Any) {
+        
+        selectedcategory = "Happiness"
+        taphappiness.alpha = 1
+        taphealth.alpha = 0.5
+        tapwealth.alpha = 0.5
+        tapcategory.alpha = 0.5
+        
+    }
+    @IBAction func tapHealth(_ sender: Any) {
+        
+        selectedcategory = "Health"
+        taphealth.alpha = 1
+        taphappiness.alpha = 0.5
+        tapwealth.alpha = 0.5
+        tapcategory.alpha = 0.5
+        
+    }
+    @IBAction func tapWealth(_ sender: Any) {
+        
+        selectedcategory = "Wealth"
+        tapwealth.alpha = 1
+        taphappiness.alpha = 0.5
+        taphealth.alpha = 0.5
+        tapcategory.alpha = 0.5
+        
+    }
+    @IBOutlet weak var tapEffective: UIButton!
     @IBAction func tapAdd(_ sender: Any) {
         
         if tf.text != "" {
@@ -70,7 +114,7 @@ class WorkoutViewController: UIViewController,UITextFieldDelegate, UIPickerViewD
         actualtags.append("Win")
         actualtags.append("Grateful")
         
-        pickerView.alpha = 0
+
         // Do any additional setup after loading the view.
     }
 
@@ -86,82 +130,12 @@ class WorkoutViewController: UIViewController,UITextFieldDelegate, UIPickerViewD
         
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        
-        return 1
-    }
+  
+ 
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        
-        if tagselected {
-            
-            return actualtags[row]
-            
-        } else {
-            
-            if tagselected == false {
-                
-                return categories[row]
-                
-            } else {
-                
-                return "0"
-                
-            }
-            
-        }
 
-        
-    }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        
-        if tagselected {
-            
-            return actualtags.count
-            
-        } else {
-            
-            if tagselected == false {
-                
-                return categories.count
-                
-            } else {
-                
-                return 1
-                
-            }
-            
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        
-        if tagselected {
-            
-            selectedtag = actualtags[row]
-            taptag.setTitle("", for: .normal)
-            taptag.setBackgroundImage(UIImage(named: actualtags[row]), for: .normal)
-            
-        } else {
-            
-            if tagselected == false {
-                
-                selectedcategory = categories [row]
-                tapcategory.setTitle(categories[row], for: .normal)
-
-            } else {
-                
-            }
-            
-        }
-        
-        pickerView.alpha = 0 
-    }
-
+ 
 var selectedtag = String()
     /*
     // MARK: - Navigation

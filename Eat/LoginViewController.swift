@@ -14,6 +14,11 @@ import FirebaseDatabase
 import FirebaseAuth
 import FBSDKCoreKit
 
+var bodymonthlygoal = String()
+var careermonthlygoal = String()
+var happinessmonthlygoal = String()
+var peoplemonthlygoal = String()
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func tapLogin(_ sender: Any) {
@@ -56,8 +61,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 newuser = false
                 
-                ref?.child("Users").child(uid).updateChildValues(["LastOpened" : todaysdate])
-
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "LoginToWorkouts", sender: self)
                     
@@ -93,12 +96,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "MM-dd-yy"
                 var todaysdate =  dateFormatter.string(from: date)
+                let thirtyDaysAfterToday = Calendar.current.date(byAdding: .day, value: +30, to: date)!
+                let thirty = dateFormatter.string(from: thirtyDaysAfterToday)
                 
                 
-                
-                if bodymonthlygoal != "" && careermonthlygoal != "" {
+                if bodymonthlygoal != "" && careermonthlygoal != "" && happinessmonthlygoal != "" && careermonthlygoal != "" {
                     
-                    ref?.child("Users").child(uid).updateChildValues(["LastOpened" : todaysdate, "BodyMonthlyGoal" : bodymonthlygoal, "CareerMonthlyGoal" : careermonthlygoal, "PeopleMonthlyGoal" : peoplemonthlygoal])
+                    ref?.child("Users").child(uid).updateChildValues(["LastOpened" : todaysdate, "BodyMonthlyGoal" : bodymonthlygoal, "CareerMonthlyGoal" : careermonthlygoal, "PeopleMonthlyGoal" : peoplemonthlygoal, "HappinessMonthlyGoal" : happinessmonthlygoal, "FirstMonth" : thirty])
                     
                 }
                 
