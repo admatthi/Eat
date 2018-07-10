@@ -150,6 +150,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             uid = (Auth.auth().currentUser?.uid)!
             
+            goallabel.text = "No Monthly Goal Set"
+            
             queryforlastopened  { () -> () in
                 
                 self.bodytapped()
@@ -365,7 +367,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         } else {
             
-            cell.activitylabel.text = "You haven't addded any tasks here yet."
+            cell.activitylabel.text = "You haven't addded any habits here yet."
             cell.seperator.alpha = 0
             cell.tagimage.alpha = 0
         }

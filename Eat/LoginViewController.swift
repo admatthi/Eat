@@ -62,7 +62,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 newuser = false
                 
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "LoginToWorkouts", sender: self)
+                    self.performSegue(withIdentifier: "LoginToHome4", sender: self)
                     
                 }
             }
@@ -111,7 +111,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
                 DispatchQueue.main.async {
                     
-        self.performSegue(withIdentifier: "LoginToWorkouts", sender: self)
+        self.performSegue(withIdentifier: "LoginToHome4", sender: self)
                 }
             }
             

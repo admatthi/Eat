@@ -11,25 +11,21 @@ import FBSDKCoreKit
 
 var currentweight = String()
 var goalweight = String()
-
+var maingoal = String()
 
 class DViewController: UIViewController, UITextFieldDelegate {
 
     
+    @IBOutlet weak var goaltf: UITextField!
     @IBOutlet weak var errorlabel: UILabel!
     @IBAction func tapNext(_ sender: Any) {
         
-        if currenttf.text != "" && targettf.text != "" {
+        if goaltf.text != "" {
             
-            currentweight = currenttf.text!
-            
-            goalweight = ttf.text!
+            maingoal = goaltf.text!
         }
     }
-    @IBOutlet weak var ttf: UITextField!
-    @IBOutlet weak var targettf: UILabel!
-    @IBOutlet weak var currenttf: UITextField!
-    @IBOutlet weak var agetf: UITextField!
+
     //    @IBOutlet weak var slider1label: UILabel!
     //    @IBOutlet weak var slider2label: UILabel!
     //    @IBOutlet weak var slider2: UISlider!
@@ -61,9 +57,7 @@ class DViewController: UIViewController, UITextFieldDelegate {
         
         FBSDKAppEvents.logEvent("Fourth Screen")
         
-        agetf.delegate = self
-        currenttf.delegate = self
-        ttf.delegate = self
+ 
         
         // Do any additional setup after loading the view.
         

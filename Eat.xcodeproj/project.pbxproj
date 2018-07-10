@@ -14,6 +14,7 @@
 		9D28B78220EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */; };
 		9D28B78320EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */; };
 		9D3CC6A420F1AA4B0051AA76 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A320F1AA4B0051AA76 /* HomeViewController.swift */; };
+		9D3CC6A620F42ED50051AA76 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A520F42ED50051AA76 /* GoalViewController.swift */; };
 		9D4E2C3820D6A1510032107F /* WorkoutOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */; };
 		9D62591320CD833700383CEB /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62591220CD833700383CEB /* CodeViewController.swift */; };
 		9D6380EA20B1DE9500350C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */; };
@@ -83,6 +84,7 @@
 		9D28B77E20E7EE0B006C861C /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		9D3CC6A320F1AA4B0051AA76 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9D3CC6A520F42ED50051AA76 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOptionsViewController.swift; sourceTree = "<group>"; };
 		9D62591220CD833700383CEB /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				9D3CC6A320F1AA4B0051AA76 /* HomeViewController.swift */,
 				9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */,
 				9DD103B820F0FF1A00F2768C /* EditTaskViewController.swift */,
+				9D3CC6A520F42ED50051AA76 /* GoalViewController.swift */,
 				9D694E6E20B1DD5300AEED4E /* Assets.xcassets */,
 				9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */,
 				9D694E7320B1DD5300AEED4E /* Info.plist */,
@@ -510,6 +513,7 @@
 				9DFB9D5220D6A6B700DFA8A4 /* WorkoutTableViewCell.swift in Sources */,
 				9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */,
 				9D62591320CD833700383CEB /* CodeViewController.swift in Sources */,
+				9D3CC6A620F42ED50051AA76 /* GoalViewController.swift in Sources */,
 				9D28B77F20E7EE0B006C861C /* SubscriptionsViewController.swift in Sources */,
 				9D28B78120EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */,
 			);
