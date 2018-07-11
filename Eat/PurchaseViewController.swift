@@ -18,6 +18,8 @@ import StoreKit
 import FBSDKCoreKit
 import UserNotifications
 
+var tryingtopurchase = Bool()
+
 enum RegisteredPurchase: String {
     
     case sevendaytrial = "7DayTrial"
@@ -214,6 +216,8 @@ class PurchaseViewController: UIViewController {
                                         } else {
                                             
                                             self.showAlert(alert: self.alertForPurchaseResult(result: result))
+                                            
+                                            tryingtopurchase = true
                                             
                                             DispatchQueue.main.async {
                                                 

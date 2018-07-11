@@ -62,7 +62,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 newuser = false
                 
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "LoginToHome4", sender: self)
+                    self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
                     
                 }
             }
@@ -111,7 +111,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
                 DispatchQueue.main.async {
                     
-        self.performSegue(withIdentifier: "LoginToHome4", sender: self)
+        self.performSegue(withIdentifier: "LoginToDiscover", sender: self)
                 }
             }
             
@@ -140,6 +140,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         FBSDKAppEvents.logEvent("LoginScreen")
         
+        if tryingtopurchase {
+            
+            tapcreate.alpha = 1
+            
+        } else {
+            
+            tapcreate.alpha = 0 
+        }
 //        if newuser == true {
 //            
 //            tapcreate.alpha = 0

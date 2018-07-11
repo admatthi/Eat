@@ -9,12 +9,22 @@
 /* Begin PBXBuildFile section */
 		795997E15950346E54F8E7FF /* Pods_Eat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9B31F77D99EB6CC4E6816D /* Pods_Eat.framework */; };
 		7FC40C4A1A586544C4162912 /* Pods_EatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA55BB637A5AE4E79D6FA796 /* Pods_EatUITests.framework */; };
+		9D18577820F5677F0079FF84 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18577720F5677F0079FF84 /* ReaderViewController.swift */; };
+		9D18577920F5677F0079FF84 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18577720F5677F0079FF84 /* ReaderViewController.swift */; };
+		9D18577A20F5677F0079FF84 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18577720F5677F0079FF84 /* ReaderViewController.swift */; };
 		9D28B77F20E7EE0B006C861C /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B77E20E7EE0B006C861C /* SubscriptionsViewController.swift */; };
 		9D28B78120EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */; };
 		9D28B78220EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */; };
 		9D28B78320EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */; };
 		9D3CC6A420F1AA4B0051AA76 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A320F1AA4B0051AA76 /* HomeViewController.swift */; };
 		9D3CC6A620F42ED50051AA76 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A520F42ED50051AA76 /* GoalViewController.swift */; };
+		9D3CC6A820F50E8E0051AA76 /* DiscoverBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A720F50E8E0051AA76 /* DiscoverBooksViewController.swift */; };
+		9D3CC6AA20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A920F50F8E0051AA76 /* BooksCollectionViewCell.swift */; };
+		9D3CC6AB20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A920F50F8E0051AA76 /* BooksCollectionViewCell.swift */; };
+		9D3CC6AC20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A920F50F8E0051AA76 /* BooksCollectionViewCell.swift */; };
+		9D3CC6B220F516720051AA76 /* ReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */; };
+		9D3CC6B320F516720051AA76 /* ReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */; };
+		9D3CC6B420F516720051AA76 /* ReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */; };
 		9D4E2C3820D6A1510032107F /* WorkoutOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */; };
 		9D62591320CD833700383CEB /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62591220CD833700383CEB /* CodeViewController.swift */; };
 		9D6380EA20B1DE9500350C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */; };
@@ -81,10 +91,14 @@
 		0A264F16ACEF0C97563464A1 /* Pods-Eat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.debug.xcconfig"; sourceTree = "<group>"; };
 		440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		645BA5FDB84ADDFFA0E8BB26 /* Pods-EatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatUITests/Pods-EatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D18577720F5677F0079FF84 /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		9D28B77E20E7EE0B006C861C /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		9D3CC6A320F1AA4B0051AA76 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9D3CC6A520F42ED50051AA76 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		9D3CC6A720F50E8E0051AA76 /* DiscoverBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBooksViewController.swift; sourceTree = "<group>"; };
+		9D3CC6A920F50F8E0051AA76 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
+		9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadTableViewCell.swift; sourceTree = "<group>"; };
 		9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOptionsViewController.swift; sourceTree = "<group>"; };
 		9D62591220CD833700383CEB /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -213,6 +227,10 @@
 				9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */,
 				9DD103B820F0FF1A00F2768C /* EditTaskViewController.swift */,
 				9D3CC6A520F42ED50051AA76 /* GoalViewController.swift */,
+				9D3CC6A720F50E8E0051AA76 /* DiscoverBooksViewController.swift */,
+				9D3CC6A920F50F8E0051AA76 /* BooksCollectionViewCell.swift */,
+				9D18577720F5677F0079FF84 /* ReaderViewController.swift */,
+				9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */,
 				9D694E6E20B1DD5300AEED4E /* Assets.xcassets */,
 				9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */,
 				9D694E7320B1DD5300AEED4E /* Info.plist */,
@@ -499,6 +517,8 @@
 				9D63811E20B1F27000350C4D /* LoginViewController.swift in Sources */,
 				9DFB9D5620D9D39100DFA8A4 /* Settings2ViewController.swift in Sources */,
 				9D6380FA20B1E03100350C4D /* DViewController.swift in Sources */,
+				9D18577820F5677F0079FF84 /* ReaderViewController.swift in Sources */,
+				9D3CC6AA20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */,
 				9D3CC6A420F1AA4B0051AA76 /* HomeViewController.swift in Sources */,
 				9D6380F220B1E01A00350C4D /* BViewController.swift in Sources */,
 				9D6380F620B1E02300350C4D /* CViewController.swift in Sources */,
@@ -511,6 +531,8 @@
 				9D4E2C3820D6A1510032107F /* WorkoutOptionsViewController.swift in Sources */,
 				9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */,
 				9DFB9D5220D6A6B700DFA8A4 /* WorkoutTableViewCell.swift in Sources */,
+				9D3CC6B220F516720051AA76 /* ReadTableViewCell.swift in Sources */,
+				9D3CC6A820F50E8E0051AA76 /* DiscoverBooksViewController.swift in Sources */,
 				9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */,
 				9D62591320CD833700383CEB /* CodeViewController.swift in Sources */,
 				9D3CC6A620F42ED50051AA76 /* GoalViewController.swift in Sources */,
@@ -524,8 +546,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D63811F20B1F27000350C4D /* LoginViewController.swift in Sources */,
+				9D3CC6B320F516720051AA76 /* ReadTableViewCell.swift in Sources */,
 				9DBB8B3620B64F06004C36D1 /* BarCell.swift in Sources */,
 				9D6380EF20B1E01000350C4D /* AViewController.swift in Sources */,
+				9D3CC6AB20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */,
+				9D18577920F5677F0079FF84 /* ReaderViewController.swift in Sources */,
 				9D6380FB20B1E03100350C4D /* DViewController.swift in Sources */,
 				9D6380F320B1E01A00350C4D /* BViewController.swift in Sources */,
 				9D63810320B1E04600350C4D /* PurchaseViewController.swift in Sources */,
@@ -540,8 +565,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D63812020B1F27000350C4D /* LoginViewController.swift in Sources */,
+				9D3CC6B420F516720051AA76 /* ReadTableViewCell.swift in Sources */,
 				9DBB8B3720B64F06004C36D1 /* BarCell.swift in Sources */,
 				9D6380F020B1E01000350C4D /* AViewController.swift in Sources */,
+				9D3CC6AC20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */,
+				9D18577A20F5677F0079FF84 /* ReaderViewController.swift in Sources */,
 				9D6380FC20B1E03100350C4D /* DViewController.swift in Sources */,
 				9D6380F420B1E01B00350C4D /* BViewController.swift in Sources */,
 				9D63810420B1E04600350C4D /* PurchaseViewController.swift in Sources */,
@@ -697,7 +725,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A264F16ACEF0C97563464A1 /* Pods-Eat.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-27";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-29";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
@@ -715,7 +743,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-27";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-29";
 				CODE_SIGN_ENTITLEMENTS = Eat/Eat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797Q3HJ5U5;
