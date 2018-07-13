@@ -22,13 +22,23 @@ var bookauthors = [String:String]()
 var bookcovers = [String:UIImage]()
 var bookdescriptions = [String:String]()
 
-var selfhelpbookids = [String]()
-var selfhelpbooknames = [String:String]()
-var selfhelpbookauthors = [String:String]()
-var selfhelpbookcovers = [String:UIImage]()
-var selfhelpdescriptions = [String:String]()
+var businessmoneybookids = [String]()
+var businessmoneybooknames = [String:String]()
+var businessmoneybookauthors = [String:String]()
+var businessmoneybookcovers = [String:UIImage]()
+var businessmoneydescriptions = [String:String]()
 
-var selfhelp = Bool()
+var healthbookids = [String]()
+var healthbooknames = [String:String]()
+var healthbookauthors = [String:String]()
+var healthbookcovers = [String:UIImage]()
+var healthdescriptions = [String:String]()
+
+var socialbookids = [String]()
+var socialbooknames = [String:String]()
+var socialbookauthors = [String:String]()
+var socialbookcovers = [String:UIImage]()
+var socialdescriptions = [String:String]()
 
 var purchased = Bool()
 
@@ -43,11 +53,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var loadinglabeltext: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var collectionView4: UICollectionView!
+    @IBOutlet weak var collectionView3: UICollectionView!
     @IBOutlet weak var authorofquote: UILabel!
     func hideloading() {
         
         authorofquote.alpha = 0
-        logo.alpha = 0
+//        logo.alpha = 0
         loadinglabel.alpha = 0
         loadinglabeltext.alpha = 0
     }
@@ -84,11 +96,6 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 
             }
             
-            queryforselfhelpbookids { () -> () in
-                
-                self.queryforselfhelpbookinfo()
-                
-            }
             
             purchased = false
             tapsettings.alpha = 0
@@ -111,16 +118,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 self.queryforbookinfo()
 
             }
-            
-            queryforselfhelpbookids { () -> () in
-                
-                self.queryforselfhelpbookinfo()
-                
-            }
+
             
             
             collectionView.reloadData()
             collectionView2.reloadData()
+            collectionView3.reloadData()
+            collectionView4.reloadData()
             
             purchased = true
             tapsettings.alpha = 1
@@ -144,7 +148,26 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         booknames.removeAll()
         bookdescriptions.removeAll()
         
-        ref?.child("Books").observeSingleEvent(of: .value, with: { (snapshot) in
+        businessmoneybookids.removeAll()
+        businessmoneybookcovers.removeAll()
+        businessmoneybookauthors.removeAll()
+        businessmoneybooknames.removeAll()
+        businessmoneydescriptions.removeAll()
+        
+        healthbookids.removeAll()
+        healthbookcovers.removeAll()
+        healthbookauthors.removeAll()
+        healthbooknames.removeAll()
+        healthdescriptions.removeAll()
+        
+        socialbookids.removeAll()
+        socialbookcovers.removeAll()
+        socialbookauthors.removeAll()
+        socialbooknames.removeAll()
+        socialdescriptions.removeAll()
+        
+        
+        ref?.child("AllBooks").observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             
@@ -179,56 +202,187 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             for each in bookids  {
                 
-                ref?.child("Books").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref?.child("AllBooks").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
                     
                     var value = snapshot.value as? NSDictionary
                     
-                    if var activityvalue = value?["Author"] as? String {
-                        
-                        bookauthors[each] = activityvalue
-                        
-                    }
                     
-                    
-                    if var activityvalue2 = value?["Name"] as? String {
+                    if var activityvalue = value?["Genre"] as? String {
                         
-                        booknames[each] = activityvalue2
-                    }
-                    
-                    
-                    if var activityvalue2 = value?["Description"] as? String {
-                        
-                        bookdescriptions[each] = activityvalue2
-                    }
-                    
-                    if var productimagee = value?["Image"] as? String {
-                        
-                        if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
+                        if activityvalue == "Business & Money" {
                             
-                            let url = URL(string: productimagee)
+                            businessmoneybookids.append(each)
                             
-                            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                            
-                            if data != nil {
+                            if var activityvalue = value?["Author"] as? String {
                                 
-                                let productphoto = UIImage(data: (data)!)
-                                
-                                //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
-                                let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
-                                
-                                bookcovers[each] = productphoto
-                                
-                                functioncounter += 1
-                                
+                                businessmoneybookauthors[each] = activityvalue
                                 
                             }
                             
                             
+                            if var activityvalue2 = value?["Name"] as? String {
+                                
+                                businessmoneybooknames[each] = activityvalue2
+                            }
+                            
+                            
+                            if var activityvalue2 = value?["Description"] as? String {
+                                
+                                businessmoneydescriptions[each] = activityvalue2
+                            }
+                            
+                            if var productimagee = value?["Image"] as? String {
+                                
+                                if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
+                                    
+                                    let url = URL(string: productimagee)
+                                    
+                                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                                    
+                                    if data != nil {
+                                        
+                                        let productphoto = UIImage(data: (data)!)
+                                        
+                                        //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
+                                        let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
+                                        
+                                        businessmoneybookcovers[each] = productphoto
+                                        
+                                        functioncounter += 1
+                                        
+                                        
+                                    }
+                                    
+                                    
+                                }
+                            }
+                            
+                        } else {
+                            
+                            if activityvalue == "Health, Fitness, & Dieting" {
+                                
+                                healthbookids.append(each)
+                                if var activityvalue = value?["Author"] as? String {
+                                    
+                                    healthbookauthors[each] = activityvalue
+                                    
+                                }
+                                
+                                
+                                if var activityvalue2 = value?["Name"] as? String {
+                                    
+                                    healthbooknames[each] = activityvalue2
+                                }
+                                
+                                
+                                if var activityvalue2 = value?["Description"] as? String {
+                                    
+                                    healthdescriptions[each] = activityvalue2
+                                }
+                                
+                                if var productimagee = value?["Image"] as? String {
+                                    
+                                    if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
+                                        
+                                        let url = URL(string: productimagee)
+                                        
+                                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                                        
+                                        if data != nil {
+                                            
+                                            let productphoto = UIImage(data: (data)!)
+                                            
+                                            //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
+                                            let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
+                                            
+                                            healthbookcovers[each] = productphoto
+                                            
+                                            functioncounter += 1
+                                            
+                                            
+                                        }
+                                        
+                                        
+                                    }
+                                }
+                                
+                            } else {
+                                
+                                if activityvalue == "Politics & Social Science" {
+                                    
+                                    socialbookids.append(each)
+                                    if var activityvalue = value?["Author"] as? String {
+                                        
+                                        socialbookauthors[each] = activityvalue
+                                        
+                                    }
+                                    
+                                    
+                                    if var activityvalue2 = value?["Name"] as? String {
+                                        
+                                        socialbooknames[each] = activityvalue2
+                                    }
+                                    
+                                    
+                                    if var activityvalue2 = value?["Description"] as? String {
+                                        
+                                        socialdescriptions[each] = activityvalue2
+                                    }
+                                    
+                                    if var productimagee = value?["Image"] as? String {
+                                        
+                                        if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
+                                            
+                                            let url = URL(string: productimagee)
+                                            
+                                            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                                            
+                                            if data != nil {
+                                                
+                                                let productphoto = UIImage(data: (data)!)
+                                                
+                                                //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
+                                                let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
+                                                
+                                                socialbookcovers[each] = productphoto
+                                                
+                                                functioncounter += 1
+                                                
+                                                
+                                            }
+                                            
+                                            
+                                        }
+                                    }
+                                }
+                            }
                         }
+                        
                     }
                     
+                    
                     if functioncounter == bookids.count {
+//
+                        booknames.update(other: healthbooknames)
+                        booknames.update(other: socialbooknames)
+                        booknames.update(other: businessmoneybooknames)
+
+                        bookauthors.update(other: healthbookauthors)
+                        bookauthors.update(other: socialbookauthors)
+                        bookauthors.update(other: businessmoneybookauthors)
+
+                        bookcovers.update(other: healthbookcovers)
+                        bookcovers.update(other: businessmoneybookcovers)
+                        bookcovers.update(other: socialbookcovers)
                         
+                        bookdescriptions.update(other: socialdescriptions)
+                            bookdescriptions.update(other: healthdescriptions)
+                        bookdescriptions.update(other: businessmoneydescriptions)
+                    
+                        
+                        self.collectionView4.reloadData()
+                        self.collectionView3.reloadData()
+                        self.collectionView2.reloadData()
                         self.collectionView.reloadData()
                         
                     }
@@ -238,118 +392,16 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
     }
     
-    func queryforselfhelpbookids(completed: @escaping (() -> ()) ) {
-        
-        var functioncounter = 0
-        
-        selfhelpbookids.removeAll()
-        selfhelpbookcovers.removeAll()
-        selfhelpbookauthors.removeAll()
-        selfhelpbooknames.removeAll()
-        selfhelpdescriptions.removeAll()
-        
-        ref?.child("SelfHelpBooks").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            var value = snapshot.value as? NSDictionary
-            
-            if let snapDict = snapshot.value as? [String:AnyObject] {
-                
-                for each in snapDict {
-                    
-                    let ids = each.key
-                    
-                    selfhelpbookids.append(ids)
-                    
-                    functioncounter += 1
-                    
-                    if functioncounter == snapDict.count {
-                        
-                        completed()
-                        
-                    }
-                    
-                    
-                }
-                
-            }
-            
-        })
-        
-        
-    }
-    func queryforselfhelpbookinfo() {
-        
-        var functioncounter = 0
-        
-        for each in selfhelpbookids  {
-            
-            ref?.child("SelfHelpBooks").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                var value = snapshot.value as? NSDictionary
-                
-                if var activityvalue = value?["Author"] as? String {
-                    
-                    selfhelpbookauthors[each] = activityvalue
-                    
-                }
-                
-                
-                if var activityvalue2 = value?["Name"] as? String {
-                    
-                    selfhelpbooknames[each] = activityvalue2
-                }
-                
-                
-                if var activityvalue2 = value?["Description"] as? String {
-                    
-                    selfhelpdescriptions[each] = activityvalue2
-                }
-                
-                if var productimagee = value?["Image"] as? String {
-                    
-                    if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
-                        
-                        let url = URL(string: productimagee)
-                        
-                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                        
-                        if data != nil {
-                            
-                            let productphoto = UIImage(data: (data)!)
-                            
-                            //                            matchimages[each] = self.maskRoundedImage(image: productphoto!, radius: 180.0)
-                            let sizee = CGSize(width: 50, height: 50) // CGFloat, Double, Int
-                            
-                            selfhelpbookcovers[each] = productphoto
-                            
-                            functioncounter += 1
-                            
-                            
-                        }
-                        
-                        
-                    }
-                }
-                
-                if functioncounter == selfhelpbookids.count {
-                    
-                    self.collectionView2.reloadData()
-                    
-                }
-            })
-            
-        }
-        
-    }
+  
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
         if collectionView.tag == 1 {
         
-        if bookids.count > 0 {
+        if businessmoneybooknames.count > 0 {
             
-            return bookids.count
+            return businessmoneybooknames.count
             
         } else {
             
@@ -361,9 +413,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             if collectionView.tag == 2 {
                 
-                if selfhelpbookids.count > 0 {
+                if healthbooknames.count > 0 {
                     
-                    return selfhelpbookids.count
+                    return healthbooknames.count
                     
                 } else {
                     
@@ -372,7 +424,35 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 
             } else {
                 
-                return 1
+                if collectionView.tag == 3 {
+                    
+                    if socialbooknames.count > 0 {
+                        
+                        return socialbooknames.count
+                        
+                    } else {
+                        
+                        return 1
+                    }
+                    
+                } else {
+                    
+                    if collectionView.tag == 4 {
+                        
+                        if booknames.count > 0 {
+                            
+                            return booknames.count
+                            
+                        } else {
+                            
+                            return 1
+                        }
+                        
+                    } else {
+                        
+                        return 1
+                    }
+                }
             }
         }
     }
@@ -381,7 +461,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
         
-        if collectionView.tag == 1 {
+        if collectionView.tag == 4 {
         if bookauthors.count > indexPath.row {
             
         cell.bookauthor.text = bookauthors[bookids[indexPath.row]]
@@ -396,12 +476,43 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         }
         
-        if collectionView.tag == 2 {
-            if selfhelpbookauthors.count > indexPath.row {
+        if collectionView.tag == 1 {
+            if businessmoneybookauthors.count > indexPath.row {
                 
-                cell.bookauthor.text = selfhelpbookauthors[selfhelpbookids[indexPath.row]]
-                cell.bookcover.image = selfhelpbookcovers[selfhelpbookids[indexPath.row]]
-                cell.booktitle.text = selfhelpbooknames[selfhelpbookids[indexPath.row]]
+                cell.bookauthor.text = businessmoneybookauthors[businessmoneybookids[indexPath.row]]
+                cell.bookcover.image = businessmoneybookcovers[businessmoneybookids[indexPath.row]]
+                cell.booktitle.text = businessmoneybooknames[businessmoneybookids[indexPath.row]]
+                cell.bookcover.layer.cornerRadius = 5.0
+                cell.bookcover.layer.masksToBounds = true
+                
+                hideloading()
+                
+            }
+            
+        }
+        
+        if collectionView.tag == 2 {
+            if healthbookauthors.count > indexPath.row {
+                
+                cell.bookauthor.text = healthbookauthors[healthbookids[indexPath.row]]
+                cell.bookcover.image = healthbookcovers[healthbookids[indexPath.row]]
+                cell.booktitle.text = healthbooknames[healthbookids[indexPath.row]]
+                cell.bookcover.layer.cornerRadius = 5.0
+                cell.bookcover.layer.masksToBounds = true
+                
+                hideloading()
+                
+            }
+            
+        }
+        
+        if collectionView.tag == 3 {
+            
+            if socialbookauthors.count > indexPath.row {
+                
+                cell.bookauthor.text = socialbookauthors[socialbookids[indexPath.row]]
+                cell.bookcover.image = socialbookcovers[socialbookids[indexPath.row]]
+                cell.booktitle.text = socialbooknames[socialbookids[indexPath.row]]
                 cell.bookcover.layer.cornerRadius = 5.0
                 cell.bookcover.layer.masksToBounds = true
                 
@@ -421,14 +532,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         if collectionView.tag == 1 {
             
-                selectedbookid = bookids[indexPath.row]
-                selectedtitle = booknames[bookids[indexPath.row]]!
+                selectedbookid = businessmoneybookids[indexPath.row]
+                selectedtitle = businessmoneybooknames[businessmoneybookids[indexPath.row]]!
             
-            selectedauthor = bookauthors[bookids[indexPath.row]]!
-            selectedimage = bookcovers[bookids[indexPath.row]]!
-                selfhelp = false
+            selectedauthor = businessmoneybookauthors[businessmoneybookids[indexPath.row]]!
+            selectedimage = businessmoneybookcovers[businessmoneybookids[indexPath.row]]!
 
-            selecteddescription = bookdescriptions[bookids[indexPath.row]]!
+            selecteddescription = businessmoneydescriptions[businessmoneybookids[indexPath.row]]!
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
             
             
@@ -437,14 +547,37 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             if collectionView.tag == 2 {
                 
-                selfhelp = true
-                selectedbookid = selfhelpbookids[indexPath.row]
-                selectedtitle = selfhelpbooknames[selfhelpbookids[indexPath.row]]!
-                selectedauthor = selfhelpbookauthors[selfhelpbookids[indexPath.row]]!
-                selectedimage = selfhelpbookcovers[selfhelpbookids[indexPath.row]]!
-                selecteddescription = selfhelpdescriptions[selfhelpbookids[indexPath.row]]!
+                selectedbookid = healthbookids[indexPath.row]
+                selectedtitle = businessmoneybooknames[healthbookids[indexPath.row]]!
+                selectedauthor = businessmoneybookauthors[healthbookids[indexPath.row]]!
+                selectedimage = businessmoneybookcovers[healthbookids[indexPath.row]]!
+                selecteddescription = businessmoneydescriptions[healthbookids[indexPath.row]]!
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                 
+            } else {
+                
+                if collectionView.tag == 3 {
+                    
+                    selectedbookid = socialbookids[indexPath.row]
+                    selectedtitle = socialbooknames[socialbookids[indexPath.row]]!
+                    selectedauthor = socialbookauthors[socialbookids[indexPath.row]]!
+                    selectedimage = socialbookcovers[socialbookids[indexPath.row]]!
+                    selecteddescription = socialdescriptions[socialbookids[indexPath.row]]!
+                    self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                    
+                } else {
+                    
+                    if collectionView.tag == 4 {
+                        
+                        selectedbookid = bookids[indexPath.row]
+                        selectedtitle = booknames[bookids[indexPath.row]]!
+                        selectedauthor = bookauthors[bookids[indexPath.row]]!
+                        selectedimage = bookcovers[bookids[indexPath.row]]!
+                        selecteddescription = businessmoneydescriptions[bookids[indexPath.row]]!
+                        self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                        
+                    }
+                }
             }
             
         }
@@ -460,4 +593,12 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     }
     */
 
+}
+
+extension Dictionary {
+    mutating func update(other:Dictionary) {
+        for (key,value) in other {
+            self.updateValue(value, forKey:key)
+        }
+    }
 }

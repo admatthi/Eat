@@ -40,19 +40,10 @@ class ReaderViewController: UIViewController, UITableViewDataSource, UITableView
         
 //        wtf()
         
-                
-        if selfhelp {
-            
-            category = "SelfHelpBooks"
+
             whatthehell()
 
-            
-        } else {
-            
-            category = "Books"
-            whatthehell()
-        }
-        // Do any additional setup after loading the view.
+                // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,7 +55,7 @@ class ReaderViewController: UIViewController, UITableViewDataSource, UITableView
         
         quote.removeAll()
         
-        ref?.child(category).child(selectedbookid).child("Summary").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child("AllBooks").child(selectedbookid).child("Summary").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
             
             var value = snapshot.value as? NSDictionary
             
