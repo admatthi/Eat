@@ -9,6 +9,7 @@ import UIKit
 
 class ReadTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var quotenumber: UILabel!
     @IBOutlet weak var BACKLABEL: UILabel!
     @IBOutlet weak var quotelabel: UILabel!
     override func awakeFromNib() {

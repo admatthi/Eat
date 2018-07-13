@@ -12,12 +12,6 @@
 		9D18577820F5677F0079FF84 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18577720F5677F0079FF84 /* ReaderViewController.swift */; };
 		9D18577920F5677F0079FF84 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18577720F5677F0079FF84 /* ReaderViewController.swift */; };
 		9D18577A20F5677F0079FF84 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18577720F5677F0079FF84 /* ReaderViewController.swift */; };
-		9D28B77F20E7EE0B006C861C /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B77E20E7EE0B006C861C /* SubscriptionsViewController.swift */; };
-		9D28B78120EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */; };
-		9D28B78220EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */; };
-		9D28B78320EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */; };
-		9D3CC6A420F1AA4B0051AA76 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A320F1AA4B0051AA76 /* HomeViewController.swift */; };
-		9D3CC6A620F42ED50051AA76 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A520F42ED50051AA76 /* GoalViewController.swift */; };
 		9D3CC6A820F50E8E0051AA76 /* DiscoverBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A720F50E8E0051AA76 /* DiscoverBooksViewController.swift */; };
 		9D3CC6AA20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A920F50F8E0051AA76 /* BooksCollectionViewCell.swift */; };
 		9D3CC6AB20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6A920F50F8E0051AA76 /* BooksCollectionViewCell.swift */; };
@@ -25,7 +19,6 @@
 		9D3CC6B220F516720051AA76 /* ReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */; };
 		9D3CC6B320F516720051AA76 /* ReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */; };
 		9D3CC6B420F516720051AA76 /* ReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */; };
-		9D4E2C3820D6A1510032107F /* WorkoutOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */; };
 		9D62591320CD833700383CEB /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62591220CD833700383CEB /* CodeViewController.swift */; };
 		9D6380EA20B1DE9500350C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */; };
 		9D6380EB20B1DE9500350C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */; };
@@ -50,7 +43,6 @@
 		9D63812020B1F27000350C4D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63811D20B1F27000350C4D /* LoginViewController.swift */; };
 		9D63812220B201C800350C4D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D63812120B201C800350C4D /* StoreKit.framework */; };
 		9D694E6820B1DD5300AEED4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E6720B1DD5200AEED4E /* AppDelegate.swift */; };
-		9D694E6A20B1DD5300AEED4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E6920B1DD5300AEED4E /* ViewController.swift */; };
 		9D694E6D20B1DD5300AEED4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D694E6B20B1DD5300AEED4E /* Main.storyboard */; };
 		9D694E6F20B1DD5300AEED4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D694E6E20B1DD5300AEED4E /* Assets.xcassets */; };
 		9D694E7220B1DD5300AEED4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */; };
@@ -61,10 +53,8 @@
 		9DBB8B3620B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBB8B3720B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBC5C220C2F77C00C38DFC /* DataService.swift */; };
-		9DD103B920F0FF1A00F2768C /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD103B820F0FF1A00F2768C /* EditTaskViewController.swift */; };
-		9DFB9D5020D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */; };
-		9DFB9D5220D6A6B700DFA8A4 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */; };
-		9DFB9D5420D6A6CE00DFA8A4 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */; };
+		9DE84C1B20F7B7F90048B78D /* BookOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE84C1A20F7B7F90048B78D /* BookOverviewViewController.swift */; };
+		9DE84C1D20F7CF790048B78D /* SubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE84C1C20F7CF790048B78D /* SubsViewController.swift */; };
 		9DFB9D5620D9D39100DFA8A4 /* Settings2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5520D9D39100DFA8A4 /* Settings2ViewController.swift */; };
 		C3552F51131E596A3143D483 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E85CEF3FB24BB9D7280F9A /* Pods_EatTests.framework */; };
 /* End PBXBuildFile section */
@@ -92,14 +82,9 @@
 		440920310A024B6639C04C80 /* Pods-Eat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eat/Pods-Eat.release.xcconfig"; sourceTree = "<group>"; };
 		645BA5FDB84ADDFFA0E8BB26 /* Pods-EatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatUITests/Pods-EatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D18577720F5677F0079FF84 /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
-		9D28B77E20E7EE0B006C861C /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
-		9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
-		9D3CC6A320F1AA4B0051AA76 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		9D3CC6A520F42ED50051AA76 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		9D3CC6A720F50E8E0051AA76 /* DiscoverBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverBooksViewController.swift; sourceTree = "<group>"; };
 		9D3CC6A920F50F8E0051AA76 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadTableViewCell.swift; sourceTree = "<group>"; };
-		9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutOptionsViewController.swift; sourceTree = "<group>"; };
 		9D62591220CD833700383CEB /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		9D6380E920B1DE9500350C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D6380ED20B1E01000350C4D /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +96,6 @@
 		9D63812120B201C800350C4D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9D694E6420B1DD5200AEED4E /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D694E6720B1DD5200AEED4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D694E6920B1DD5300AEED4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D694E6C20B1DD5300AEED4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D694E6E20B1DD5300AEED4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D694E7120B1DD5300AEED4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,10 +110,8 @@
 		9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		9DBB8B3420B64F06004C36D1 /* BarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		9DBBC5C220C2F77C00C38DFC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		9DD103B820F0FF1A00F2768C /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
-		9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
-		9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		9DE84C1A20F7B7F90048B78D /* BookOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookOverviewViewController.swift; sourceTree = "<group>"; };
+		9DE84C1C20F7CF790048B78D /* SubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubsViewController.swift; sourceTree = "<group>"; };
 		9DFB9D5520D9D39100DFA8A4 /* Settings2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings2ViewController.swift; sourceTree = "<group>"; };
 		A88B6C258942DD8C488A6364 /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF9B31F77D99EB6CC4E6816D /* Pods_Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,7 +189,6 @@
 			children = (
 				9D7B36E620BC7D3F00C38251 /* Eat.entitlements */,
 				9D694E6720B1DD5200AEED4E /* AppDelegate.swift */,
-				9D694E6920B1DD5300AEED4E /* ViewController.swift */,
 				9D694E6B20B1DD5300AEED4E /* Main.storyboard */,
 				9D6380ED20B1E01000350C4D /* AViewController.swift */,
 				9D6380F120B1E01A00350C4D /* BViewController.swift */,
@@ -217,18 +198,11 @@
 				9D63811D20B1F27000350C4D /* LoginViewController.swift */,
 				9D62591220CD833700383CEB /* CodeViewController.swift */,
 				9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */,
-				9D28B78020EEF8FA006C861C /* ActivitiesTableViewCell.swift */,
-				9DFB9D4F20D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift */,
-				9D4E2C3720D6A1510032107F /* WorkoutOptionsViewController.swift */,
-				9DFB9D5120D6A6B700DFA8A4 /* WorkoutTableViewCell.swift */,
 				9DFB9D5520D9D39100DFA8A4 /* Settings2ViewController.swift */,
-				9D28B77E20E7EE0B006C861C /* SubscriptionsViewController.swift */,
-				9D3CC6A320F1AA4B0051AA76 /* HomeViewController.swift */,
-				9DFB9D5320D6A6CE00DFA8A4 /* WorkoutViewController.swift */,
-				9DD103B820F0FF1A00F2768C /* EditTaskViewController.swift */,
-				9D3CC6A520F42ED50051AA76 /* GoalViewController.swift */,
 				9D3CC6A720F50E8E0051AA76 /* DiscoverBooksViewController.swift */,
+				9DE84C1A20F7B7F90048B78D /* BookOverviewViewController.swift */,
 				9D3CC6A920F50F8E0051AA76 /* BooksCollectionViewCell.swift */,
+				9DE84C1C20F7CF790048B78D /* SubsViewController.swift */,
 				9D18577720F5677F0079FF84 /* ReaderViewController.swift */,
 				9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */,
 				9D694E6E20B1DD5300AEED4E /* Assets.xcassets */,
@@ -512,32 +486,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D694E6A20B1DD5300AEED4E /* ViewController.swift in Sources */,
 				9D63810220B1E04600350C4D /* PurchaseViewController.swift in Sources */,
 				9D63811E20B1F27000350C4D /* LoginViewController.swift in Sources */,
 				9DFB9D5620D9D39100DFA8A4 /* Settings2ViewController.swift in Sources */,
 				9D6380FA20B1E03100350C4D /* DViewController.swift in Sources */,
 				9D18577820F5677F0079FF84 /* ReaderViewController.swift in Sources */,
 				9D3CC6AA20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */,
-				9D3CC6A420F1AA4B0051AA76 /* HomeViewController.swift in Sources */,
 				9D6380F220B1E01A00350C4D /* BViewController.swift in Sources */,
 				9D6380F620B1E02300350C4D /* CViewController.swift in Sources */,
-				9DD103B920F0FF1A00F2768C /* EditTaskViewController.swift in Sources */,
 				9D916F5020CF5DB700C6245E /* FeedbackViewController.swift in Sources */,
-				9DFB9D5420D6A6CE00DFA8A4 /* WorkoutViewController.swift in Sources */,
 				9D6380EE20B1E01000350C4D /* AViewController.swift in Sources */,
-				9DFB9D5020D6A40C00DFA8A4 /* WorkoutCategoryCollectionViewCell.swift in Sources */,
 				9D694E6820B1DD5300AEED4E /* AppDelegate.swift in Sources */,
-				9D4E2C3820D6A1510032107F /* WorkoutOptionsViewController.swift in Sources */,
 				9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */,
-				9DFB9D5220D6A6B700DFA8A4 /* WorkoutTableViewCell.swift in Sources */,
+				9DE84C1B20F7B7F90048B78D /* BookOverviewViewController.swift in Sources */,
 				9D3CC6B220F516720051AA76 /* ReadTableViewCell.swift in Sources */,
 				9D3CC6A820F50E8E0051AA76 /* DiscoverBooksViewController.swift in Sources */,
+				9DE84C1D20F7CF790048B78D /* SubsViewController.swift in Sources */,
 				9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */,
 				9D62591320CD833700383CEB /* CodeViewController.swift in Sources */,
-				9D3CC6A620F42ED50051AA76 /* GoalViewController.swift in Sources */,
-				9D28B77F20E7EE0B006C861C /* SubscriptionsViewController.swift in Sources */,
-				9D28B78120EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,7 +521,6 @@
 				9D6380F320B1E01A00350C4D /* BViewController.swift in Sources */,
 				9D63810320B1E04600350C4D /* PurchaseViewController.swift in Sources */,
 				9D6380F720B1E02300350C4D /* CViewController.swift in Sources */,
-				9D28B78220EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */,
 				9D694E7D20B1DD5300AEED4E /* EatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,7 +539,6 @@
 				9D6380F420B1E01B00350C4D /* BViewController.swift in Sources */,
 				9D63810420B1E04600350C4D /* PurchaseViewController.swift in Sources */,
 				9D6380F820B1E02300350C4D /* CViewController.swift in Sources */,
-				9D28B78320EEF8FA006C861C /* ActivitiesTableViewCell.swift in Sources */,
 				9D694E8820B1DD5300AEED4E /* EatUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

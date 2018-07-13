@@ -185,7 +185,8 @@ class ReaderViewController: UIViewController, UITableViewDataSource, UITableView
         
         if quote.count > indexPath.row {
             
-            cell.quotelabel.text = "'\(quote[indexPath.row])'"
+            cell.quotelabel.text = "\(quote[indexPath.row])"
+            cell.quotenumber.text = "\(indexPath.row+1))"
             
         }
         cell.BACKLABEL.layer.cornerRadius = 5.0

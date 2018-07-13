@@ -20,15 +20,21 @@ var bookids = [String]()
 var booknames = [String:String]()
 var bookauthors = [String:String]()
 var bookcovers = [String:UIImage]()
+var bookdescriptions = [String:String]()
 
 var selfhelpbookids = [String]()
 var selfhelpbooknames = [String:String]()
 var selfhelpbookauthors = [String:String]()
 var selfhelpbookcovers = [String:UIImage]()
+var selfhelpdescriptions = [String:String]()
 
 var selfhelp = Bool()
 
 var purchased = Bool()
+
+var selectedauthor = String()
+var selectedimage = UIImage()
+var selecteddescription = String()
 
 class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -136,7 +142,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         bookcovers.removeAll()
         bookauthors.removeAll()
         booknames.removeAll()
-    
+        bookdescriptions.removeAll()
         
         ref?.child("Books").observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -189,6 +195,12 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         booknames[each] = activityvalue2
                     }
                     
+                    
+                    if var activityvalue2 = value?["Description"] as? String {
+                        
+                        bookdescriptions[each] = activityvalue2
+                    }
+                    
                     if var productimagee = value?["Image"] as? String {
                         
                         if productimagee.hasPrefix("http://") || productimagee.hasPrefix("https://") {
@@ -234,7 +246,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         selfhelpbookcovers.removeAll()
         selfhelpbookauthors.removeAll()
         selfhelpbooknames.removeAll()
-        
+        selfhelpdescriptions.removeAll()
         
         ref?.child("SelfHelpBooks").observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -285,6 +297,12 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 if var activityvalue2 = value?["Name"] as? String {
                     
                     selfhelpbooknames[each] = activityvalue2
+                }
+                
+                
+                if var activityvalue2 = value?["Description"] as? String {
+                    
+                    selfhelpdescriptions[each] = activityvalue2
                 }
                 
                 if var productimagee = value?["Image"] as? String {
@@ -399,28 +417,19 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var collectionView2: UICollectionView!
     @IBOutlet weak var whitelabel: UILabel!
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//
-
-//
-//        DispatchQueue.main.async {
-//
-//
-//        }
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if purchased {
-            
         if collectionView.tag == 1 {
             
                 selectedbookid = bookids[indexPath.row]
                 selectedtitle = booknames[bookids[indexPath.row]]!
+            
+            selectedauthor = bookauthors[bookids[indexPath.row]]!
+            selectedimage = bookcovers[bookids[indexPath.row]]!
                 selfhelp = false
 
-                self.performSegue(withIdentifier: "Try2", sender: self)
+            selecteddescription = bookdescriptions[bookids[indexPath.row]]!
+                self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
             
             
         } else {
@@ -431,16 +440,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 selfhelp = true
                 selectedbookid = selfhelpbookids[indexPath.row]
                 selectedtitle = selfhelpbooknames[selfhelpbookids[indexPath.row]]!
-                
-                self.performSegue(withIdentifier: "Try2", sender: self)
+                selectedauthor = selfhelpbookauthors[selfhelpbookids[indexPath.row]]!
+                selectedimage = selfhelpbookcovers[selfhelpbookids[indexPath.row]]!
+                selecteddescription = selfhelpdescriptions[selfhelpbookids[indexPath.row]]!
+                self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                 
             }
             
-        }
-            
-        } else {
-            
-            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
         }
 
     }
