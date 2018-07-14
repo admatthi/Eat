@@ -86,16 +86,24 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
+
             
-            whitelabel.layer.cornerRadius = 5.0
-            whitelabel.layer.masksToBounds = true
-            
-            queryforbookids { () -> () in
+            if bookids.count == 0 {
                 
-                self.queryforbookinfo()
+                queryforbookids { () -> () in
+                    
+                    self.queryforbookinfo()
+                    
+                }
+                
+            } else {
+                
                 
             }
             
+            
+            backgroundlabel.layer.cornerRadius = 10.0
+            backgroundlabel.clipsToBounds = true
             
             purchased = false
             tapsettings.alpha = 0
@@ -111,14 +119,22 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 //            dateFormatter.dateFormat = "MM-dd-yy"
 //            todaysdate =  dateFormatter.string(from: date)
             
+            backgroundlabel.layer.cornerRadius = 5.0
+            backgroundlabel.clipsToBounds = true
             uid = (Auth.auth().currentUser?.uid)!
             
+            if bookids.count == 0 {
+                
             queryforbookids { () -> () in
 
                 self.queryforbookinfo()
 
-            }
+                }
 
+            } else {
+                
+                
+            }
             
             
             collectionView.reloadData()
@@ -132,6 +148,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var backgroundlabel: UILabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -360,6 +377,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         
                     }
                     
+//                    self.collectionView4.reloadData()
+//                    self.collectionView3.reloadData()
+//                    self.collectionView2.reloadData()
+//                    self.collectionView.reloadData()
                     
                     if functioncounter == bookids.count {
 //
@@ -548,10 +569,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             if collectionView.tag == 2 {
                 
                 selectedbookid = healthbookids[indexPath.row]
-                selectedtitle = businessmoneybooknames[healthbookids[indexPath.row]]!
-                selectedauthor = businessmoneybookauthors[healthbookids[indexPath.row]]!
-                selectedimage = businessmoneybookcovers[healthbookids[indexPath.row]]!
-                selecteddescription = businessmoneydescriptions[healthbookids[indexPath.row]]!
+                selectedtitle = healthbooknames[healthbookids[indexPath.row]]!
+                selectedauthor = healthbookauthors[healthbookids[indexPath.row]]!
+                selectedimage = healthbookcovers[healthbookids[indexPath.row]]!
+                selecteddescription = healthdescriptions[healthbookids[indexPath.row]]!
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
                 
             } else {

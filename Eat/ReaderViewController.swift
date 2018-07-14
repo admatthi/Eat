@@ -21,13 +21,36 @@ var selectedtitle = String()
 var thischaptertitle = String()
 var selectedbookid = String()
 
-class ReaderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+let gred = UIColor(red:0.95, green:0.09, blue:0.35, alpha:1.0)
+
+let bblue = UIColor(red:0.01, green:0.61, blue:0.87, alpha:1.0)
+let yyellow = UIColor(red:1.00, green:0.73, blue:0.00, alpha:1.0)
+let lblue = UIColor(red:0.00, green:0.78, blue:0.83, alpha:1.0)
+let oorange = UIColor(red:1.00, green:0.40, blue:0.08, alpha:1.0)
+
+
+var colors = [UIColor]()
+
+class ReaderViewController: UIViewController {
     @IBOutlet weak var titlelabel: UILabel!
     @IBAction func tapPrevious(_ sender: Any) {
+        
+        
+        if counter > 0 {
+            
+            lastcount()
+
+        }
     }
     @IBAction func tapNext(_ sender: Any) {
+        
+        if counter < 11 {
+            
+            nextcount()
+
+            
+        }
     }
-    @IBOutlet weak var headerlabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference?
     var category = String()
@@ -36,21 +59,68 @@ class ReaderViewController: UIViewController, UITableViewDataSource, UITableView
         
         ref = Database.database().reference()
         
-        titlelabel.text = selectedtitle
-        
 //        wtf()
         
-
             whatthehell()
 
+        counter = 0
                 // Do any additional setup after loading the view.
+        
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
     }
     
+    @IBOutlet weak var counterbutton: UIButton!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var quotetext: UILabel!
+    
+    @IBOutlet weak var backgroundlabel: UILabel!
+    
+    func showproperquote() {
+        
+        quotetext.text = quote[counter]
+        counterbutton.setTitle(String(counter+1), for: .normal )
+        
+        backgroundlabel.backgroundColor = colors[counter]
+    }
+    
+    var counter = 0
+    
+    func lastcount() {
+        
+        counter -= 1
+        showproperquote()
+        
+    }
+    
+    func nextcount() {
+        
+        counter += 1
+        showproperquote()
+        
+    }
     func whatthehell() {
         
         quote.removeAll()
@@ -120,71 +190,13 @@ class ReaderViewController: UIViewController, UITableViewDataSource, UITableView
                 quote.append(activityvalue2)
             }
             
-            self.tableView.reloadData()
+            self.showproperquote()
         })
         
         
     }
     
-    func wtf() {
-        
-        var functioncounter = 1
-        
-        while functioncounter < 15 {
-            
-            ref?.child("Books").child(selectedbookid).child("Summary").child("\(functioncounter)").observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                var value = snapshot.value as? NSDictionary
-                
-                if var activityvalue = value?["Title"] as? String {
-                    
-                    self.headerlabel.text = activityvalue
-                    
-                }
-                
-                
-                if var activityvalue2 = value?["1"] as? String {
-                    
-                    quote.append(activityvalue2)
-                }
-                
-                functioncounter += 1
-                
-                self.tableView.reloadData()
-            })
-            
-        }
-        
-    }
-    
-    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if quote.count > 0 {
-            
-            return quote.count
-            
-        } else {
-            
-            return 1
-        }
-        
-    }
-    
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Quote", for: indexPath) as! ReadTableViewCell
-        
-        if quote.count > indexPath.row {
-            
-            cell.quotelabel.text = "\(quote[indexPath.row])"
-            cell.quotenumber.text = "\(indexPath.row+1))"
-            
-        }
-        cell.BACKLABEL.layer.cornerRadius = 5.0
-        cell.BACKLABEL.layer.masksToBounds = true
-        return cell
-        
-    }
+
     /*
      // MARK: - Navigation
      
