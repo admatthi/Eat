@@ -44,15 +44,8 @@ class ReaderViewController: UIViewController {
     }
     @IBAction func tapNext(_ sender: Any) {
         
-        if counter < quote.count  {
-            
-            nextcount()
-
-            
-        } else {
-            
-            self.performSegue(withIdentifier: "ReaderToOverview", sender: self)
-        }
+        nextcount()
+        
     }
     @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference?
@@ -62,6 +55,8 @@ class ReaderViewController: UIViewController {
         
         ref = Database.database().reference()
         
+        whitelabel.layer.cornerRadius = 10.0
+        whitelabel.layer.masksToBounds = true
 //        wtf()
         
             whatthehell()
@@ -101,29 +96,42 @@ class ReaderViewController: UIViewController {
     
     @IBOutlet weak var backgroundlabel: UILabel!
     
-    func showproperquote() {
-        
-        quotetext.text = quote[counter]
-        counterbutton.setTitle(String(counter+1), for: .normal )
-        
-//        backgroundlabel.backgroundColor = colors[counter]
-    }
+
     
     var counter = 0
     
     func lastcount() {
         
-        counter -= 1
-        showproperquote()
+        if counter == 0 {
+            
+            
+        } else {
+            
+            counter -= 1
+            showproperquote()
+            
+        }
+        
         
     }
     
     func nextcount() {
         
-        counter += 1
-        showproperquote()
-        
+        if counter > (quote.count-1) {
+            
+            self.performSegue(withIdentifier: "ReaderToOverview", sender: self)
+
+            
+        } else {
+
+            showproperquote()
+
+            counter += 1
+            
+        }
+
     }
+    @IBOutlet weak var whitelabel: UILabel!
     func whatthehell() {
         
         quote.removeAll()
@@ -200,6 +208,328 @@ class ReaderViewController: UIViewController {
     }
     
 
+    @IBOutlet weak var two: UIImageView!
+    @IBOutlet weak var one: UIImageView!
+    @IBOutlet weak var three: UIImageView!
+    @IBOutlet weak var four: UIImageView!
+    @IBOutlet weak var five: UIImageView!
+    @IBOutlet weak var six: UIImageView!
+    @IBOutlet weak var seven: UIImageView!
+    @IBOutlet weak var eight: UIImageView!
+    @IBOutlet weak var nine: UIImageView!
+    @IBOutlet weak var ten: UIImageView!
+    @IBOutlet weak var eleven: UIImageView!
+    @IBOutlet weak var twelve: UIImageView!
+    @IBOutlet weak var thirteen: UIImageView!
+    @IBOutlet weak var fourteen: UIImageView!
+    @IBOutlet weak var fifteen: UIImageView!
+
+
+    func showproperquote() {
+        
+        quotetext.text = quote[counter]
+        
+        if counter == 0 {
+            
+            one.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 1 {
+            
+            two.alpha = 1
+            one.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 2 {
+            
+            three.alpha = 1
+            two.alpha = 0.5
+            one.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 3 {
+            
+            four.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            one.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 4 {
+            
+            five.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            one.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 5 {
+            
+            six.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            one.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 6 {
+            
+            seven.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            one.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 7 {
+            
+            eight.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            one.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 8 {
+            
+            nine.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            one.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 9 {
+            
+            ten.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            one.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 10 {
+            
+            eleven.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            one.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 11 {
+            
+            twelve.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            one.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 12 {
+            
+            thirteen.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            one.alpha = 0.5
+            fourteen.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 13 {
+            
+            fourteen.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            one.alpha = 0.5
+            fifteen.alpha = 0.5
+            
+        }
+        
+        if counter == 14 {
+            
+            fifteen.alpha = 1
+            two.alpha = 0.5
+            three.alpha = 0.5
+            four.alpha = 0.5
+            five.alpha = 0.5
+            six.alpha = 0.5
+            seven.alpha = 0.5
+            eight.alpha = 0.5
+            nine.alpha = 0.5
+            ten.alpha = 0.5
+            eleven.alpha = 0.5
+            twelve.alpha = 0.5
+            thirteen.alpha = 0.5
+            fourteen.alpha = 0.5
+            one.alpha = 0.5
+            
+        }
+        //        backgroundlabel.backgroundColor = colors[counter]
+    }
     /*
      // MARK: - Navigation
      

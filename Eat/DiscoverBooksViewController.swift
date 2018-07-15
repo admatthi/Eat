@@ -62,6 +62,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
 //        logo.alpha = 0
         loadinglabel.alpha = 0
         loadinglabeltext.alpha = 0
+        activityIndicator.stopAnimating()
+        activityIndicator.alpha = 0
     }
     
     func showloading() {
@@ -70,8 +72,11 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         logo.alpha = 1
         loadinglabel.alpha = 1
         loadinglabeltext.alpha = 1
+        activityIndicator.startAnimating()
+        activityIndicator.alpha = 1
     }
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -481,8 +486,13 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
-        cell.bookcover.layer.cornerRadius = 15.0
+        cell.bookcover.layer.cornerRadius = 10.0
         cell.bookcover.layer.masksToBounds = true
+        
+        cell.dark.layer.cornerRadius = 10.0
+        cell.dark.layer.masksToBounds = true
+        
+        
         if collectionView.tag == 4 {
         if bookauthors.count > indexPath.row {
             

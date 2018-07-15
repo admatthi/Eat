@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "GreyCircle Copy.png",
+      "filename" : "Orangelogo.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "GreyCircle Copy@2x.png",
+      "filename" : "Orangelogo@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "GreyCircle Copy@3x.png",
+      "filename" : "Orangelogo@3x.png",
       "scale" : "3x"
     }
   ],
