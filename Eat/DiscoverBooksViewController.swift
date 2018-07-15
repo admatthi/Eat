@@ -481,15 +481,15 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Books", for: indexPath) as! BooksCollectionViewCell
-        
+        cell.bookcover.layer.cornerRadius = 15.0
+        cell.bookcover.layer.masksToBounds = true
         if collectionView.tag == 4 {
         if bookauthors.count > indexPath.row {
             
         cell.bookauthor.text = bookauthors[bookids[indexPath.row]]
         cell.bookcover.image = bookcovers[bookids[indexPath.row]]
         cell.booktitle.text = booknames[bookids[indexPath.row]]
-        cell.bookcover.layer.cornerRadius = 5.0
-        cell.bookcover.layer.masksToBounds = true
+
             
         hideloading()
             
@@ -503,8 +503,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookauthor.text = businessmoneybookauthors[businessmoneybookids[indexPath.row]]
                 cell.bookcover.image = businessmoneybookcovers[businessmoneybookids[indexPath.row]]
                 cell.booktitle.text = businessmoneybooknames[businessmoneybookids[indexPath.row]]
-                cell.bookcover.layer.cornerRadius = 5.0
-                cell.bookcover.layer.masksToBounds = true
+ 
                 
                 hideloading()
                 
@@ -518,8 +517,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookauthor.text = healthbookauthors[healthbookids[indexPath.row]]
                 cell.bookcover.image = healthbookcovers[healthbookids[indexPath.row]]
                 cell.booktitle.text = healthbooknames[healthbookids[indexPath.row]]
-                cell.bookcover.layer.cornerRadius = 5.0
-                cell.bookcover.layer.masksToBounds = true
+
                 
                 hideloading()
                 
@@ -534,8 +532,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 cell.bookauthor.text = socialbookauthors[socialbookids[indexPath.row]]
                 cell.bookcover.image = socialbookcovers[socialbookids[indexPath.row]]
                 cell.booktitle.text = socialbooknames[socialbookids[indexPath.row]]
-                cell.bookcover.layer.cornerRadius = 5.0
-                cell.bookcover.layer.masksToBounds = true
+
                 
                 hideloading()
                 
@@ -560,7 +557,16 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             selectedimage = businessmoneybookcovers[businessmoneybookids[indexPath.row]]!
 
             selecteddescription = businessmoneydescriptions[businessmoneybookids[indexPath.row]]!
+            
+            if purchased {
+                
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                
+            } else {
+                
+                self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+                
+            }
             
             
         } else {
@@ -573,7 +579,15 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 selectedauthor = healthbookauthors[healthbookids[indexPath.row]]!
                 selectedimage = healthbookcovers[healthbookids[indexPath.row]]!
                 selecteddescription = healthdescriptions[healthbookids[indexPath.row]]!
-                self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                if purchased {
+                    
+                    self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                    
+                } else {
+                    
+                    self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+                    
+                }
                 
             } else {
                 
@@ -584,7 +598,15 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                     selectedauthor = socialbookauthors[socialbookids[indexPath.row]]!
                     selectedimage = socialbookcovers[socialbookids[indexPath.row]]!
                     selecteddescription = socialdescriptions[socialbookids[indexPath.row]]!
-                    self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                    if purchased {
+                        
+                        self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                        
+                    } else {
+                        
+                        self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+                        
+                    }
                     
                 } else {
                     
@@ -595,7 +617,16 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         selectedauthor = bookauthors[bookids[indexPath.row]]!
                         selectedimage = bookcovers[bookids[indexPath.row]]!
                         selecteddescription = businessmoneydescriptions[bookids[indexPath.row]]!
-                        self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                        
+                        if purchased {
+                            
+                            self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+
+                        } else {
+                            
+                            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
+
+                        }
                         
                     }
                 }

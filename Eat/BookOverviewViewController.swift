@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseCore
+import FirebaseStorage
+import FirebaseDatabase
+import FirebaseAuth
+import FBSDKCoreKit
+import UserNotifications
+import AudioToolbox
 
 class BookOverviewViewController: UIViewController {
 
+    @IBOutlet weak var keyinsights: UILabel!
     @IBAction func tapStartReading(_ sender: Any) {
         
         if purchased {
@@ -23,18 +32,43 @@ class BookOverviewViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var tapstart: UIButton!
     @IBOutlet weak var descriptionlabel: UILabel!
     @IBOutlet weak var tapstartreading: UIButton!
     @IBOutlet weak var cover: UIImageView!
     @IBOutlet weak var titlelabel: UILabel!
+    @IBOutlet weak var abouttheauthor: UILabel!
+    @IBOutlet weak var reviewer3: UILabel!
+    @IBOutlet weak var review3: UILabel!
+    @IBOutlet weak var reviewer2: UILabel!
+    @IBOutlet weak var review2: UILabel!
+    @IBOutlet weak var reviewer1: UILabel!
+    @IBOutlet weak var review1: UILabel!
     @IBOutlet weak var author: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        ref = Database.database().reference()
 
         titlelabel.text = selectedtitle
         author.text = selectedauthor
         cover.image = selectedimage
         descriptionlabel.text = selecteddescription
+        
+        queryforreviewinfo()
+        
+        cover.layer.cornerRadius = 10.0
+        cover.layer.masksToBounds = true
+        
+        
+        if purchased {
+            
+            tapstart.setTitle("Start Now", for: .normal)
+            
+        } else {
+            
+            tapstart.setTitle("Start Your Free 7-Day Trial Now", for: .normal)
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -44,7 +78,59 @@ class BookOverviewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    func queryforreviewinfo() {
+        
+        var functioncounter = 0
+        
+            ref?.child("AllBooks").child(selectedbookid).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                var value = snapshot.value as? NSDictionary
+                
+                if var activityvalue2 = value?["AboutAuthor"] as? String {
+                    
+                    self.abouttheauthor.text = activityvalue2
+                }
+                
+                if var activityvalue2 = value?["Review1"] as? String {
+                    
+                    self.review1.text = activityvalue2
+                }
+                
+                if var activityvalue2 = value?["Reviewer1"] as? String {
+                    
+                    self.reviewer1.text = "-\(activityvalue2)"
+                }
+                
+                if var activityvalue2 = value?["Review2"] as? String {
+                    
+                    self.review2.text = activityvalue2
+                }
+                
+                if var activityvalue2 = value?["Reviewer2"] as? String {
+                    
+                    self.reviewer2.text = "-\(activityvalue2)"
+                }
+                
+                if var activityvalue2 = value?["Review3"] as? String {
+                    
+                    self.review3.text = activityvalue2
+                }
+                
+                if var activityvalue2 = value?["Reviewer3"] as? String {
+                    
+                    self.reviewer3.text = "-\(activityvalue2)"
+                }
+                
+                if var activityvalue2 = value?["Insights"] as? String {
+                    
+                    self.keyinsights.text = "\(activityvalue2) Key Snippets"
+                }
+                
+                
+            })
+            
+        }
     /*
     // MARK: - Navigation
 

@@ -17,30 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-OM-e6u">
-                                <rect key="frame" x="21.5" y="267" width="331" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="CbM-8T-pyG"/>
-                                    <constraint firstAttribute="width" constant="331" id="Kev-xO-8EQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="22"/>
-                                <color key="textColor" red="0.20962880710000001" green="0.20962880710000001" blue="0.20962880710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgZ-wk-fd8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snippets" translatesAutoresizingMaskIntoConstraints="NO" id="ggM-Nk-VCa">
-                                <rect key="frame" x="99" y="313" width="177" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SnippetsLogoGreen" translatesAutoresizingMaskIntoConstraints="NO" id="3h3-4E-nwB">
+                                <rect key="frame" x="95" y="299" width="184" height="68"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="177" id="Gkh-vB-0g3"/>
-                                    <constraint firstAttribute="height" constant="40" id="Mgd-XP-pYZ"/>
+                                    <constraint firstAttribute="height" constant="68" id="DG8-YM-YI2"/>
+                                    <constraint firstAttribute="width" constant="184" id="kko-U2-tMJ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ggM-Nk-VCa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1yl-NV-P6N"/>
-                            <constraint firstItem="ggM-Nk-VCa" firstAttribute="top" secondItem="TRn-OM-e6u" secondAttribute="bottom" constant="1" id="2le-3P-1Ro"/>
-                            <constraint firstItem="TRn-OM-e6u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="247" id="ww6-uL-yyL"/>
-                            <constraint firstItem="TRn-OM-e6u" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zG4-3m-9R6"/>
+                            <constraint firstItem="pgZ-wk-fd8" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="OqA-SV-rSQ"/>
+                            <constraint firstItem="pgZ-wk-fd8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xny-om-sJb"/>
+                            <constraint firstItem="3h3-4E-nwB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fD1-PR-SKb"/>
+                            <constraint firstItem="pgZ-wk-fd8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jmL-sS-6Tv"/>
+                            <constraint firstItem="pgZ-wk-fd8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mDv-Un-GEe"/>
+                            <constraint firstItem="3h3-4E-nwB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="w6p-1w-l5D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -51,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="snippets" width="595" height="144"/>
+        <image name="SnippetsLogoGreen" width="594" height="137"/>
     </resources>
 </document>

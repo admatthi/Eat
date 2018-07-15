@@ -44,11 +44,14 @@ class ReaderViewController: UIViewController {
     }
     @IBAction func tapNext(_ sender: Any) {
         
-        if counter < 11 {
+        if counter < quote.count  {
             
             nextcount()
 
             
+        } else {
+            
+            self.performSegue(withIdentifier: "ReaderToOverview", sender: self)
         }
     }
     @IBOutlet weak var tableView: UITableView!
@@ -103,7 +106,7 @@ class ReaderViewController: UIViewController {
         quotetext.text = quote[counter]
         counterbutton.setTitle(String(counter+1), for: .normal )
         
-        backgroundlabel.backgroundColor = colors[counter]
+//        backgroundlabel.backgroundColor = colors[counter]
     }
     
     var counter = 0
