@@ -24,7 +24,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SnippetsLogoGreen" translatesAutoresizingMaskIntoConstraints="NO" id="3h3-4E-nwB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orangelogo" translatesAutoresizingMaskIntoConstraints="NO" id="3h3-4E-nwB">
                                 <rect key="frame" x="95" y="299" width="184" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="DG8-YM-YI2"/>
@@ -50,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SnippetsLogoGreen" width="594" height="137"/>
+        <image name="Orangelogo" width="970" height="229"/>
     </resources>
 </document>

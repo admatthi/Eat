@@ -107,7 +107,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             }
             
             
-            backgroundlabel.layer.cornerRadius = 10.0
+            backgroundlabel.layer.cornerRadius = 20.0
             backgroundlabel.clipsToBounds = true
             
             purchased = false
