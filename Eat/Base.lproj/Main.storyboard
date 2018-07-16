@@ -246,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqB-Be-XrM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12673" y="4754"/>
+            <point key="canvasLocation" x="-13364" y="4754"/>
         </scene>
         <!--Subs View Controller-->
         <scene sceneID="aYn-rV-8Tk">
@@ -463,7 +463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubg-aL-9FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11940" y="4754"/>
+            <point key="canvasLocation" x="-12710" y="4754"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Mon-gz-Pri">
@@ -561,7 +561,7 @@
                                     <segue destination="jtV-IT-HH5" kind="show" customClass="SegueFromRight" customModule="Eat" customModuleProvider="target" id="zKd-nT-EWr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SnippetsLogoGreen" translatesAutoresizingMaskIntoConstraints="NO" id="UMd-m8-3mk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orangelogo" translatesAutoresizingMaskIntoConstraints="NO" id="UMd-m8-3mk">
                                 <rect key="frame" x="136" y="44" width="102" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="3aJ-0N-SIO"/>
@@ -1092,7 +1092,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start discovering ideas that will change your life" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE9-Gt-cpy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start discovering life changing ideas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE9-Gt-cpy">
                                 <rect key="frame" x="52" y="67" width="272" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="I4a-YE-6XQ"/>
@@ -2178,7 +2178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYw-qb-8y3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11194.4" y="5011.3943028485764"/>
+            <point key="canvasLocation" x="-11940" y="5011"/>
         </scene>
         <!--Book Overview View Controller-->
         <scene sceneID="464-As-gaE">
@@ -2692,7 +2692,6 @@
         <image name="PinkOutline" width="958" height="189"/>
         <image name="ProfileTapped" width="16" height="16"/>
         <image name="Settings" width="200" height="200"/>
-        <image name="SnippetsLogoGreen" width="594" height="137"/>
         <image name="WhiteButton" width="378" height="76"/>
         <image name="WhiteOutline" width="55" height="55"/>
         <image name="WorkoutsUntapped" width="16" height="16"/>
@@ -2700,12 +2699,12 @@
         <image name="YogaImage" width="295" height="287"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M3O-5p-mHj"/>
-        <segue reference="7jq-hO-3an"/>
-        <segue reference="om5-Pt-tAY"/>
+        <segue reference="ao3-wZ-2o6"/>
+        <segue reference="knN-qt-VWg"/>
+        <segue reference="NGL-xI-GHh"/>
         <segue reference="n47-FR-FVK"/>
         <segue reference="5tr-5x-0Ai"/>
-        <segue reference="SlH-1V-Xtw"/>
+        <segue reference="hr4-mk-0em"/>
         <segue reference="Dcn-FR-y5Z"/>
         <segue reference="qf7-L9-Grm"/>
         <segue reference="4dt-c2-5VA"/>
