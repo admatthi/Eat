@@ -53,7 +53,6 @@ class BookOverviewViewController: UIViewController {
         titlelabel.text = selectedtitle
         author.text = selectedauthor
         cover.image = selectedimage
-        descriptionlabel.text = selecteddescription
         
         queryforreviewinfo()
         
@@ -89,37 +88,7 @@ class BookOverviewViewController: UIViewController {
                 
                 if var activityvalue2 = value?["AboutAuthor"] as? String {
                     
-                    self.abouttheauthor.text = activityvalue2
-                }
-                
-                if var activityvalue2 = value?["Review1"] as? String {
-                    
-                    self.review1.text = activityvalue2
-                }
-                
-                if var activityvalue2 = value?["Reviewer1"] as? String {
-                    
-                    self.reviewer1.text = "-\(activityvalue2)"
-                }
-                
-                if var activityvalue2 = value?["Review2"] as? String {
-                    
-                    self.review2.text = activityvalue2
-                }
-                
-                if var activityvalue2 = value?["Reviewer2"] as? String {
-                    
-                    self.reviewer2.text = "-\(activityvalue2)"
-                }
-                
-                if var activityvalue2 = value?["Review3"] as? String {
-                    
-                    self.review3.text = activityvalue2
-                }
-                
-                if var activityvalue2 = value?["Reviewer3"] as? String {
-                    
-                    self.reviewer3.text = "-\(activityvalue2)"
+//                    self.abouttheauthor.text = activityvalue2
                 }
                 
                 if var activityvalue2 = value?["Insights"] as? String {

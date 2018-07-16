@@ -1680,7 +1680,7 @@
                                             <constraint firstAttribute="height" constant="21" id="Cow-JY-GrB"/>
                                             <constraint firstAttribute="width" constant="21" id="vkE-BN-hO2"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="Settings White"/>
+                                        <state key="normal" backgroundImage="Settings"/>
                                         <connections>
                                             <segue destination="ny6-z1-1xH" kind="show" id="4dt-c2-5VA"/>
                                         </connections>
@@ -2185,248 +2185,30 @@
             <objects>
                 <viewController id="xvC-5O-nSi" customClass="BookOverviewViewController" customModule="Eat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VVN-yF-dhr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWO-3c-JRX">
-                                <rect key="frame" x="0.0" y="20" width="375" height="2380"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zSn-ev-NAv">
-                                        <rect key="frame" x="85" y="43" width="206" height="281"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="281" id="Rtt-wT-Vty"/>
-                                            <constraint firstAttribute="width" constant="206" id="tHK-mk-0kI"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93P-sY-eGo">
-                                        <rect key="frame" x="187.5" y="979.5" width="0.0" height="401"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="401" id="a6R-yN-QFJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark H. McCormack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAB-QW-AAD">
-                                        <rect key="frame" x="22" y="450" width="331" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="331" id="Zf2-oA-soq"/>
-                                            <constraint firstAttribute="height" constant="21" id="xfq-fq-szg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nf3-x8-ZkV">
-                                        <rect key="frame" x="22" y="10" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="aCs-DL-98f"/>
-                                            <constraint firstAttribute="height" constant="25" id="bKF-oo-Eve"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="X"/>
-                                        <connections>
-                                            <segue destination="JWn-hR-rYQ" kind="show" id="3GN-WW-0MT"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lajksdflskdalajksdflskdalajksdflskdalajksdflskdalajksdflskda" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykz-Hm-efq">
-                                        <rect key="frame" x="22" y="332" width="331" height="125"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="331" id="Z8J-KM-X5p"/>
-                                            <constraint firstAttribute="height" constant="125" id="wDV-t5-l77"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="29"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqL-tQ-WiK">
-                                        <rect key="frame" x="22" y="533" width="345" height="222"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="222" id="W8y-Rf-lfx"/>
-                                            <constraint firstAttribute="width" constant="345" id="z4E-kL-Tw2"/>
-                                        </constraints>
-                                        <string key="text">Before they can treat patients, physicians must attend medical school. Before trying cases, attorneys need to pass the bar. But businessmen and managers can work without ever going to business school. It's no wonder they are often lost or unsure when it comes to fundamental management principles. Former management consultant Magretta, with Stone's help, provides these wanderers with a map. In simple, engaging prose, Magretta and Stone, contributor and editor-in-chief, respectively, of the Harvard Business Review, offer an explanation of what a manager does. They logically begin with a description of what's required to be a manager, then explain, generally, how to do it. Along the way, they draw on the lessons of management authorities from Michael E. Porter (\"the essence of strategy is choosing what not to do\") to Peter F. Drucker (\"results are obtained by exploiting opportunities, not by solving problems\"), and also quote more tangential gurus, such as Albert Einstein (\"not everything that can be counted counts, and not everything that counts can be counted\"). The authors do not discuss specifically how to manage people, prepare a budget or deal with shareholders, but that's not their intent. Magretta and Stone set out to provide the overall framework for thinking about how to be a manager, and in that, they succeed. The book also has a useful appendix listing related readings."</string>
-                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqt-gU-l8i">
-                                        <rect key="frame" x="22" y="781" width="345" height="171"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="345" id="CjH-Rd-z6a"/>
-                                            <constraint firstAttribute="height" constant="171" id="jI8-bQ-NCB"/>
-                                        </constraints>
-                                        <string key="text">Before they can treat patients, physicians must attend medical school. Before trying cases, attorneys need to pass the bar. But businessmen and managers can work without ever going to business school. It's no wonder they are often lost or unsure when it comes to fundamental management principles. Former management consultant Magretta, with Stone's help, provides these wanderers with a map. In simple, engaging prose, Magretta and Stone, contributor and editor-in-chief, respectively, of the Harvard Business Review, offer an explanation of what a manager does. They logically begin with a description of what's required to be a manager, then explain, generally, how to do it. Along the way, they draw on the lessons of management authorities from Michael E. Porter (\"the essence of strategy is choosing what not to do\") to Peter F. Drucker (\"results are obtained by exploiting opportunities, not by solving problems\"), and also quote more tangential gurus, such as Albert Einstein (\"not everything that can be counted counts, and not everything that counts can be counted\"). The authors do not discuss specifically how to manage people, prepare a budget or deal with shareholders, but that's not their intent. Magretta and Stone set out to provide the overall framework for thinking about how to be a manager, and in that, they succeed. The book also has a useful appendix listing related readings."</string>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDu-Z9-qdC">
-                                        <rect key="frame" x="22" y="980" width="345" height="102"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="102" id="1ok-U9-XE9"/>
-                                            <constraint firstAttribute="width" constant="345" id="fjL-sO-30L"/>
-                                        </constraints>
-                                        <string key="text">"Less is the funniest, smartest and most humane novel I've read since Tom Rachman's 2010 debut, The Imperfectionists....Greer writes sentences of arresting lyricism and beauty. His metaphors come at you like fireflies.
-</string>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REVIEWS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZP-mH-Qxv">
-                                        <rect key="frame" x="22" y="957" width="331" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="331" id="oTy-8D-U5T"/>
-                                            <constraint firstAttribute="height" constant="18" id="xZD-qh-S0p"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="11"/>
-                                        <color key="textColor" red="0.65098039215686276" green="0.62352941176470589" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kU6-0A-rXJ">
-                                        <rect key="frame" x="22" y="1090" width="331" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="2qC-uP-BTQ"/>
-                                            <constraint firstAttribute="width" constant="331" id="SqU-AL-sBg"/>
-                                        </constraints>
-                                        <string key="text">―New York Times Book Review
-</string>
-                                        <fontDescription key="fontDescription" name="GillSans-Italic" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPq-Fp-8rT">
-                                        <rect key="frame" x="22" y="1118" width="345" height="102"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="102" id="HJp-dD-Z8h"/>
-                                            <constraint firstAttribute="width" constant="345" id="sqO-Nf-qhZ"/>
-                                        </constraints>
-                                        <string key="text">"Less is the funniest, smartest and most humane novel I've read since Tom Rachman's 2010 debut, The Imperfectionists....Greer writes sentences of arresting lyricism and beauty. His metaphors come at you like fireflies.
-</string>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7U-RW-KNp">
-                                        <rect key="frame" x="22" y="1228" width="331" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="Bqa-uj-3kX"/>
-                                            <constraint firstAttribute="width" constant="331" id="Pg4-6U-Yc3"/>
-                                        </constraints>
-                                        <string key="text">―New York Times Book Review
-</string>
-                                        <fontDescription key="fontDescription" name="GillSans-Italic" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT THE AUTHOR" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyd-he-TBT">
-                                        <rect key="frame" x="22" y="763" width="331" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="HYx-OC-4ty"/>
-                                            <constraint firstAttribute="width" constant="331" id="YmM-73-LGp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="11"/>
-                                        <color key="textColor" red="0.65098039215686276" green="0.62352941176470589" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCW-JB-gtP">
-                                        <rect key="frame" x="22" y="1256" width="345" height="102"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="345" id="LeZ-DS-dg3"/>
-                                            <constraint firstAttribute="height" constant="102" id="nxr-jY-qiX"/>
-                                        </constraints>
-                                        <string key="text">"Less is the funniest, smartest and most humane novel I've read since Tom Rachman's 2010 debut, The Imperfectionists....Greer writes sentences of arresting lyricism and beauty. His metaphors come at you like fireflies.
-</string>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-7R-V7Z">
-                                        <rect key="frame" x="22" y="1366" width="331" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="331" id="Jkj-Xg-asg"/>
-                                            <constraint firstAttribute="height" constant="18" id="lHZ-Oq-SnB"/>
-                                        </constraints>
-                                        <string key="text">―New York Times Book Review
-</string>
-                                        <fontDescription key="fontDescription" name="GillSans-Italic" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.13333333333333333" green="0.15686274509803921" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Idea" translatesAutoresizingMaskIntoConstraints="NO" id="sUt-02-le4">
-                                        <rect key="frame" x="22" y="514" width="17" height="17"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="LrY-Aj-DwD"/>
-                                            <constraint firstAttribute="width" constant="17" id="x13-ds-7KM"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Key Insights" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P5-Sr-5m0">
-                                        <rect key="frame" x="47" y="512" width="277" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="277" id="VxD-ln-CQW"/>
-                                            <constraint firstAttribute="height" constant="21" id="q9j-vB-DMA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
-                                        <color key="textColor" red="0.1333333333" green="0.15686274510000001" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oO5-QM-vYU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <constraints>
-                                    <constraint firstItem="zSn-ev-NAv" firstAttribute="top" secondItem="zWO-3c-JRX" secondAttribute="top" constant="43" id="1sw-de-ZA9"/>
-                                    <constraint firstItem="yZP-mH-Qxv" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="5p3-ce-OSo"/>
-                                    <constraint firstItem="Z7U-RW-KNp" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="5tY-sL-hIw"/>
-                                    <constraint firstItem="sUt-02-le4" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="7ME-gM-DHg"/>
-                                    <constraint firstAttribute="bottom" secondItem="93P-sY-eGo" secondAttribute="bottom" constant="999.5" id="Bko-Sz-7Jr"/>
-                                    <constraint firstItem="yZP-mH-Qxv" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="DLy-Q5-GKj"/>
-                                    <constraint firstItem="7P5-Sr-5m0" firstAttribute="leading" secondItem="sUt-02-le4" secondAttribute="trailing" constant="8" id="FbX-Zl-bhf"/>
-                                    <constraint firstItem="SqL-tQ-WiK" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="GNY-f3-USZ"/>
-                                    <constraint firstItem="kU6-0A-rXJ" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="Ije-Af-Nz6"/>
-                                    <constraint firstItem="Z7U-RW-KNp" firstAttribute="top" secondItem="BPq-Fp-8rT" secondAttribute="bottom" constant="8" id="J44-We-v3h"/>
-                                    <constraint firstItem="nf3-x8-ZkV" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="Jvl-bF-e43"/>
-                                    <constraint firstItem="wDu-Z9-qdC" firstAttribute="top" secondItem="yZP-mH-Qxv" secondAttribute="bottom" constant="5" id="KHq-cV-fZB"/>
-                                    <constraint firstAttribute="trailing" secondItem="93P-sY-eGo" secondAttribute="trailing" constant="187" id="Ksh-np-qMz"/>
-                                    <constraint firstItem="93P-sY-eGo" firstAttribute="centerY" secondItem="zWO-3c-JRX" secondAttribute="centerY" constant="-10" id="Lt4-JY-yUh"/>
-                                    <constraint firstItem="Kfh-7R-V7Z" firstAttribute="top" secondItem="OCW-JB-gtP" secondAttribute="bottom" constant="8" id="M4I-xy-4GB"/>
-                                    <constraint firstItem="SqL-tQ-WiK" firstAttribute="top" secondItem="7P5-Sr-5m0" secondAttribute="bottom" id="NKt-Bu-fVi"/>
-                                    <constraint firstItem="Kfh-7R-V7Z" firstAttribute="top" secondItem="OCW-JB-gtP" secondAttribute="bottom" constant="8" id="PTT-lc-3EN"/>
-                                    <constraint firstItem="Iyd-he-TBT" firstAttribute="top" secondItem="SqL-tQ-WiK" secondAttribute="bottom" constant="8" id="PgD-ps-Dp6"/>
-                                    <constraint firstItem="sUt-02-le4" firstAttribute="top" secondItem="KAB-QW-AAD" secondAttribute="bottom" constant="43" id="Pm9-BA-ozL"/>
-                                    <constraint firstItem="BPq-Fp-8rT" firstAttribute="top" secondItem="kU6-0A-rXJ" secondAttribute="bottom" constant="10" id="R6t-dz-mqa"/>
-                                    <constraint firstItem="Iyd-he-TBT" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="Seq-SH-SX7"/>
-                                    <constraint firstItem="KAB-QW-AAD" firstAttribute="centerX" secondItem="zWO-3c-JRX" secondAttribute="centerX" id="U15-NH-Ulr"/>
-                                    <constraint firstItem="BPq-Fp-8rT" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="URF-4V-F7m"/>
-                                    <constraint firstItem="Z7U-RW-KNp" firstAttribute="top" secondItem="BPq-Fp-8rT" secondAttribute="bottom" constant="8" id="X9r-R9-a2H"/>
-                                    <constraint firstItem="7P5-Sr-5m0" firstAttribute="top" secondItem="KAB-QW-AAD" secondAttribute="bottom" constant="41" id="bS4-34-wmk"/>
-                                    <constraint firstItem="wDu-Z9-qdC" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="cPH-jL-hd4"/>
-                                    <constraint firstItem="SqL-tQ-WiK" firstAttribute="centerX" secondItem="zWO-3c-JRX" secondAttribute="centerX" constant="7" id="e72-Y8-xDf"/>
-                                    <constraint firstItem="kU6-0A-rXJ" firstAttribute="top" secondItem="wDu-Z9-qdC" secondAttribute="bottom" constant="8" id="fY3-Tr-6Ah"/>
-                                    <constraint firstItem="kU6-0A-rXJ" firstAttribute="top" secondItem="wDu-Z9-qdC" secondAttribute="bottom" constant="8" id="fqi-cy-BAq"/>
-                                    <constraint firstItem="Kfh-7R-V7Z" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="gqR-pg-7pD"/>
-                                    <constraint firstItem="OCW-JB-gtP" firstAttribute="top" secondItem="Z7U-RW-KNp" secondAttribute="bottom" constant="10" id="gyR-eB-ZN7"/>
-                                    <constraint firstItem="xqt-gU-l8i" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="hHG-y6-fvg"/>
-                                    <constraint firstItem="ykz-Hm-efq" firstAttribute="top" secondItem="zSn-ev-NAv" secondAttribute="bottom" constant="8" id="ihF-af-JCZ"/>
-                                    <constraint firstItem="KAB-QW-AAD" firstAttribute="top" secondItem="zSn-ev-NAv" secondAttribute="bottom" constant="126" id="jBZ-lX-C3r"/>
-                                    <constraint firstAttribute="height" constant="2380" id="lsC-Hh-exI"/>
-                                    <constraint firstItem="wDu-Z9-qdC" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="lsN-Bv-Q5I"/>
-                                    <constraint firstItem="zSn-ev-NAv" firstAttribute="centerX" secondItem="zWO-3c-JRX" secondAttribute="centerX" id="mGj-Ql-zdd"/>
-                                    <constraint firstItem="OCW-JB-gtP" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="mRY-9Q-z2F"/>
-                                    <constraint firstItem="kU6-0A-rXJ" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="mX3-6D-oJz"/>
-                                    <constraint firstItem="nf3-x8-ZkV" firstAttribute="top" secondItem="zWO-3c-JRX" secondAttribute="top" constant="10" id="nbQ-GZ-zPy"/>
-                                    <constraint firstItem="ykz-Hm-efq" firstAttribute="centerX" secondItem="zWO-3c-JRX" secondAttribute="centerX" id="ni7-zL-Fcf"/>
-                                    <constraint firstItem="yZP-mH-Qxv" firstAttribute="top" secondItem="xqt-gU-l8i" secondAttribute="bottom" constant="5" id="orU-JJ-5ms"/>
-                                    <constraint firstItem="Iyd-he-TBT" firstAttribute="leading" secondItem="zWO-3c-JRX" secondAttribute="leading" constant="22" id="rNY-hO-ygj"/>
-                                    <constraint firstItem="xqt-gU-l8i" firstAttribute="top" secondItem="Iyd-he-TBT" secondAttribute="bottom" id="sRN-V8-jIw"/>
-                                    <constraint firstItem="SqL-tQ-WiK" firstAttribute="centerX" secondItem="93P-sY-eGo" secondAttribute="centerX" constant="7" id="yjF-fd-ycy"/>
-                                </constraints>
-                            </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TransparentBackground" translatesAutoresizingMaskIntoConstraints="NO" id="qfG-Kc-QHk">
-                                <rect key="frame" x="0.0" y="2272" width="375" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="5gE-ho-oNM"/>
+                                    <constraint firstAttribute="height" constant="667" id="ilV-Py-6rs"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DarkBackground" translatesAutoresizingMaskIntoConstraints="NO" id="HCj-Ko-XHG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark H. McCormack" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOX-x2-CU3">
+                                <rect key="frame" x="16" y="496" width="331" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="331" id="E3x-yC-8OG"/>
+                                    <constraint firstAttribute="height" constant="21" id="rXO-sa-lXr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqm-F9-0p4">
-                                <rect key="frame" x="22" y="2316" width="331" height="67"/>
+                                <rect key="frame" x="22" y="583" width="331" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="331" id="Fh4-OQ-IpJ"/>
                                     <constraint firstAttribute="height" constant="67" id="dIH-iN-aLC"/>
@@ -2439,48 +2221,88 @@
                                     <action selector="tapStartReading:" destination="xvC-5O-nSi" eventType="touchUpInside" id="not-Wc-Ipt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohu-gc-zM5">
+                                <rect key="frame" x="16" y="39" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="19Z-QE-B6S"/>
+                                    <constraint firstAttribute="height" constant="38" id="NoZ-2z-Zro"/>
+                                    <constraint firstAttribute="width" constant="38" id="V6a-n4-Mfk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="dyY-Dy-qQM"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="X"/>
+                                <connections>
+                                    <segue destination="JWn-hR-rYQ" kind="show" id="om5-Pt-tAY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Idea" translatesAutoresizingMaskIntoConstraints="NO" id="quy-cD-H7t">
+                                <rect key="frame" x="16" y="535" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="FwQ-Yj-Kdr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="17" id="MSv-rf-3Uq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="jE1-Vd-sb6"/>
+                                    <constraint firstAttribute="width" constant="17" id="jMF-uL-gyn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 Key Insights" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnP-Xq-Axk">
+                                <rect key="frame" x="33" y="533" width="277" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="aue-0l-e3P"/>
+                                    <constraint firstAttribute="height" constant="21" id="f5D-qm-HAG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lajksdflskdalajksdflskdalajksdflskdalajksdflskdalajksdflskda" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUT-LG-WhH">
+                                <rect key="frame" x="16" y="397" width="331" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="331" id="JeK-RC-4Fg"/>
+                                    <constraint firstAttribute="height" constant="91" id="x28-XC-3uv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="29"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zWO-3c-JRX" firstAttribute="top" secondItem="0Kx-8c-nAx" secondAttribute="top" id="GIu-VL-Cqn"/>
+                            <constraint firstItem="JUT-LG-WhH" firstAttribute="leading" secondItem="0Kx-8c-nAx" secondAttribute="leading" constant="16" id="4V5-5L-ZWP"/>
+                            <constraint firstItem="sOX-x2-CU3" firstAttribute="leading" secondItem="0Kx-8c-nAx" secondAttribute="leading" constant="16" id="C3Z-gi-ePj"/>
+                            <constraint firstItem="bnP-Xq-Axk" firstAttribute="top" secondItem="sOX-x2-CU3" secondAttribute="bottom" constant="16" id="CNg-Xh-qsl"/>
+                            <constraint firstItem="pqm-F9-0p4" firstAttribute="top" secondItem="quy-cD-H7t" secondAttribute="bottom" constant="31" id="Cin-PN-pOR"/>
+                            <constraint firstItem="HCj-Ko-XHG" firstAttribute="leading" secondItem="0Kx-8c-nAx" secondAttribute="leading" id="HGQ-UO-rf3"/>
                             <constraint firstItem="pqm-F9-0p4" firstAttribute="centerX" secondItem="VVN-yF-dhr" secondAttribute="centerX" id="JNO-bC-lkW"/>
-                            <constraint firstItem="zWO-3c-JRX" firstAttribute="leading" secondItem="VVN-yF-dhr" secondAttribute="leading" id="Ks0-ih-Z9X"/>
-                            <constraint firstItem="qfG-Kc-QHk" firstAttribute="leading" secondItem="0Kx-8c-nAx" secondAttribute="leading" id="Nmo-s9-RBg"/>
-                            <constraint firstAttribute="bottom" secondItem="zWO-3c-JRX" secondAttribute="bottom" id="VtQ-ue-Bok"/>
-                            <constraint firstItem="qfG-Kc-QHk" firstAttribute="trailing" secondItem="0Kx-8c-nAx" secondAttribute="trailing" id="az7-os-eqc"/>
-                            <constraint firstItem="zWO-3c-JRX" firstAttribute="leading" secondItem="0Kx-8c-nAx" secondAttribute="leading" id="bM7-v1-Gm2"/>
-                            <constraint firstItem="zWO-3c-JRX" firstAttribute="bottom" secondItem="0Kx-8c-nAx" secondAttribute="bottom" id="crj-dO-x8D"/>
-                            <constraint firstItem="zWO-3c-JRX" firstAttribute="top" secondItem="0Kx-8c-nAx" secondAttribute="top" id="j4N-LT-KqF"/>
-                            <constraint firstItem="zWO-3c-JRX" firstAttribute="trailing" secondItem="0Kx-8c-nAx" secondAttribute="trailing" id="jRy-aY-tPX"/>
-                            <constraint firstItem="zWO-3c-JRX" firstAttribute="centerX" secondItem="VVN-yF-dhr" secondAttribute="centerX" id="jaX-nI-7cb"/>
+                            <constraint firstItem="bnP-Xq-Axk" firstAttribute="leading" secondItem="quy-cD-H7t" secondAttribute="trailing" id="LKX-sN-327"/>
+                            <constraint firstItem="ohu-gc-zM5" firstAttribute="leading" secondItem="0Kx-8c-nAx" secondAttribute="leading" constant="16" id="PJv-Gd-a4g"/>
+                            <constraint firstItem="pqm-F9-0p4" firstAttribute="top" secondItem="bnP-Xq-Axk" secondAttribute="bottom" constant="29" id="TbG-Ww-Zr7"/>
+                            <constraint firstItem="HCj-Ko-XHG" firstAttribute="bottom" secondItem="0Kx-8c-nAx" secondAttribute="bottom" id="VHt-4Y-dkt"/>
+                            <constraint firstItem="HCj-Ko-XHG" firstAttribute="trailing" secondItem="0Kx-8c-nAx" secondAttribute="trailing" id="VUc-gc-uOc"/>
+                            <constraint firstItem="ohu-gc-zM5" firstAttribute="top" secondItem="0Kx-8c-nAx" secondAttribute="top" constant="19" id="Xx7-8R-TTx"/>
+                            <constraint firstItem="oO5-QM-vYU" firstAttribute="top" secondItem="VVN-yF-dhr" secondAttribute="top" id="YZn-vU-0Ae"/>
+                            <constraint firstItem="oO5-QM-vYU" firstAttribute="leading" secondItem="0Kx-8c-nAx" secondAttribute="leading" id="a52-ad-tjp"/>
+                            <constraint firstItem="sOX-x2-CU3" firstAttribute="top" secondItem="JUT-LG-WhH" secondAttribute="bottom" constant="8" id="aNr-Ng-60W"/>
+                            <constraint firstItem="quy-cD-H7t" firstAttribute="leading" secondItem="0Kx-8c-nAx" secondAttribute="leading" constant="16" id="d3V-l9-fkP"/>
+                            <constraint firstItem="HCj-Ko-XHG" firstAttribute="top" secondItem="VVN-yF-dhr" secondAttribute="top" id="o6f-nJ-NNW"/>
                             <constraint firstItem="0Kx-8c-nAx" firstAttribute="bottom" secondItem="pqm-F9-0p4" secondAttribute="bottom" constant="17" id="oJW-oD-Lws"/>
-                            <constraint firstItem="qfG-Kc-QHk" firstAttribute="bottom" secondItem="0Kx-8c-nAx" secondAttribute="bottom" id="qtp-xH-rfH"/>
+                            <constraint firstItem="oO5-QM-vYU" firstAttribute="trailing" secondItem="0Kx-8c-nAx" secondAttribute="trailing" id="tt0-Bd-4ZJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Kx-8c-nAx"/>
                     </view>
-                    <size key="freeformSize" width="375" height="2400"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="abouttheauthor" destination="xqt-gU-l8i" id="5TA-jD-zaO"/>
-                        <outlet property="author" destination="KAB-QW-AAD" id="bbB-r7-XYd"/>
-                        <outlet property="cover" destination="zSn-ev-NAv" id="4cQ-xU-WKY"/>
-                        <outlet property="descriptionlabel" destination="SqL-tQ-WiK" id="1qS-yX-b3v"/>
-                        <outlet property="keyinsights" destination="7P5-Sr-5m0" id="Frg-rI-O29"/>
-                        <outlet property="review1" destination="wDu-Z9-qdC" id="1jb-aE-Nxj"/>
-                        <outlet property="review2" destination="BPq-Fp-8rT" id="O6z-5G-OGe"/>
-                        <outlet property="review3" destination="OCW-JB-gtP" id="Jk4-oa-qUh"/>
-                        <outlet property="reviewer1" destination="kU6-0A-rXJ" id="90u-kw-SFP"/>
-                        <outlet property="reviewer2" destination="Z7U-RW-KNp" id="8eC-Ps-kgC"/>
-                        <outlet property="reviewer3" destination="Kfh-7R-V7Z" id="L1B-Ow-Qk5"/>
+                        <outlet property="author" destination="sOX-x2-CU3" id="AbX-hn-03a"/>
+                        <outlet property="cover" destination="oO5-QM-vYU" id="493-IP-W0d"/>
+                        <outlet property="keyinsights" destination="bnP-Xq-Axk" id="Pfh-Cq-Wbt"/>
                         <outlet property="tapstart" destination="pqm-F9-0p4" id="cyG-s8-pvQ"/>
                         <outlet property="tapstartreading" destination="pqm-F9-0p4" id="fdJ-XZ-8PW"/>
-                        <outlet property="titlelabel" destination="ykz-Hm-efq" id="ND6-ki-foi"/>
+                        <outlet property="titlelabel" destination="JUT-LG-WhH" id="Id1-MW-3On"/>
                         <segue destination="PcP-Wv-fbZ" kind="show" identifier="BookOverviewToPurchase" id="SlH-1V-Xtw"/>
                         <segue destination="SVO-GV-jvL" kind="show" identifier="BookOverviewToRead" id="M3O-5p-mHj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfj-6t-vDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10447.200000000001" y="5550.2248875562227"/>
+            <point key="canvasLocation" x="-10447.200000000001" y="4771.6641679160421"/>
         </scene>
         <!--Reader View Controller-->
         <scene sceneID="TZ8-zC-SOI">
@@ -2523,10 +2345,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ig2-hK-TBx">
-                                <rect key="frame" x="24" y="33" width="30" height="30"/>
+                                <rect key="frame" x="24" y="33" width="38" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="8zd-r2-05q"/>
-                                    <constraint firstAttribute="height" constant="30" id="AWr-gr-7i1"/>
+                                    <constraint firstAttribute="width" constant="38" id="8zd-r2-05q"/>
+                                    <constraint firstAttribute="height" constant="38" id="AWr-gr-7i1"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="X"/>
                                 <connections>
@@ -2869,9 +2691,8 @@
         <image name="OvalNoShadow" width="142" height="142"/>
         <image name="PinkOutline" width="958" height="189"/>
         <image name="ProfileTapped" width="16" height="16"/>
-        <image name="Settings White" width="196" height="196"/>
+        <image name="Settings" width="200" height="200"/>
         <image name="SnippetsLogoGreen" width="594" height="137"/>
-        <image name="TransparentBackground" width="414" height="130"/>
         <image name="WhiteButton" width="378" height="76"/>
         <image name="WhiteOutline" width="55" height="55"/>
         <image name="WorkoutsUntapped" width="16" height="16"/>
@@ -2881,12 +2702,12 @@
     <inferredMetricsTieBreakers>
         <segue reference="M3O-5p-mHj"/>
         <segue reference="7jq-hO-3an"/>
-        <segue reference="3GN-WW-0MT"/>
+        <segue reference="om5-Pt-tAY"/>
         <segue reference="n47-FR-FVK"/>
         <segue reference="5tr-5x-0Ai"/>
         <segue reference="SlH-1V-Xtw"/>
         <segue reference="Dcn-FR-y5Z"/>
-        <segue reference="nRD-N8-Le1"/>
+        <segue reference="qf7-L9-Grm"/>
         <segue reference="4dt-c2-5VA"/>
     </inferredMetricsTieBreakers>
 </document>

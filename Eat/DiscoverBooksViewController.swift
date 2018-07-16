@@ -566,17 +566,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             selectedauthor = businessmoneybookauthors[businessmoneybookids[indexPath.row]]!
             selectedimage = businessmoneybookcovers[businessmoneybookids[indexPath.row]]!
 
-            selecteddescription = businessmoneydescriptions[businessmoneybookids[indexPath.row]]!
+//            selecteddescription = businessmoneydescriptions[businessmoneybookids[indexPath.row]]!
             
-            if purchased {
-                
-                self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
-                
-            } else {
-                
-                self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
-                
-            }
+            self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+
             
             
         } else {
@@ -588,17 +581,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 selectedtitle = healthbooknames[healthbookids[indexPath.row]]!
                 selectedauthor = healthbookauthors[healthbookids[indexPath.row]]!
                 selectedimage = healthbookcovers[healthbookids[indexPath.row]]!
-                selecteddescription = healthdescriptions[healthbookids[indexPath.row]]!
-                if purchased {
-                    
-                    self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
-                    
-                } else {
-                    
-                    self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
-                    
-                }
-                
+//                selecteddescription = healthdescriptions[healthbookids[indexPath.row]]!
+                self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+
             } else {
                 
                 if collectionView.tag == 3 {
@@ -607,16 +592,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                     selectedtitle = socialbooknames[socialbookids[indexPath.row]]!
                     selectedauthor = socialbookauthors[socialbookids[indexPath.row]]!
                     selectedimage = socialbookcovers[socialbookids[indexPath.row]]!
-                    selecteddescription = socialdescriptions[socialbookids[indexPath.row]]!
-                    if purchased {
-                        
-                        self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
-                        
-                    } else {
-                        
-                        self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
-                        
-                    }
+//                    selecteddescription = socialdescriptions[socialbookids[indexPath.row]]!
+                    self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+
                     
                 } else {
                     
@@ -626,17 +604,10 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         selectedtitle = booknames[bookids[indexPath.row]]!
                         selectedauthor = bookauthors[bookids[indexPath.row]]!
                         selectedimage = bookcovers[bookids[indexPath.row]]!
-                        selecteddescription = businessmoneydescriptions[bookids[indexPath.row]]!
+//                        selecteddescription = businessmoneydescriptions[bookids[indexPath.row]]!
                         
-                        if purchased {
-                            
-                            self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
+                        self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
 
-                        } else {
-                            
-                            self.performSegue(withIdentifier: "HomeToPurchase", sender: self)
-
-                        }
                         
                     }
                 }
