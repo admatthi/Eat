@@ -55,6 +55,7 @@
 		9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBC5C220C2F77C00C38DFC /* DataService.swift */; };
 		9DE84C1B20F7B7F90048B78D /* BookOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE84C1A20F7B7F90048B78D /* BookOverviewViewController.swift */; };
 		9DE84C1D20F7CF790048B78D /* SubsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE84C1C20F7CF790048B78D /* SubsViewController.swift */; };
+		9DF1902920FCF75D00553FF0 /* A1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF1902820FCF75D00553FF0 /* A1ViewController.swift */; };
 		9DFB9D5620D9D39100DFA8A4 /* Settings2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB9D5520D9D39100DFA8A4 /* Settings2ViewController.swift */; };
 		C3552F51131E596A3143D483 /* Pods_EatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E85CEF3FB24BB9D7280F9A /* Pods_EatTests.framework */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		9DBBC5C220C2F77C00C38DFC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9DE84C1A20F7B7F90048B78D /* BookOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookOverviewViewController.swift; sourceTree = "<group>"; };
 		9DE84C1C20F7CF790048B78D /* SubsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubsViewController.swift; sourceTree = "<group>"; };
+		9DF1902820FCF75D00553FF0 /* A1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A1ViewController.swift; sourceTree = "<group>"; };
 		9DFB9D5520D9D39100DFA8A4 /* Settings2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings2ViewController.swift; sourceTree = "<group>"; };
 		A88B6C258942DD8C488A6364 /* Pods-EatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatTests/Pods-EatTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF9B31F77D99EB6CC4E6816D /* Pods_Eat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 				9D694E6720B1DD5200AEED4E /* AppDelegate.swift */,
 				9D694E6B20B1DD5300AEED4E /* Main.storyboard */,
 				9D6380ED20B1E01000350C4D /* AViewController.swift */,
+				9DF1902820FCF75D00553FF0 /* A1ViewController.swift */,
 				9D6380F120B1E01A00350C4D /* BViewController.swift */,
 				9D6380F520B1E02300350C4D /* CViewController.swift */,
 				9D6380F920B1E03100350C4D /* DViewController.swift */,
@@ -491,6 +494,7 @@
 				9DFB9D5620D9D39100DFA8A4 /* Settings2ViewController.swift in Sources */,
 				9D6380FA20B1E03100350C4D /* DViewController.swift in Sources */,
 				9D18577820F5677F0079FF84 /* ReaderViewController.swift in Sources */,
+				9DF1902920FCF75D00553FF0 /* A1ViewController.swift in Sources */,
 				9D3CC6AA20F50F8E0051AA76 /* BooksCollectionViewCell.swift in Sources */,
 				9D6380F220B1E01A00350C4D /* BViewController.swift in Sources */,
 				9D6380F620B1E02300350C4D /* CViewController.swift in Sources */,

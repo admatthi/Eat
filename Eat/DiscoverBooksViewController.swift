@@ -84,6 +84,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         self.becomeFirstResponder() // To get shake gesture
         
+        FBSDKAppEvents.logEvent("Discover Viewed")
+
         tryingtopurchase = false
         // Do any additional setup after loading the view.
         

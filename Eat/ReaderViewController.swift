@@ -57,6 +57,8 @@ class ReaderViewController: UIViewController {
         
         whitelabel.layer.cornerRadius = 10.0
         whitelabel.layer.masksToBounds = true
+        
+        FBSDKAppEvents.logEvent("Read Book Viewed")
 //        wtf()
         
             whatthehell()

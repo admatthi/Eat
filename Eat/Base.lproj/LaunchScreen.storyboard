@@ -24,7 +24,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orangelogo" translatesAutoresizingMaskIntoConstraints="NO" id="3h3-4E-nwB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrangeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="byc-l1-WdU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueBackground" translatesAutoresizingMaskIntoConstraints="NO" id="3h3-4E-nwB">
                                 <rect key="frame" x="95" y="299" width="184" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="DG8-YM-YI2"/>
@@ -34,11 +37,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="byc-l1-WdU" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Db0-PA-5fU"/>
+                            <constraint firstItem="byc-l1-WdU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FoZ-VF-Kb5"/>
                             <constraint firstItem="pgZ-wk-fd8" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="OqA-SV-rSQ"/>
+                            <constraint firstItem="byc-l1-WdU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SJW-11-HRJ"/>
                             <constraint firstItem="pgZ-wk-fd8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xny-om-sJb"/>
                             <constraint firstItem="3h3-4E-nwB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fD1-PR-SKb"/>
                             <constraint firstItem="pgZ-wk-fd8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jmL-sS-6Tv"/>
                             <constraint firstItem="pgZ-wk-fd8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mDv-Un-GEe"/>
+                            <constraint firstItem="byc-l1-WdU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vDq-MU-Boe"/>
                             <constraint firstItem="3h3-4E-nwB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="w6p-1w-l5D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -50,6 +57,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Orangelogo" width="970" height="229"/>
+        <image name="BlueBackground" width="275" height="261"/>
+        <image name="OrangeBackground" width="1242" height="2208"/>
     </resources>
 </document>
