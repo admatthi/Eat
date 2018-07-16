@@ -94,26 +94,14 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         if Auth.auth().currentUser == nil {
             // Do smth if user is not logged in
 
+            purchased = false
             
-            if bookids.count == 0 {
+            DispatchQueue.main.async {
                 
-                queryforbookids { () -> () in
-                    
-                    self.queryforbookinfo()
-                    
-                }
-                
-            } else {
-                
+                self.performSegue(withIdentifier: "DiscoverToSale", sender: self)
                 
             }
             
-            
-            backgroundlabel.layer.cornerRadius = 20.0
-            backgroundlabel.clipsToBounds = true
-            
-            purchased = false
-            tapsettings.alpha = 0
             
         } else {
             

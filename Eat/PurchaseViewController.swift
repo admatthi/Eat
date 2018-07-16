@@ -202,13 +202,13 @@ class PurchaseViewController: UIViewController {
                                         
                                             newuser = false
                                             
-                                            self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-
                                             self.showAlert(alert: self.alertForPurchaseResult(result: result))
 
+                                            tryingtopurchase = true
+                                            
                                             DispatchQueue.main.async {
                                                 
-
+                                                self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
                                                 
                                             }
                                             
@@ -217,13 +217,7 @@ class PurchaseViewController: UIViewController {
                                             
                                             self.showAlert(alert: self.alertForPurchaseResult(result: result))
                                             
-                                            tryingtopurchase = true
-                                            
-                                            DispatchQueue.main.async {
-                                                
-                                                self.performSegue(withIdentifier: "PurchaseToLoging", sender: self)
-                                                
-                                            }
+
                                         }
                                         
                                         
