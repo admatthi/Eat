@@ -50,6 +50,20 @@ class ReaderViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference?
     var category = String()
+    
+    var bookmarktapped = Bool()
+    
+    func showbookmark() {
+        
+        if bookmarktapped {
+            
+            tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
+            
+        } else {
+            
+            tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +71,8 @@ class ReaderViewController: UIViewController {
         
         whitelabel.layer.cornerRadius = 10.0
         whitelabel.layer.masksToBounds = true
+        
+        bookmarktapped = true
         
         FBSDKAppEvents.logEvent("Read Book Viewed")
 //        wtf()
@@ -104,6 +120,7 @@ class ReaderViewController: UIViewController {
     
     func lastcount() {
         
+        
         if counter == 0 {
             
             
@@ -114,11 +131,33 @@ class ReaderViewController: UIViewController {
             
         }
         
+        bookmarktapped = true
+        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)    }
+    
+    @IBAction func tapBookMark(_ sender: Any) {
+        
+        if bookmarktapped {
+            
+            tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
+            
+            bookmarktapped = false
+            
+            ref?.child("Users").child(uid).child("Favorites").childByAutoId().updateChildValues(["Text" : quote[counter]])
+            
+        } else {
+            
+            tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+            
+            bookmarktapped = true
+        }
         
     }
-    
+    @IBOutlet weak var tapbookmark: UIButton!
     func nextcount() {
         
+        bookmarktapped = true
+        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+
         if counter > (quote.count-1) {
             
             self.performSegue(withIdentifier: "ReaderToOverview", sender: self)
@@ -233,303 +272,304 @@ class ReaderViewController: UIViewController {
         
         if counter == 0 {
             
-            one.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck2")
+            three.image = UIImage(named: "OrangeCheck2")
+            four.image = UIImage(named: "OrangeCheck2")
+            five.image = UIImage(named: "OrangeCheck2")
+            six.image = UIImage(named: "OrangeCheck2")
+            seven.image = UIImage(named: "OrangeCheck2")
+            eight.image = UIImage(named: "OrangeCheck2")
+            nine.image = UIImage(named: "OrangeCheck2")
+            ten.image = UIImage(named: "OrangeCheck2")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 1 {
             
-            two.alpha = 1
-            one.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck2")
+            four.image = UIImage(named: "OrangeCheck2")
+            five.image = UIImage(named: "OrangeCheck2")
+            six.image = UIImage(named: "OrangeCheck2")
+            seven.image = UIImage(named: "OrangeCheck2")
+            eight.image = UIImage(named: "OrangeCheck2")
+            nine.image = UIImage(named: "OrangeCheck2")
+            ten.image = UIImage(named: "OrangeCheck2")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 2 {
             
-            three.alpha = 1
-            two.alpha = 0.5
-            one.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck2")
+            five.image = UIImage(named: "OrangeCheck2")
+            six.image = UIImage(named: "OrangeCheck2")
+            seven.image = UIImage(named: "OrangeCheck2")
+            eight.image = UIImage(named: "OrangeCheck2")
+            nine.image = UIImage(named: "OrangeCheck2")
+            ten.image = UIImage(named: "OrangeCheck2")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 3 {
             
-            four.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            one.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck2")
+            six.image = UIImage(named: "OrangeCheck2")
+            seven.image = UIImage(named: "OrangeCheck2")
+            eight.image = UIImage(named: "OrangeCheck2")
+            nine.image = UIImage(named: "OrangeCheck2")
+            ten.image = UIImage(named: "OrangeCheck2")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 4 {
             
-            five.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            one.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck2")
+            seven.image = UIImage(named: "OrangeCheck2")
+            eight.image = UIImage(named: "OrangeCheck2")
+            nine.image = UIImage(named: "OrangeCheck2")
+            ten.image = UIImage(named: "OrangeCheck2")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 5 {
             
-            six.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            one.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck2")
+            eight.image = UIImage(named: "OrangeCheck2")
+            nine.image = UIImage(named: "OrangeCheck2")
+            ten.image = UIImage(named: "OrangeCheck2")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 6 {
             
-            seven.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            one.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck")
+            eight.image = UIImage(named: "OrangeCheck2")
+            nine.image = UIImage(named: "OrangeCheck2")
+            ten.image = UIImage(named: "OrangeCheck2")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 7 {
             
-            eight.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            one.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
-            
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck")
+            eight.image = UIImage(named: "OrangeCheck")
+            nine.image = UIImage(named: "OrangeCheck2")
+            ten.image = UIImage(named: "OrangeCheck2")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
         }
         
         if counter == 8 {
             
-            nine.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            one.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck")
+            eight.image = UIImage(named: "OrangeCheck")
+            nine.image = UIImage(named: "OrangeCheck")
+            ten.image = UIImage(named: "OrangeCheck2")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 9 {
             
-            ten.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            one.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck")
+            eight.image = UIImage(named: "OrangeCheck")
+            nine.image = UIImage(named: "OrangeCheck")
+            ten.image = UIImage(named: "OrangeCheck")
+            eleven.image = UIImage(named: "OrangeCheck2")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 10 {
             
-            eleven.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            one.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck")
+            eight.image = UIImage(named: "OrangeCheck")
+            nine.image = UIImage(named: "OrangeCheck")
+            ten.image = UIImage(named: "OrangeCheck")
+            eleven.image = UIImage(named: "OrangeCheck")
+            twelve.image = UIImage(named: "OrangeCheck2")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 11 {
             
-            twelve.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            one.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck")
+            eight.image = UIImage(named: "OrangeCheck")
+            nine.image = UIImage(named: "OrangeCheck")
+            ten.image = UIImage(named: "OrangeCheck")
+            eleven.image = UIImage(named: "OrangeCheck")
+            twelve.image = UIImage(named: "OrangeCheck")
+            thirteen.image = UIImage(named: "OrangeCheck2")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 12 {
             
-            thirteen.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            one.alpha = 0.5
-            fourteen.alpha = 0.5
-            fifteen.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck")
+            eight.image = UIImage(named: "OrangeCheck")
+            nine.image = UIImage(named: "OrangeCheck")
+            ten.image = UIImage(named: "OrangeCheck")
+            eleven.image = UIImage(named: "OrangeCheck")
+            twelve.image = UIImage(named: "OrangeCheck")
+            thirteen.image = UIImage(named: "OrangeCheck")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
             
         }
         
         if counter == 13 {
             
-            fourteen.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            one.alpha = 0.5
-            fifteen.alpha = 0.5
-            
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck")
+            eight.image = UIImage(named: "OrangeCheck")
+            nine.image = UIImage(named: "OrangeCheck")
+            ten.image = UIImage(named: "OrangeCheck")
+            eleven.image = UIImage(named: "OrangeCheck")
+            twelve.image = UIImage(named: "OrangeCheck")
+            thirteen.image = UIImage(named: "OrangeCheck")
+            fourteen.image = UIImage(named: "OrangeCheck2")
+            fifteen.image = UIImage(named: "OrangeCheck2")
         }
         
         if counter == 14 {
             
-            fifteen.alpha = 1
-            two.alpha = 0.5
-            three.alpha = 0.5
-            four.alpha = 0.5
-            five.alpha = 0.5
-            six.alpha = 0.5
-            seven.alpha = 0.5
-            eight.alpha = 0.5
-            nine.alpha = 0.5
-            ten.alpha = 0.5
-            eleven.alpha = 0.5
-            twelve.alpha = 0.5
-            thirteen.alpha = 0.5
-            fourteen.alpha = 0.5
-            one.alpha = 0.5
+            one.image = UIImage(named: "OrangeCheck")
+            two.image = UIImage(named: "OrangeCheck")
+            three.image = UIImage(named: "OrangeCheck")
+            four.image = UIImage(named: "OrangeCheck")
+            five.image = UIImage(named: "OrangeCheck")
+            six.image = UIImage(named: "OrangeCheck")
+            seven.image = UIImage(named: "OrangeCheck")
+            eight.image = UIImage(named: "OrangeCheck")
+            nine.image = UIImage(named: "OrangeCheck")
+            ten.image = UIImage(named: "OrangeCheck")
+            eleven.image = UIImage(named: "OrangeCheck")
+            twelve.image = UIImage(named: "OrangeCheck")
+            thirteen.image = UIImage(named: "OrangeCheck")
+            fourteen.image = UIImage(named: "OrangeCheck")
+            fifteen.image = UIImage(named: "OrangeCheck")
             
         }
+        
+        quotetext.addCharacterSpacing()
+
         //        backgroundlabel.backgroundColor = colors[counter]
     }
     /*
@@ -542,4 +582,14 @@ class ReaderViewController: UIViewController {
      }
      */
     
+}
+
+extension UILabel {
+    func addCharacterSpacing() {
+        if let labelText = text, labelText.count > 0 {
+            let attributedString = NSMutableAttributedString(string: labelText)
+            attributedString.addAttribute(NSAttributedStringKey.kern, value: 1.2, range: NSRange(location: 0, length: attributedString.length - 1))
+            attributedText = attributedString
+        }
+    }
 }
