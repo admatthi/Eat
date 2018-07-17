@@ -79,7 +79,6 @@ class ReaderViewController: UIViewController {
         
             whatthehell()
 
-        counter = 0
                 // Do any additional setup after loading the view.
         
         colors.append(bblue)
@@ -134,7 +133,12 @@ class ReaderViewController: UIViewController {
         bookmarktapped = true
         tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)    }
     
+    var randomstring = String()
+    
     @IBAction func tapBookMark(_ sender: Any) {
+        
+        if counter > 0 {
+        counter -= 1
         
         if bookmarktapped {
             
@@ -142,15 +146,39 @@ class ReaderViewController: UIViewController {
             
             bookmarktapped = false
             
-            ref?.child("Users").child(uid).child("Favorites").childByAutoId().updateChildValues(["Text" : quote[counter]])
+           randomstring = UUID().uuidString
+            ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter]])
             
         } else {
             
             tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
             
+        ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
+            
             bookmarktapped = true
         }
         
+        } else {
+            
+            if bookmarktapped {
+                
+                tapbookmark.setImage(UIImage(named: "LightBookMark"), for: .normal)
+                
+                bookmarktapped = false
+                
+                randomstring = UUID().uuidString
+                ref?.child("Users").child(uid).child("Favorites").child(randomstring).updateChildValues(["Text" : quote[counter]])
+                
+            } else {
+                
+                tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+                
+                ref?.child("Users").child(uid).child("Favorites").child(randomstring).removeValue()
+                
+                bookmarktapped = true
+            }
+            
+        }
     }
     @IBOutlet weak var tapbookmark: UIButton!
     func nextcount() {
@@ -165,9 +193,10 @@ class ReaderViewController: UIViewController {
             
         } else {
 
+            counter += 1
+
             showproperquote()
 
-            counter += 1
             
         }
 
@@ -242,6 +271,23 @@ class ReaderViewController: UIViewController {
                 quote.append(activityvalue2)
             }
             
+            if var activityvalue2 = value?["13"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["14"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["15"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            self.counter = 0
+
             self.showproperquote()
         })
         

@@ -49,7 +49,6 @@ var selecteddescription = String()
 class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var loadinglabel: UILabel!
     @IBOutlet weak var loadinglabeltext: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -60,22 +59,29 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         authorofquote.alpha = 0
 //        logo.alpha = 0
-//        loadinglabel.alpha = 0
+        loadinglabel.alpha = 0
         loadinglabeltext.alpha = 0
         activityIndicator.stopAnimating()
         activityIndicator.alpha = 0
+        tapfavorties.alpha = 1
+        taphome.alpha = 1
     }
     
+    @IBOutlet weak var loadinglabel: UILabel!
     func showloading() {
         
         authorofquote.alpha = 1
         logo.alpha = 1
-//        loadinglabel.alpha = 1
+        loadinglabel.alpha = 1
         loadinglabeltext.alpha = 1
         activityIndicator.startAnimating()
         activityIndicator.alpha = 1
+        tapfavorties.alpha = 0
+        taphome.alpha = 0
     }
     
+    @IBOutlet weak var taphome: UIButton!
+    @IBOutlet weak var tapfavorties: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()

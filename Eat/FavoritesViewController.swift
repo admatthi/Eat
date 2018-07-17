@@ -32,6 +32,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             
             self.queryfordata()
         }
+        
+        backgroundlabel.layer.cornerRadius = 5.0
+        backgroundlabel.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
@@ -108,6 +111,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 
         }
     }
+    @IBOutlet weak var backgroundlabel: UILabel!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
