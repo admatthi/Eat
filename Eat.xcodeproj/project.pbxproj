@@ -49,6 +49,8 @@
 		9D694E7D20B1DD5300AEED4E /* EatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E7C20B1DD5300AEED4E /* EatTests.swift */; };
 		9D694E8820B1DD5300AEED4E /* EatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D694E8720B1DD5300AEED4E /* EatUITests.swift */; };
 		9D916F5020CF5DB700C6245E /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */; };
+		9D9FAA4320FD79F400386D3E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FAA4220FD79F400386D3E /* FavoritesViewController.swift */; };
+		9D9FAA4520FD7A0500386D3E /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FAA4420FD7A0400386D3E /* FavoritesTableViewCell.swift */; };
 		9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBB8B3620B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
 		9DBB8B3720B64F06004C36D1 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB8B3420B64F06004C36D1 /* BarCell.swift */; };
@@ -109,6 +111,8 @@
 		9D694E8920B1DD5300AEED4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D7B36E620BC7D3F00C38251 /* Eat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eat.entitlements; sourceTree = "<group>"; };
 		9D916F4F20CF5DB700C6245E /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		9D9FAA4220FD79F400386D3E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		9D9FAA4420FD7A0400386D3E /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		9DBB8B3420B64F06004C36D1 /* BarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		9DBBC5C220C2F77C00C38DFC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9DE84C1A20F7B7F90048B78D /* BookOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookOverviewViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				9DE84C1C20F7CF790048B78D /* SubsViewController.swift */,
 				9D18577720F5677F0079FF84 /* ReaderViewController.swift */,
 				9D3CC6B120F516720051AA76 /* ReadTableViewCell.swift */,
+				9D9FAA4220FD79F400386D3E /* FavoritesViewController.swift */,
+				9D9FAA4420FD7A0400386D3E /* FavoritesTableViewCell.swift */,
 				9D694E6E20B1DD5300AEED4E /* Assets.xcassets */,
 				9D694E7020B1DD5300AEED4E /* LaunchScreen.storyboard */,
 				9D694E7320B1DD5300AEED4E /* Info.plist */,
@@ -502,11 +508,13 @@
 				9D6380EE20B1E01000350C4D /* AViewController.swift in Sources */,
 				9D694E6820B1DD5300AEED4E /* AppDelegate.swift in Sources */,
 				9DBB8B3520B64F06004C36D1 /* BarCell.swift in Sources */,
+				9D9FAA4520FD7A0500386D3E /* FavoritesTableViewCell.swift in Sources */,
 				9DE84C1B20F7B7F90048B78D /* BookOverviewViewController.swift in Sources */,
 				9D3CC6B220F516720051AA76 /* ReadTableViewCell.swift in Sources */,
 				9D3CC6A820F50E8E0051AA76 /* DiscoverBooksViewController.swift in Sources */,
 				9DE84C1D20F7CF790048B78D /* SubsViewController.swift in Sources */,
 				9DBBC5C320C2F77C00C38DFC /* DataService.swift in Sources */,
+				9D9FAA4320FD79F400386D3E /* FavoritesViewController.swift in Sources */,
 				9D62591320CD833700383CEB /* CodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

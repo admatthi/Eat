@@ -60,7 +60,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         authorofquote.alpha = 0
 //        logo.alpha = 0
-        loadinglabel.alpha = 0
+//        loadinglabel.alpha = 0
         loadinglabeltext.alpha = 0
         activityIndicator.stopAnimating()
         activityIndicator.alpha = 0
@@ -70,7 +70,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         
         authorofquote.alpha = 1
         logo.alpha = 1
-        loadinglabel.alpha = 1
+//        loadinglabel.alpha = 1
         loadinglabeltext.alpha = 1
         activityIndicator.startAnimating()
         activityIndicator.alpha = 1
