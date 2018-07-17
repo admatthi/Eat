@@ -32,7 +32,6 @@ let oorange = UIColor(red:1.00, green:0.40, blue:0.08, alpha:1.0)
 var colors = [UIColor]()
 
 class ReaderViewController: UIViewController {
-    @IBOutlet weak var titlelabel: UILabel!
     @IBAction func tapPrevious(_ sender: Any) {
         
         
@@ -64,13 +63,23 @@ class ReaderViewController: UIViewController {
             tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
         }
     }
+    @IBOutlet weak var cover: UIImageView!
+    @IBOutlet weak var authorlabel: UILabel!
+    @IBOutlet weak var titlelabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
         
-        whitelabel.layer.cornerRadius = 10.0
-        whitelabel.layer.masksToBounds = true
+//        whitelabel.layer.cornerRadius = 10.0
+//        whitelabel.layer.masksToBounds = true
+        
+        titlelabel.text = selectedtitle
+        authorlabel.text = selectedauthor
+        cover.image = selectedimage
+        cover.layer.cornerRadius = 5.0
+        cover.layer.masksToBounds = true
         
         bookmarktapped = true
         
@@ -131,7 +140,9 @@ class ReaderViewController: UIViewController {
         }
         
         bookmarktapped = true
-        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)    }
+        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+        
+    }
     
     var randomstring = String()
     
@@ -183,8 +194,6 @@ class ReaderViewController: UIViewController {
     @IBOutlet weak var tapbookmark: UIButton!
     func nextcount() {
         
-        bookmarktapped = true
-        tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
 
         if counter > (quote.count-1) {
             
@@ -196,7 +205,6 @@ class ReaderViewController: UIViewController {
             counter += 1
 
             showproperquote()
-
             
         }
 
@@ -314,6 +322,8 @@ class ReaderViewController: UIViewController {
 
     func showproperquote() {
         
+        if counter < quote.count {
+            
         quotetext.text = quote[counter]
         
         if counter == 0 {
@@ -616,7 +626,11 @@ class ReaderViewController: UIViewController {
         
         quotetext.addCharacterSpacing()
 
-        //        backgroundlabel.backgroundColor = colors[counter]
+        backgroundlabel.backgroundColor = colors[counter]
+        
+            bookmarktapped = true
+            tapbookmark.setImage(UIImage(named: "DarkBookMark"), for: .normal)
+        }
     }
     /*
      // MARK: - Navigation

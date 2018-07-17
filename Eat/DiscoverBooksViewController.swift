@@ -57,23 +57,20 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var authorofquote: UILabel!
     func hideloading() {
         
-        authorofquote.alpha = 0
+        coverimage.alpha = 0
 //        logo.alpha = 0
-        loadinglabel.alpha = 0
-        loadinglabeltext.alpha = 0
         activityIndicator.stopAnimating()
         activityIndicator.alpha = 0
         tapfavorties.alpha = 1
         taphome.alpha = 1
     }
     
+    @IBOutlet weak var coverimage: UIImageView!
     @IBOutlet weak var loadinglabel: UILabel!
     func showloading() {
         
-        authorofquote.alpha = 1
+        coverimage.alpha = 1
         logo.alpha = 1
-        loadinglabel.alpha = 1
-        loadinglabeltext.alpha = 1
         activityIndicator.startAnimating()
         activityIndicator.alpha = 1
         tapfavorties.alpha = 0

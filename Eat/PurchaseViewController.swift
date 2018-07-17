@@ -28,7 +28,7 @@ enum RegisteredPurchase: String {
     
     case OneTimePurchase = "OneTimePurchase"
     
-    case YearPurchase = "7DayFreeTrial"
+    case SevenDayFreeTrial = "7DayFreeTrial"
 
     
 }
@@ -71,10 +71,10 @@ class PurchaseViewController: UIViewController {
     @IBOutlet weak var saleslabel: UILabel!
     let bundleID = "com.aatech.Eat"
     
-    var threeday = RegisteredPurchase.threedaytrial
-    var sevenday = RegisteredPurchase.sevendaytrial
-    var onetime = RegisteredPurchase.OneTimePurchase
-    var yearpurchase = RegisteredPurchase.YearPurchase
+    var threedaytrial = RegisteredPurchase.threedaytrial
+    var sevendaytrial = RegisteredPurchase.sevendaytrial
+    var onetimepurchase = RegisteredPurchase.OneTimePurchase
+    var sevendayfreetrial = RegisteredPurchase.SevenDayFreeTrial
     let validator = AppleReceiptValidator(service: .production)
     
     @IBOutlet weak var label: UILabel!
@@ -103,16 +103,14 @@ class PurchaseViewController: UIViewController {
         
         FBSDKAppEvents.logEvent("YearPressed")
         
-        purchase(purchase: onetime)
+        purchase(purchase: onetimepurchase)
 
     }
     @IBAction func tapButton2(_ sender: Any) {
-        
-        //        generator.impactOccurred()
-        
+                
         FBSDKAppEvents.logEvent("MonthlyPressed")
         
-        purchase(purchase: threeday)
+        purchase(purchase: threedaytrial)
 
         
         
@@ -121,21 +119,9 @@ class PurchaseViewController: UIViewController {
         
         //        generator.impactOccurred()
         
-        FBSDKAppEvents.logEvent("6MonthPressed")
+        FBSDKAppEvents.logEvent("12MonthTrialPressed")
         
-        purchase(purchase: yearpurchase)
-
-        
-//        
-//        DispatchQueue.main.async {
-//
-//            self.performSegue(withIdentifier: "PurchaseToLogin2", sender: self)
-//
-//        }
-        
-//        login()
-        //
-        
+        purchase(purchase: sevendayfreetrial)
         
     }
     
