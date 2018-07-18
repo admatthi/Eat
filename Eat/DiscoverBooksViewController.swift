@@ -15,6 +15,7 @@ import FirebaseAuth
 import FBSDKCoreKit
 import UserNotifications
 import AudioToolbox
+import GameplayKit
 
 var bookids = [String]()
 var booknames = [String:String]()
@@ -215,6 +216,8 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             
             var functioncounter = 0
             
+            bookids = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: bookids) as! [String]
+
             for each in bookids  {
                 
                 ref?.child("AllBooks").child(each).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -609,6 +612,9 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
         }
 
     }
+    
+
+
     /*
     // MARK: - Navigation
 
@@ -628,3 +634,5 @@ extension Dictionary {
         }
     }
 }
+
+
