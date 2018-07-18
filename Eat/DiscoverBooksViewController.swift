@@ -559,7 +559,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
             selectedauthor = businessmoneybookauthors[businessmoneybookids[indexPath.row]]!
             selectedimage = businessmoneybookcovers[businessmoneybookids[indexPath.row]]!
 
-//            selecteddescription = businessmoneydescriptions[businessmoneybookids[indexPath.row]]!
+            selecteddescription = businessmoneydescriptions[businessmoneybookids[indexPath.row]]!
             
             self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
 
@@ -574,7 +574,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                 selectedtitle = healthbooknames[healthbookids[indexPath.row]]!
                 selectedauthor = healthbookauthors[healthbookids[indexPath.row]]!
                 selectedimage = healthbookcovers[healthbookids[indexPath.row]]!
-//                selecteddescription = healthdescriptions[healthbookids[indexPath.row]]!
+                selecteddescription = healthdescriptions[healthbookids[indexPath.row]]!
                 self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
 
             } else {
@@ -585,7 +585,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                     selectedtitle = socialbooknames[socialbookids[indexPath.row]]!
                     selectedauthor = socialbookauthors[socialbookids[indexPath.row]]!
                     selectedimage = socialbookcovers[socialbookids[indexPath.row]]!
-//                    selecteddescription = socialdescriptions[socialbookids[indexPath.row]]!
+                    selecteddescription = socialdescriptions[socialbookids[indexPath.row]]!
                     self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
 
                     
@@ -597,7 +597,7 @@ class DiscoverBooksViewController: UIViewController, UICollectionViewDelegate, U
                         selectedtitle = booknames[bookids[indexPath.row]]!
                         selectedauthor = bookauthors[bookids[indexPath.row]]!
                         selectedimage = bookcovers[bookids[indexPath.row]]!
-//                        selecteddescription = businessmoneydescriptions[bookids[indexPath.row]]!
+                        selecteddescription = businessmoneydescriptions[bookids[indexPath.row]]!
                         
                         self.performSegue(withIdentifier: "HomeToBookOverview", sender: self)
 

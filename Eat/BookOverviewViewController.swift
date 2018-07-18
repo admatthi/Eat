@@ -53,7 +53,7 @@ class BookOverviewViewController: UIViewController {
         titlelabel.text = selectedtitle
         author.text = selectedauthor
         cover.image = selectedimage
-        
+        descriptionlabel.text = selecteddescription
         queryforreviewinfo()
         
         cover.layer.cornerRadius = 10.0
@@ -63,7 +63,7 @@ class BookOverviewViewController: UIViewController {
         
         if purchased {
             
-            tapstart.setTitle("Start Now", for: .normal)
+            tapstart.setTitle("Read Now", for: .normal)
             
         } else {
             

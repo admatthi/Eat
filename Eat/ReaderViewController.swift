@@ -110,6 +110,46 @@ class ReaderViewController: UIViewController {
         colors.append(oorange)
         colors.append(gred)
         colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
+        colors.append(bblue)
+        colors.append(yyellow)
+        colors.append(oorange)
+        colors.append(gred)
+        colors.append(lblue)
     }
     
     @IBOutlet weak var counterbutton: UIButton!
@@ -290,6 +330,61 @@ class ReaderViewController: UIViewController {
             }
             
             if var activityvalue2 = value?["15"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["16"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["17"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["18"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["19"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["20"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["21"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["22"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["23"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["24"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["25"] as? String {
+                
+                quote.append(activityvalue2)
+            }
+            
+            if var activityvalue2 = value?["26"] as? String {
                 
                 quote.append(activityvalue2)
             }
